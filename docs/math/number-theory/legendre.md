@@ -4,7 +4,7 @@
 
 The **Legendre symbol **is a function of $a$ and $p$ defined as :
 
-<img style="height: 90px; margin-left: -15px;" src="https://i.imgur.com/LlUiWpG.png">
+$\left({\frac {a}{p}}\right)={\begin{cases}1&{\text{ if }}a{\text{ is a quadratic residue modulo }}p{\text{ and }}a\not \equiv 0{\pmod {p}},\\-1&{\text{ if }}a{\text{ is a quadratic non-residue modulo }}p,\\0&{\text{ if }}a\equiv 0{\pmod {p}}.\end{cases}}$
 
 **Legendre symbol** 的原始定義其實是這樣的 ( 兩個定義是等價的 ) :
 
