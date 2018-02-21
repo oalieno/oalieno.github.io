@@ -1,6 +1,10 @@
 # Information
 site_name: OAlienO's Blog
 
+# Repository
+repo_name: 'OAlienO/OAlienO'
+repo_url: 'https://github.com/OAlienO/OAlienO'
+
 # Content
 pages:
     - HOME: index.md
