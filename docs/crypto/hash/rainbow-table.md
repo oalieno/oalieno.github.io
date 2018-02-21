@@ -1,4 +1,4 @@
-# 彩虹表 \( Rainbow Table \)
+# 彩虹表 ( Rainbow Table )
 
 字典攻擊是預先儲存一個很大的資料庫，裡面包含許多常見字串的 hash value，透過查表的方式找回 hash key
 
