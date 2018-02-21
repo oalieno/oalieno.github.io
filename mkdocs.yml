@@ -1,0 +1,62 @@
+# Information
+site_name: OAlienO's Blog
+
+# Content
+pages:
+    - HOME: index.md
+    - MATH:
+      - 數論:
+        - 費馬小定理: math/number-theory/fermat.md
+        - 二次剩餘: math/number-theory/quadratic-residue.md
+        - 連分數: math/number-theory/continued-fractions.md
+        - 中國剩餘定理: math/number-theory/chinese-remainder-theorem.md
+        - Smooth Number: math/number-theory/smooth.md
+        - Legendre Symbol: math/number-theory/legendre.md
+      - 群論:
+        - 群論簡介: math/group-theory/introduction.md
+    - CRYPTO:
+      - 密碼學簡介: crypto/introduction.md
+      - 古典密碼: crypto/classical.md
+      - 對稱式密碼:
+        - DES: crypto/symmetric/des.md
+        - AES: crypto/symmetric/aes.md
+        - 工作模式: crypto/symmetric/mode.md
+      - 非對稱式密碼:
+        - Diffie-Hellman:
+          - Introduction to Diffie-Hellman: crypto/asymmetric/diffie-hellman/introduction.md
+          - Backdoor in Diffie-Hellman: crypto/asymmetric/diffie-hellman/backdoor.md
+        - RSA:
+          - Introduction to RSA: crypto/asymmetric/rsa/introduction.md
+          - Pollard's p-1 Algorithm: crypto/asymmetric/rsa/pollard.md
+          - Williams's p+1 Algorithm: crypto/asymmetric/rsa/williams.md
+          - Fermat's Factorization Method: crypto/asymmetric/rsa/fermat.md
+          - Wiener's Attack: crypto/asymmetric/rsa/wiener.md
+          - Common Factor Attack: crypto/asymmetric/rsa/common-factor-attack.md
+          - Common Modulus Attack: crypto/asymmetric/rsa/common-modulus-attack.md
+          - Backdoor in RSA: crypto/asymmetric/rsa/backdoor.md
+        - Rabin: crypto/asymmetric/rabin.md
+      - 哈希函數:
+        - Merkle–Damgård Construction: crypto/hash/merkle-damgard.md
+        - Birthday Attack: crypto/hash/birthday-attack.md
+        - Rainbow Table: crypto/hash/rainbow-table.md
+        - Length Extension Attack: crypto/hash/length-extension-attack.md
+
+# Theme
+theme: 'material'
+
+# Customization
+extra_javascript: 
+    - 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'
+
+# Extensions
+markdown_extensions:
+    - pymdownx.arithmatex
+    - pymdownx.caret
+    - pymdownx.critic
+    - pymdownx.details
+    - pymdownx.inlinehilite
+    - pymdownx.magiclink
+    - pymdownx.mark
+    - pymdownx.smartsymbols
+    - pymdownx.superfences
+    - pymdownx.tilde
