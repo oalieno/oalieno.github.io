@@ -25,6 +25,7 @@ pages:
         - DES: crypto/symmetric/des.md
         - AES: crypto/symmetric/aes.md
         - 工作模式: crypto/symmetric/mode.md
+        - Padding Oracle Attack: crypto/symmetric/padding-oracle.md
       - 非對稱式密碼:
         - Diffie-Hellman:
           - Introduction to Diffie-Hellman: crypto/asymmetric/diffie-hellman/introduction.md
@@ -37,6 +38,7 @@ pages:
           - Wiener's Attack: crypto/asymmetric/rsa/wiener.md
           - Common Factor Attack: crypto/asymmetric/rsa/common-factor-attack.md
           - Common Modulus Attack: crypto/asymmetric/rsa/common-modulus-attack.md
+          - Coppersmith Attack: crypto/asymmetric/rsa/coppersmith.md
           - Backdoor in RSA: crypto/asymmetric/rsa/backdoor.md
         - Rabin: crypto/asymmetric/rabin.md
       - 哈希函數:
@@ -44,6 +46,9 @@ pages:
         - Birthday Attack: crypto/hash/birthday-attack.md
         - Rainbow Table: crypto/hash/rainbow-table.md
         - Length Extension Attack: crypto/hash/length-extension-attack.md
+      - 經典攻擊:
+        - BEAST Attack: crypto/classic/beast.md
+        - POODLE Attack: crypto/classic/poodle.md
 
 # Theme
 theme: 'material'
