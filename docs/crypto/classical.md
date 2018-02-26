@@ -77,3 +77,7 @@ Example:
 ### 柵欄密碼
 
 [百度](https://baike.baidu.com/item/%E6%A0%85%E6%A0%8F%E5%AF%86%E7%A0%81)
+
+### 更多資源
+
+[更多通靈之術](https://gist.github.com/0kami/ffd15270914492491e18ff9f070eab2b)

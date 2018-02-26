@@ -54,5 +54,8 @@ $m_p \equiv c^{\frac{1}{4}(p+1)} \pmod{p}$
 
 $m_q \equiv c^{\frac{1}{4}(q+1)} \pmod{q}$
 
-其他情況可以用 Berlekamp's algorithm，這邊就不討論了
+而一般情況下，則使用 Tonelli-Shanks Algorithm ( 看看這個 [blog](https://eli.thegreenplace.net/2009/03/07/computing-modular-square-roots-in-python) 或這篇 [Square Roots from 1;24,51,10 to Dan Shanks](http://www.math.vt.edu/people/brown/doc/sqrts.pdf) )
 
+### CTF 題目
+
+[HITCON CTF 2015 Quals - Rsabin](https://ctftime.org/task/1753)

@@ -9,11 +9,14 @@ repo_url: 'https://github.com/OAlienO/OAlienO'
 pages:
     - HOME: index.md
     - MATH:
+      - README: math/README.md
       - 數論:
+        - 模運算: math/number-theory/modular.md
         - 費馬小定理: math/number-theory/fermat.md
         - 二次剩餘: math/number-theory/quadratic-residue.md
         - 連分數: math/number-theory/continued-fractions.md
         - 中國剩餘定理: math/number-theory/chinese-remainder-theorem.md
+        - 擴展歐基里得演算法: math/number-theory/exgcd.md
         - Smooth Number: math/number-theory/smooth.md
         - Legendre Symbol: math/number-theory/legendre.md
       - 群論:
@@ -40,12 +43,14 @@ pages:
           - Common Modulus Attack: crypto/asymmetric/rsa/common-modulus-attack.md
           - Coppersmith Attack: crypto/asymmetric/rsa/coppersmith.md
           - Backdoor in RSA: crypto/asymmetric/rsa/backdoor.md
+          - 實做: crypto/asymmetric/rsa/implementation.md
         - Rabin: crypto/asymmetric/rabin.md
       - 哈希函數:
         - Merkle–Damgård Construction: crypto/hash/merkle-damgard.md
         - Birthday Attack: crypto/hash/birthday-attack.md
         - Rainbow Table: crypto/hash/rainbow-table.md
         - Length Extension Attack: crypto/hash/length-extension-attack.md
+        - 實做: crypto/hash/implementation.md
       - 經典攻擊:
         - BEAST Attack: crypto/classic/beast.md
         - POODLE Attack: crypto/classic/poodle.md
