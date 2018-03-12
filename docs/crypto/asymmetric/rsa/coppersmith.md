@@ -28,9 +28,9 @@ $$
 
 使用該公鑰加密兩個明文 $m_1, m_2$ 為 $c_1, c_2$，並且兩個明文滿足 $m_1 = f(m_2)$，$f$ 是在模 $N$ 下的多項式
 
-$m_1^e \equiv c_1 \pmod{N}$，那麼 m_2 是 $g_1(x) = f(x)^e - c_1 \in \mathbb{Z}_{N}[x]$ 的根
+$m_1^e \equiv c_1 \pmod{N}$，那麼 $m_2$ 是 $g_1(x) = f(x)^e - c_1 \in \mathbb{Z}_{N}[x]$ 的根
 
-$m_2^e \equiv c_2 \pmod{N}$，那麼 m_2 是 $g_2(x) = x^e - c_2 \in \mathbb{Z}_{N}[x]$ 的根
+$m_2^e \equiv c_2 \pmod{N}$，那麼 $m_2$ 是 $g_2(x) = x^e - c_2 \in \mathbb{Z}_{N}[x]$ 的根
 
 所以 $x - m_2$ 可以整除 $g_1, g_2$
 
