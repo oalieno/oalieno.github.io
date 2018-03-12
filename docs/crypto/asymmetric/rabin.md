@@ -24,27 +24,21 @@ $m^2 \equiv c \pmod{N}$
 
 ### 解密
 
-計算 $m_p, m_q$
+$\sqrt{c} \equiv \pm m_p \pmod{p}$
 
-$m_p = \sqrt{c} \pmod{p}$
+$\sqrt{c} \equiv \pm m_q \pmod{q}$
 
-$m_q = \sqrt{c} \pmod{q}$
+使用中國剩餘定理計算在模 $N = pq$ 下的解
 
-使用擴展歐基里得計算 $y_p, y_q$
+有四組解
 
-$y_p \cdot p + y_q \cdot q = 1$
+$+ m_p \cdot q \cdot y_q + m_q \cdot p \cdot y_p \mod N$
 
-解出四組明文 $r, -r, s, -s$
+$+ m_p \cdot q \cdot y_q - m_q \cdot p \cdot y_p \mod N$
 
-$r \equiv (y_p \cdot p \cdot m_q + y_q \cdot q \cdot m_p) \pmod{N}$
+$- m_p \cdot q \cdot y_q + m_q \cdot p \cdot y_p \mod N$
 
-$-r \equiv N - r \pmod{N}$
-
-$s \equiv (y_p \cdot p \cdot m_q - y_q \cdot q \cdot m_p) \pmod{N}$
-
-$-s \equiv N - s \pmod{N}$
-
-其中一組是明文
+$- m_p \cdot q \cdot y_q - m_q \cdot p \cdot y_p \mod N$
 
 ### 模開方根
 

@@ -34,6 +34,6 @@ $$
 
 可以在這篇 [Square Roots from 1;24,51,10 to Dan Shanks](http://www.math.vt.edu/people/brown/doc/sqrts.pdf) 找到理論
 
-在 $n \equiv 3 \pmod{4}$ 時有特殊解 $a^{\frac{1}{4}(n+1)} \pmod{n}$
+在 $n \equiv 3 \pmod{4}$ 時有特殊解 &nbsp; $a^{\frac{1}{4}(n+1)} \mod n$
 
 相關主題 : [二次剩餘](/math/number-theory/quadratic-residue.md)
