@@ -32,6 +32,8 @@ pages:
       - 非對稱式密碼:
         - Diffie-Hellman:
           - Introduction to Diffie-Hellman: crypto/asymmetric/diffie-hellman/introduction.md
+          - Big-Step Giant-Step: crypto/asymmetric/diffie-hellman/baby-step-giant-step.md
+          - Pohlig Hellman Algorithm: crypto/asymmetric/diffie-hellman/pohlig-hellman.md
           - Backdoor in Diffie-Hellman: crypto/asymmetric/diffie-hellman/backdoor.md
         - RSA:
           - Introduction to RSA: crypto/asymmetric/rsa/introduction.md

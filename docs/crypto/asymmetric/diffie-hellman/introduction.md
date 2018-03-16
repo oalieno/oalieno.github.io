@@ -14,3 +14,13 @@ Alice 和 Bob 想要共享祕密
 6. Alice 和 Bob 共享祕密 $g^{ab}\ \text{mod}\ p$
 
 Diffie-Hellman Key Exchange 能防止**竊聽**但不能防止**中間人攻擊**
+
+## Discrete Logarithm Problem
+
+Diffie Hellman 破解的困難點在於 Discrete Logarithm Problem 沒有有效的方式求解
+
+Discrete Logarithm Problem :
+
+給一質數 $p$，一個生成元 $\alpha \in \mathbb{Z}_p^{*}$，一個元素 $\beta \in \mathbb{Z}_p^{*}$ ( $\mathbb{Z}_p^{*}$ has order $n$ )
+
+求 $x$ 滿足 $\alpha^{x} \equiv \beta \pmod{p}$
