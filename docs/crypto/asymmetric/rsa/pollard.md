@@ -14,13 +14,9 @@ Pollard's p-1 algorithm 就是嘗試去構造出 $k(p-1)$ ，並且令 $a = 2$ (
 
 當 $1 \times 2 \times 3 \cdots$ 是 $p-1$ 的倍數，我們就成功分解 $N$
 
-### 限制
+### 使用條件
 
-當 $p-1$ 最大的質因數越小
-
-$1 \times 2 \times 3 ...$ 能越快成為 $p - 1$ 的倍數
-
-Pollard's p-1 algorithm 能越快的分解 $N$
+當 $p-1$ 最大的質因數很小
 
 ### 程式碼 ( python )
 

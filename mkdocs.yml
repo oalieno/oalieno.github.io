@@ -3,13 +3,14 @@ site_name: OAlienO's Blog
 
 # Repository
 repo_name: 'OAlienO/OAlienO'
-repo_url: 'https://github.com/OAlienO/OAlienO'
+repo_url: 'https://github.com/OAlienO/OAlienO.github.io'
 
 # Content
 pages:
     - HOME: index.md
     - MATH:
       - README: math/README.md
+      - 數學名詞: math/math-term.md
       - 數論:
         - 模運算: math/number-theory/modular.md
         - 費馬小定理: math/number-theory/fermat.md
@@ -17,12 +18,11 @@ pages:
         - 連分數: math/number-theory/continued-fractions.md
         - 中國剩餘定理: math/number-theory/chinese-remainder-theorem.md
         - 擴展歐基里得演算法: math/number-theory/exgcd.md
-        - Smooth Number: math/number-theory/smooth.md
         - Legendre Symbol: math/number-theory/legendre.md
       - 群論:
         - 群論簡介: math/group-theory/introduction.md
     - CRYPTO:
-      - 密碼學簡介: crypto/introduction.md
+      - README: crypto/README.md
       - 古典密碼: crypto/classical.md
       - 對稱式密碼:
         - DES: crypto/symmetric/des.md

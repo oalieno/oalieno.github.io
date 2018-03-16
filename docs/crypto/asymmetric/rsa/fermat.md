@@ -4,18 +4,23 @@
 
 令 $a = \frac{p + q}{2}, b = \frac{p - q}{2}$  那麼 $N = (a + b)(a - b) = a^2 - b^2$
 
-但是今天我們不知道 $p, q$ ，而我們想要分解 $N$ ，那我們就猜 $a = \lceil \sqrt{N} \rceil$ ，沒猜到就把 $a$ 加一繼續猜
+但是今天我們不知道 $p, q$ ，而我們想要分解 $N$
 
-### 限制
+那我們就猜 $a = \lceil \sqrt{N} \rceil$ ，測試 $a^2 - N$ 是不是完全平方數
 
-當 $p$ 和 $q$ 離 $\sqrt{N}$ 越近，Fermat's factorization method 能越快找到解
+猜到的話可以從 $a, b$ 反推回 $p, q$
+
+沒猜到就把 $a$ 加一繼續猜
+
+### 使用條件
+
+$|p-q|$ 很小
 
 ### 程式碼 ( python )
 
-請自行實做 `is_square` ( 就是判斷數字是不是完全平方數 )
-
 ```python
 import math
+import gmpy2
 
 ceil = math.ceil
 sqrt = math.sqrt
@@ -23,7 +28,7 @@ sqrt = math.sqrt
 def fermat(n):
     a = ceil(sqrt(n))
     b2 = a * a - n
-    while not is_square(b2):
+    while not gmpy2.iroot(b2, 2)[1]:
         a = a + 1
         b2 = a * a - n
     b = sqrt(b2)

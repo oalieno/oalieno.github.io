@@ -6,8 +6,6 @@
 
 只要 $k \ge e = 3$，我們就可以解出 $m$
 
-下面的例子，我們假設 $e = 3$
-
 $$
 m^3 \equiv c_1 \pmod{N_1} \\
 m^3 \equiv c_2 \pmod{N_2} \\
@@ -20,13 +18,13 @@ $$
 
 而因為 $m \lt N_i\ \forall 1 \le i \le 3$，所以 $m^3 \lt N_1N_2N_3$，所以 $m^3 = c$
 
-那我們用 Gauss's Algorithm 求出 $c$ 後開三次方就解出 $m = \sqrt[3]{c}$
+那我們用求出 $c$ 後就可以解出 $m = \sqrt[3]{c}$
 
 ### Franklin-Reiter Related Message Attack
 
 假設我們有公鑰 $(N, e)$
 
-使用該公鑰加密兩個明文 $m_1, m_2$ 為 $c_1, c_2$，並且兩個明文滿足 $m_1 = f(m_2)$，$f$ 是在模 $N$ 下的多項式
+使用公鑰加密兩個明文 $m_1, m_2$ 為 $c_1, c_2$，且兩個明文滿足 $m_1 = f(m_2)$，$f$ 是在模 $N$ 下的多項式
 
 $m_1^e \equiv c_1 \pmod{N}$，那麼 $m_2$ 是 $g_1(x) = f(x)^e - c_1 \in \mathbb{Z}_{N}[x]$ 的根
 
