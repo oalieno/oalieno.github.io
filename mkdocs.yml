@@ -19,6 +19,7 @@ pages:
         - 中國剩餘定理: math/number-theory/chinese-remainder-theorem.md
         - 擴展歐基里得演算法: math/number-theory/exgcd.md
         - Legendre Symbol: math/number-theory/legendre.md
+        - Resultant: math/number-theory/resultant.md
       - 群論:
         - 群論簡介: math/group-theory/introduction.md
     - CRYPTO:

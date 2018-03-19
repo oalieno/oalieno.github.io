@@ -1,5 +1,11 @@
 # Coppersmith Attack
 
+### Coppersmith Method
+
+給整數 $N$，$f \in \mathbb{Z}[x]$ 是一個 degree $d$ 的 monic polynomial
+
+用 coppersmith method 可以找到所有 $x_0 < N^{\frac{1}{d} - \epsilon}, \frac{1}{d} > \epsilon > 0$ 使得 $f(x_0) = 0$ 
+
 ### Håstad's Broadcast Attack
 
 假設某人將同一個訊息 $m$ 使用不同的 $N_1, N_2, \cdots N_k$ 相同的 $e = 3$ 加密成 $c_1, c_2, \cdots c_k$ 送給 $k$ 個人
@@ -45,6 +51,26 @@ $$
 [HITCON CTF 2014 - rsaha](https://github.com/ctfs/write-ups-2014/tree/master/hitcon-ctf-2014/rsaha)
 
 ### Coppersmith’s Short-Pad Attack
+
+假設我們有公鑰 $(N, e)$
+
+使用公鑰加密兩個明文 $m_1, m_2$ 為 $c_1, c_2$，其中 $m_1 = 2^m M + r_1, m_2 = 2^m M + r_2$
+
+$r_1, r_2$ 為未知 padding，$M$ 為真正的明文
+
+設 $g_1(x, y) = x ^ e - C_1, g_2(x, y) = (x + y) ^ e - C_2$
+
+當 $y = r_2 - r_1$，$g_1, g_2$ 有 common root $x = m_1$
+
+設 $h(y) = res_x(g_1, g_2)$
+
+我們知道 resultant 有一個特性是，$g_1, g_2$ 有 common root 若且唯若 $res(g_1, g_2) = 0$
+
+所以我們就用 coppersmith method 求 $h(y)$ 的 root 
+
+求得 root 後我們就知道 $y$，接下來就套用 Franklin-Reiter Related Message Attack 即可
+
+[CONFidence CTF 2015 – RSA1](http://mslc.ctf.su/wp/confidence-ctf-2015-rsa1-crypto-400/)
 
 ### 相關資源
 

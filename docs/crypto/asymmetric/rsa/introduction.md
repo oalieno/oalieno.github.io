@@ -64,6 +64,7 @@ $d$ : 私鑰指數 ( private exponent)
 | $N_1 = N_2$ | $gcd(e_1, e_2) = 1$ | $m_1 = m_2$ | 兩個密文 | [Common Modulus Attack](/crypto/asymmetric/rsa/common-modulus-attack) |
 | $N_1 \ne \cdots \ne N_k$ | $e_1 = \cdots = e_k$ 且 $k \ge e$ | $m_1 = \cdots = m_k$ | 多個密文 | [Håstad's Broadcast Attack](/crypto/asymmetric/rsa/coppersmith/#hastads-broadcast-attack) |
 | $N_1 = N_2$ | $e_1 = e_2$ | $m_1 = f(m_2)$ | 兩個密文 | [Franklin-Reiter Related Message Attack](/crypto/asymmetric/rsa/coppersmith/#franklin-reiter-related-message-attack) |
+| $N_1 = N_2$ | $e_1 = e_2$ | $m_1, m_2$ 是同一明文不同 padding | 兩個密文 | [Coppersmith Short-Pad Attack](/crypto/asymmetric/rsa/coppersmith/#coppersmiths-short-pad-attack) |
 
 ### 相關資源
 
