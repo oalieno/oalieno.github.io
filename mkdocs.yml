@@ -20,8 +20,8 @@ pages:
         - 擴展歐基里得演算法: math/number-theory/exgcd.md
         - Legendre Symbol: math/number-theory/legendre.md
         - Resultant: math/number-theory/resultant.md
-      - 群論:
-        - 群論簡介: math/group-theory/introduction.md
+      - Lattice:
+        - 定義: math/lattice/definition.md
     - CRYPTO:
       - README: crypto/README.md
       - 古典密碼: crypto/classical.md
@@ -57,6 +57,14 @@ pages:
       - 經典攻擊:
         - BEAST Attack: crypto/classic/beast.md
         - POODLE Attack: crypto/classic/poodle.md
+    - PWN:
+      - Heap Exploitation:
+        - House of Force: pwn/heap/house-of-force.md
+        - House of Orange: pwn/heap/house-of-orange.md
+    - WEB:
+      - SQL injection: web/sql-injection.md
+      - XSS: web/xss.md
+      - Tricks on PHP: web/php.md
 
 # Theme
 theme: 'material'
