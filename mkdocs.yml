@@ -9,7 +9,7 @@ repo_url: 'https://github.com/OAlienO/OAlienO.github.io'
 pages:
     - HOME: index.md
     - MATH:
-      - README: math/README.md
+      - 相關資源: math/resources.md
       - 數學名詞: math/math-term.md
       - 數論:
         - 模運算: math/number-theory/modular.md
@@ -23,7 +23,7 @@ pages:
       - Lattice:
         - 定義: math/lattice/definition.md
     - CRYPTO:
-      - README: crypto/README.md
+      - 相關資源: crypto/resources.md
       - 古典密碼: crypto/classical.md
       - 對稱式密碼:
         - DES: crypto/symmetric/des.md
