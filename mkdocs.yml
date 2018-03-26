@@ -62,9 +62,10 @@ pages:
         - House of Force: pwn/heap/house-of-force.md
         - House of Orange: pwn/heap/house-of-orange.md
     - WEB:
+      - Information Gathering: web/information-gathering.md
       - SQL injection: web/sql-injection.md
       - XSS: web/xss.md
-      - Tricks on PHP: web/php.md
+      - Tricks in PHP: web/php.md
 
 # Theme
 theme: 'material'
