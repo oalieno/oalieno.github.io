@@ -28,7 +28,7 @@ pages:
       - 對稱式密碼:
         - DES: crypto/symmetric/des.md
         - AES: crypto/symmetric/aes.md
-        - 工作模式: crypto/symmetric/mode.md
+        - Block Cipher Modes: crypto/symmetric/mode.md
         - Padding Oracle Attack: crypto/symmetric/padding-oracle.md
       - 非對稱式密碼:
         - Diffie-Hellman:
