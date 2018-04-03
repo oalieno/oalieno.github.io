@@ -48,6 +48,9 @@ pages:
           - Backdoor in RSA: crypto/asymmetric/rsa/backdoor.md
           - 實做: crypto/asymmetric/rsa/implementation.md
         - Rabin: crypto/asymmetric/rabin.md
+        - Elliptic Curve:
+          - Introduction to Elliptic Curve: crypto/asymmetric/elliptic-curve/introduction.md
+          - Elliptic Curve Key Exchange: crypto/asymmetric/elliptic-curve/key-exchange.md
       - 哈希函數:
         - Merkle–Damgård Construction: crypto/hash/merkle-damgard.md
         - Birthday Attack: crypto/hash/birthday-attack.md
@@ -58,6 +61,7 @@ pages:
         - BEAST Attack: crypto/classic/beast.md
         - POODLE Attack: crypto/classic/poodle.md
     - PWN:
+      - Format String: pwn/format-string.md
       - Heap Exploitation:
         - House of Force: pwn/heap/house-of-force.md
         - House of Orange: pwn/heap/house-of-orange.md
