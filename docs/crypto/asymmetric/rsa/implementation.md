@@ -55,7 +55,7 @@ openssl rsa -in private.pem -pubout > public.pem
 
 ```py
 from Crypto.PublicKey import RSA
-rsa = RSA.importKey(open('public.pem').read())
+public = RSA.importKey(open('public.pem').read())
 ```
 
 使用 openssl
@@ -70,7 +70,7 @@ openssl rsa -pubin -text -noout < public.pem
 
 ```py
 from Crypto.PublicKey import RSA
-rsa = RSA.importKey(open('private.pem').read())
+private = RSA.importKey(open('private.pem').read())
 ```
 
 使用 openssl
