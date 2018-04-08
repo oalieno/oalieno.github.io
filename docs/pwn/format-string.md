@@ -62,3 +62,21 @@ num = 6
 | %n | 4 |
 | %hn | 2 |
 | %hhn | 1 |
+
+#### 參數順序
+
+For amd64 :
+
+`rdi` is the format ( ex : `"%p"` )
+
+`rsi` $\to$ `rdx` $\to$ `rcx` $\to$ `r8` $\to$ `r9` $\to$ `stack`
+
+#### _printf_chk
+
+當 format string vulnerability 發生在 `_printf_chk`
+
+很多東西都會被檔掉
+
+1. `%n` 寫值不能用
+
+2. `%4$p` 指定參數也不能用
