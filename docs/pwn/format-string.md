@@ -2,7 +2,9 @@
 
 這邊只列一些對 exploit 重要的，更多資訊可以參考 [wikipedia](https://en.wikipedia.org/wiki/Printf_format_string)
 
-#### %c %s
+---
+
+### %c %s
 
 ```c
 int width = 5, garbage;
@@ -35,7 +37,9 @@ a
 
 %s 印到 `'\x00'` 之前
 
-#### %n
+---
+
+### %n
 
 ```c
 int num = 0, garbage;
@@ -63,7 +67,9 @@ num = 6
 | %hn | 2 |
 | %hhn | 1 |
 
-#### 參數順序
+---
+
+### 參數順序
 
 For amd64 :
 
@@ -71,7 +77,9 @@ For amd64 :
 
 `rsi` $\to$ `rdx` $\to$ `rcx` $\to$ `r8` $\to$ `r9` $\to$ `stack`
 
-#### _printf_chk
+---
+
+### _printf_chk
 
 當 format string vulnerability 發生在 `_printf_chk`
 
@@ -80,3 +88,17 @@ For amd64 :
 1. `%n` 寫值不能用
 
 2. `%4$p` 指定參數也不能用
+
+---
+
+### tools
+
+pwntools 有內建的 format string 工具 [fmtstr](http://docs.pwntools.com/en/stable/fmtstr.html)
+
+也可以用我寫的工具 [FMT](https://github.com/OAlienO/FMT)
+
+因為 pwntools 內建的工具會把 address 放在前面所以有 `\x00` 就會被截斷了
+
+所以我實作的是把 address 放在後面的
+
+自動化工具大多是用在簡單題上
