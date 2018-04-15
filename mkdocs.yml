@@ -61,6 +61,7 @@ pages:
         - BEAST Attack: crypto/classic/beast.md
         - POODLE Attack: crypto/classic/poodle.md
     - PWN:
+      - 常用指令與工具: pwn/tools.md
       - Format String: pwn/format-string.md
       - Heap Exploitation:
         - House of Force: pwn/heap/house-of-force.md
