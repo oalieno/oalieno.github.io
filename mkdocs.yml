@@ -45,7 +45,6 @@ pages:
           - Common Factor Attack: crypto/asymmetric/rsa/common-factor-attack.md
           - Common Modulus Attack: crypto/asymmetric/rsa/common-modulus-attack.md
           - Coppersmith Attack: crypto/asymmetric/rsa/coppersmith.md
-          - Backdoor in RSA: crypto/asymmetric/rsa/backdoor.md
           - 實做: crypto/asymmetric/rsa/implementation.md
         - Rabin: crypto/asymmetric/rabin.md
         - Elliptic Curve:
@@ -60,6 +59,7 @@ pages:
       - 經典攻擊:
         - BEAST Attack: crypto/classic/beast.md
         - POODLE Attack: crypto/classic/poodle.md
+        - Dual EC DRBG Backdoor: crypto/classic/dual-ec.md
     - PWN:
       - 常用指令與工具: pwn/tools.md
       - Format String: pwn/format-string.md
@@ -71,6 +71,7 @@ pages:
       - SQL injection: web/sql-injection.md
       - XSS: web/xss.md
       - Tricks in PHP: web/php.md
+      - DDOS: web/ddos.md
 
 # Theme
 theme: 'material'
