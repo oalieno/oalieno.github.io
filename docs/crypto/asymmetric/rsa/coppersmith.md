@@ -6,6 +6,8 @@
 
 用 coppersmith method 可以找到所有 $x_0 < N^{\frac{1}{d} - \epsilon}, \frac{1}{d} > \epsilon > 0$ 使得 $f(x_0) = 0$ 
 
+在 sage 中的實作叫做 `small_root`
+
 ### Håstad's Broadcast Attack
 
 假設某人將同一個訊息 $m$ 使用不同的 $N_1, N_2, \cdots N_k$ 相同的 $e = 3$ 加密成 $c_1, c_2, \cdots c_k$ 送給 $k$ 個人
@@ -71,6 +73,12 @@ $r_1, r_2$ 為未知 padding，$M$ 為真正的明文
 求得 root 後我們就知道 $y$，接下來就套用 Franklin-Reiter Related Message Attack 即可
 
 [CONFidence CTF 2015 – RSA1](http://mslc.ctf.su/wp/confidence-ctf-2015-rsa1-crypto-400/)
+
+### Boneh and Durfee Attack
+
+當 $d < N ^ 0.292$ 我們可以分解 $N$
+
+可以使用 [RSA-and-LLL-attacks](https://github.com/mimoo/RSA-and-LLL-attacks) 這個工具
 
 ### 相關資源
 

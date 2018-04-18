@@ -45,6 +45,7 @@ pages:
           - Common Factor Attack: crypto/asymmetric/rsa/common-factor-attack.md
           - Common Modulus Attack: crypto/asymmetric/rsa/common-modulus-attack.md
           - Coppersmith Attack: crypto/asymmetric/rsa/coppersmith.md
+          - Backdoor in RSA: crypto/asymmetric/rsa/backdoor.md
           - 實做: crypto/asymmetric/rsa/implementation.md
         - Rabin: crypto/asymmetric/rabin.md
         - Elliptic Curve:

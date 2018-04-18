@@ -1,5 +1,7 @@
 # Dual EC DRBG Backdoor
 
+**==TODO==**
+
 ## 相關資源
 
 * https://www.youtube.com/watch?v=OkiVN6z60lg

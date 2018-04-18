@@ -60,6 +60,7 @@ $d$ : 私鑰指數 ( private exponent)
 | $p + 1$ 是 smooth number | | | 分解 $N$ | [Williams's p + 1 Algorithm](/crypto/asymmetric/rsa/williams) |
 | $\|p - q\|$ 很小 | | | 分解 $N$ | [Fermat's Factorization Method](/crypto/asymmetric/rsa/fermat) |
 | | $d$ 很小 | | 分解 $N$ | [Wiener's Attack](/crypto/asymmetric/rsa/wiener) |
+| | $d$ 很小 | | 分解 $N$ | [Boneh and Durfee Attack](/crypto/asymmetric/rsa/coppersmith/#boneh-and-durfee-attack) |
 | $gcd(N_1, ..., N_k) \ne 1$ | | | 多個密文 | [Common Factor Attack](/crypto/asymmetric/rsa/common-factor-attack) |
 | $N_1 = N_2$ | $gcd(e_1, e_2) = 1$ | $m_1 = m_2$ | 兩個密文 | [Common Modulus Attack](/crypto/asymmetric/rsa/common-modulus-attack) |
 | $N_1 \ne \cdots \ne N_k$ | $e_1 = \cdots = e_k$ 且 $k \ge e$ | $m_1 = \cdots = m_k$ | 多個密文 | [Håstad's Broadcast Attack](/crypto/asymmetric/rsa/coppersmith/#hastads-broadcast-attack) |
