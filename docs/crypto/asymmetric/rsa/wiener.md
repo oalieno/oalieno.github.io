@@ -51,6 +51,16 @@ $p_1, p_2$ 就是我們的 $p, q$ ，而我們就成功分解 $N$ 了
 
 而我們知道 $e < \varphi(N) < N$ ，所以時間複雜度是 $O(log(e))$
 
+### 註記
+
+wiener attack 有兩種版本
+
+原始論文中的是針對 $r = \lambda(N)$
+
+我前面講的是針對 $r = \varphi(N)$
+
+中間過程不同但都可以分解 $N = p q$
+
 ### 參考資料
 
 * [sagi's blog](https://sagi.io/2016/04/crypto-classics-wieners-rsa-attack/)
