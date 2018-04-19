@@ -63,6 +63,7 @@ pages:
         - Dual EC DRBG Backdoor: crypto/classic/dual-ec.md
     - PWN:
       - 常用指令與工具: pwn/tools.md
+      - 保護機制: pwn/protection.md
       - Format String: pwn/format-string.md
       - Heap Exploitation:
         - House of Force: pwn/heap/house-of-force.md

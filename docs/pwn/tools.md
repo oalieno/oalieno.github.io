@@ -4,7 +4,9 @@
 
 * nm - list symbols from object files
 * ldd - print shared object dependencies
+* strip - Discard symbols from object files
 * objdump - display information from object files
+* execstack - tool to set, clear, or query executable stack flag of ELF binaries and shared libraries
 * checksec - list binary protection ( comes from pwntools )
 * elfdiff - diff elf binary ( comes from pwntools )
 
