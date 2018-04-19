@@ -12,14 +12,17 @@ pages:
       - 相關資源: math/resources.md
       - 數學名詞: math/math-term.md
       - 數論:
+        - 連分數: math/number-theory/continued-fractions.md
         - 模運算: math/number-theory/modular.md
         - 費馬小定理: math/number-theory/fermat.md
         - 二次剩餘: math/number-theory/quadratic-residue.md
-        - 連分數: math/number-theory/continued-fractions.md
         - 中國剩餘定理: math/number-theory/chinese-remainder-theorem.md
         - 擴展歐基里得演算法: math/number-theory/exgcd.md
+        - Euler's Totient Function: math/number-theory/euler-totient.md
+        - Carmichael Function: math/number-theory/carmichael-function.md
         - Legendre Symbol: math/number-theory/legendre.md
         - Resultant: math/number-theory/resultant.md
+      - 群論: math/group-theory.md
       - Lattice:
         - 定義: math/lattice/definition.md
     - CRYPTO:

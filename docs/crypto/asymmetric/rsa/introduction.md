@@ -38,6 +38,16 @@ $ed = 1+kr = 1+k\varphi(N)$ for some $k$
 
 $m^{ed} = m^{1+k\varphi(N)} = m(m^{\varphi(N)})^{k} \equiv m(1)^k = m  \pmod{N}$
 
+### 注記
+
+[Stack Overflow Discussion](https://crypto.stackexchange.com/questions/29591/lcm-versus-phi-in-rsa)
+
+可能會看到有些人的 $r = \lambda(N) = lcm(p - 1, q - 1)$，$\lambda$ 是 [Carmichael Function](/math/number-theory/carmichael-function/)
+
+這也是對的不影響後面的流程
+
+並且 $\lambda(N)$ 可以整除 $\varphi(N)$
+
 ### 習慣
 
 $N$ : 模數 ( modulus )

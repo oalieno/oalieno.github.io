@@ -29,7 +29,7 @@ $p_1, p_2$ 就是我們的 $p, q$ ，而我們就成功分解 $N$ 了
 
 那這個 wiener's attack 其實就是提供你一個猜 $k, d$ 的方式
 
-首先找出 convergents of the continued fraction expansion of $\frac{e}{N}$
+首先找出 convergents of the continued fraction expansion of $\frac{e}{N}$ ( 複習[連分數](/math/number-theory/continued-fractions/)? )
 
 假設他們是 $\frac{k_i}{d_i}$ 我們就猜 $k = k_i, d = d_i$
 
