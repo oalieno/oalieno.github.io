@@ -53,5 +53,5 @@ $p_1, p_2$ 就是我們的 $p, q$ ，而我們就成功分解 $N$ 了
 
 ### 參考資料
 
-[sagi's blog](https://sagi.io/2016/04/crypto-classics-wieners-rsa-attack/)
-
+* [sagi's blog](https://sagi.io/2016/04/crypto-classics-wieners-rsa-attack/)
+* [Cryptanalysis of Short RSA Secret Exponents](https://www.cits.ruhr-uni-bochum.de/imperia/md/content/may/krypto2ss08/shortsecretexponents.pdf)
