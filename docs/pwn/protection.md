@@ -58,3 +58,26 @@ sudo sysctl -w kernel.randomize_va_space=0
 Enable : gcc -fpie -pie code.c
 Disable : GCC COMPILE DEFAULT
 ```
+
+## FRAME POINTER
+
+不知道算不算保護 O_O ?
+
+有開的話是
+
+```
+leave
+ret
+```
+
+沒開的話是
+
+```
+add rsp, 0x18
+ret
+```
+
+```
+Enable GCC COMPILE DEFAULT
+Disable : gcc -fomit-frame-pointer code.c
+```
