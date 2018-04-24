@@ -36,6 +36,7 @@ pages:
       - 非對稱式密碼:
         - Diffie-Hellman:
           - Introduction to Diffie-Hellman: crypto/asymmetric/diffie-hellman/introduction.md
+          - ElGamal: crypto/asymmetric/diffie-hellman/elgamal.md
           - Big-Step Giant-Step: crypto/asymmetric/diffie-hellman/baby-step-giant-step.md
           - Pohlig Hellman Algorithm: crypto/asymmetric/diffie-hellman/pohlig-hellman.md
           - Backdoor in Diffie-Hellman: crypto/asymmetric/diffie-hellman/backdoor.md
@@ -67,7 +68,10 @@ pages:
     - PWN:
       - 常用指令與工具: pwn/tools.md
       - 保護機制: pwn/protection.md
+      - gdb tips: pwn/gdb-tips.md
       - Format String: pwn/format-string.md
+      - return to libc: pwn/return-to-libc.md
+      - return to dl-resolve: pwn/return-to-dl-resolve.md
       - Heap Exploitation:
         - House of Force: pwn/heap/house-of-force.md
         - House of Orange: pwn/heap/house-of-orange.md
