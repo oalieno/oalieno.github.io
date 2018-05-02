@@ -2,47 +2,47 @@
 
 ### Coppersmith Method
 
-給整數 $N$，$f \in \mathbb{Z}[x]$ 是一個 degree $d$ 的 monic polynomial
+給整數 $n$，$f \in \mathbb{Z}[x]$ 是一個 degree $d$ 的 monic polynomial
 
-用 coppersmith method 可以找到所有 $x_0 < N^{\frac{1}{d} - \epsilon}, \frac{1}{d} > \epsilon > 0$ 使得 $f(x_0) = 0$ 
+用 coppersmith method 可以找到所有 $x_0 < n^{\frac{1}{d} - \epsilon}, \frac{1}{d} > \epsilon > 0$ 使得 $f(x_0) = 0$ 
 
 在 sage 中的實作叫做 `small_root`
 
 ### Håstad's Broadcast Attack
 
-假設某人將同一個訊息 $m$ 使用不同的 $N_1, N_2, \cdots N_k$ 相同的 $e = 3$ 加密成 $c_1, c_2, \cdots c_k$ 送給 $k$ 個人
+假設某人將同一個訊息 $m$ 使用不同的 $n_1, n_2, \cdots n_k$ 相同的 $e = 3$ 加密成 $c_1, c_2, \cdots c_k$ 送給 $k$ 個人
 
 只要 $k \ge e = 3$，我們就可以解出 $m$
 
 $$
-m^3 \equiv c_1 \pmod{N_1} \\
-m^3 \equiv c_2 \pmod{N_2} \\
-m^3 \equiv c_3 \pmod{N_3}
+m^3 \equiv c_1 \pmod{n_1} \\
+m^3 \equiv c_2 \pmod{n_2} \\
+m^3 \equiv c_3 \pmod{n_3}
 $$
 
-根據中國剩餘定理，$m^3$ 在模 $N_1N_2N_3$ 下有一個唯一解 $c$
+根據中國剩餘定理，$m^3$ 在模 $n_1n_2n_3$ 下有一個唯一解 $c$
 
-也就是 $m^3 \equiv c \pmod{N_1N_2N_3}$
+也就是 $m^3 \equiv c \pmod{n_1n_2n_3}$
 
-而因為 $m \lt N_i\ \forall 1 \le i \le 3$，所以 $m^3 \lt N_1N_2N_3$，所以 $m^3 = c$
+而因為 $m \lt n_i\ \forall 1 \le i \le 3$，所以 $m^3 \lt n_1n_2n_3$，所以 $m^3 = c$
 
 那我們用求出 $c$ 後就可以解出 $m = \sqrt[3]{c}$
 
 ### Franklin-Reiter Related Message Attack
 
-假設我們有公鑰 $(N, e)$
+假設我們有公鑰 $(n, e)$
 
-使用公鑰加密兩個明文 $m_1, m_2$ 為 $c_1, c_2$，且兩個明文滿足 $m_1 = f(m_2)$，$f$ 是在模 $N$ 下的多項式
+使用公鑰加密兩個明文 $m_1, m_2$ 為 $c_1, c_2$，且兩個明文滿足 $m_1 = f(m_2)$，$f$ 是在模 $n$ 下的多項式
 
-$m_1^e \equiv c_1 \pmod{N}$，那麼 $m_2$ 是 $g_1(x) = f(x)^e - c_1 \in \mathbb{Z}_{N}[x]$ 的根
+$m_1^e \equiv c_1 \pmod{n}$，那麼 $m_2$ 是 $g_1(x) = f(x)^e - c_1 \in \mathbb{Z}_{n}[x]$ 的根
 
-$m_2^e \equiv c_2 \pmod{N}$，那麼 $m_2$ 是 $g_2(x) = x^e - c_2 \in \mathbb{Z}_{N}[x]$ 的根
+$m_2^e \equiv c_2 \pmod{n}$，那麼 $m_2$ 是 $g_2(x) = x^e - c_2 \in \mathbb{Z}_{n}[x]$ 的根
 
 所以 $x - m_2$ 可以整除 $g_1, g_2$
 
 我們只要計算 $gcd(g_1, g_2)$ 就可以解出 $m_2$
 
-**注意到上面的計算包括多項式都是在模 $N$ 下計算**
+**注意到上面的計算包括多項式都是在模 $n$ 下計算**
 
 而當 $e = 3$ 且 $f(x) = ax + b$ 時
 
@@ -54,7 +54,7 @@ $$
 
 ### Coppersmith’s Short-Pad Attack
 
-假設我們有公鑰 $(N, e)$
+假設我們有公鑰 $(n, e)$
 
 使用公鑰加密兩個明文 $m_1, m_2$ 為 $c_1, c_2$，其中 $m_1 = 2^m M + r_1, m_2 = 2^m M + r_2$
 
@@ -76,7 +76,7 @@ $r_1, r_2$ 為未知 padding，$M$ 為真正的明文
 
 ### Boneh and Durfee Attack
 
-當 $d < N ^ 0.292$ 我們可以分解 $N$
+當 $d < n ^ 0.292$ 我們可以分解 $n$
 
 可以使用 [RSA-and-LLL-attacks](https://github.com/mimoo/RSA-and-LLL-attacks) 這個工具
 

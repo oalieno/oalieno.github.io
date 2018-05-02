@@ -1,12 +1,12 @@
 # Fermat's Factorization Method
 
-有一個奇合數 $N$ ，是兩個奇質數的乘積 $N = pq$
+有一個奇合數 $n$ ，是兩個奇質數的乘積 $n = pq$
 
-令 $a = \frac{p + q}{2}, b = \frac{p - q}{2}$  那麼 $N = (a + b)(a - b) = a^2 - b^2$
+令 $a = \frac{p + q}{2}, b = \frac{p - q}{2}$  那麼 $n = (a + b)(a - b) = a^2 - b^2$
 
-但是今天我們不知道 $p, q$ ，而我們想要分解 $N$
+但是今天我們不知道 $p, q$ ，而我們想要分解 $n$
 
-那我們就猜 $a = \lceil \sqrt{N} \rceil$ ，測試 $a^2 - N$ 是不是完全平方數
+那我們就猜 $a = \lceil \sqrt{n} \rceil$ ，測試 $a^2 - n$ 是不是完全平方數
 
 猜到的話可以從 $a, b$ 反推回 $p, q$
 

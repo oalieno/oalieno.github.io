@@ -1,18 +1,18 @@
 # Pollard's p-1 Algorithm
 
-有一個合數 $N$ 有一個質因數 $p$
+有一個合數 $n$ 有一個質因數 $p$
 
 根據費馬小定理，當 $a$ 不是 $p$ 的倍數
 
 $a^{p-1} \equiv 1 \pmod{p} \to a^{k(p-1)} \equiv 1 \pmod{p} \to a^{k(p-1)} - 1 \equiv 0 \pmod{p}$ for some $k$
 
-所以 $gcd(a^{k(p-1)} - 1, N)$ 一定會是 $p$ 的倍數
+所以 $gcd(a^{k(p-1)} - 1, n)$ 一定會是 $p$ 的倍數
 
 Pollard's p-1 algorithm 就是嘗試去構造出 $k(p-1)$ ，並且令 $a = 2$ ( 只要 $p \ne 2$ 上面的推論就是對的 )
 
-也就是測試 $gcd(2^{1} - 1, N), gcd(2^{1 \times 2} - 1, N), gcd(2^{1 \times 2 \times 3} - 1, N), ...$
+也就是測試 $gcd(2^{1} - 1, n), gcd(2^{1 \times 2} - 1, n), gcd(2^{1 \times 2 \times 3} - 1, n), ...$
 
-當 $1 \times 2 \times 3 \cdots$ 是 $p-1$ 的倍數，我們就成功分解 $N$
+當 $1 \times 2 \times 3 \cdots$ 是 $p-1$ 的倍數，我們就成功分解 $n$
 
 ### 使用條件
 

@@ -42,6 +42,7 @@ pages:
           - Backdoor in Diffie-Hellman: crypto/asymmetric/diffie-hellman/backdoor.md
         - RSA:
           - Introduction to RSA: crypto/asymmetric/rsa/introduction.md
+          - factor n with d: crypto/asymmetric/rsa/factor-n-with-d.md
           - Pollard's p-1 Algorithm: crypto/asymmetric/rsa/pollard.md
           - Williams's p+1 Algorithm: crypto/asymmetric/rsa/williams.md
           - Fermat's Factorization Method: crypto/asymmetric/rsa/fermat.md
