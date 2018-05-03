@@ -23,3 +23,7 @@ $g^{2^{t-1}r} \mod{n}$ 為 1 在模 n 下的模開方根，可能是四組解 $\
 當他等於 $\pm x$ 時，$x \equiv 1 \pmod{p}, x \equiv -1 \pmod{q}$ 或者 $x \equiv -1 \pmod{p}, x \equiv 1 \pmod{q}$
 
 都會得到 $gcd(x - 1, n) \ne 1$
+
+### 相關資源
+
+* https://www.di-mgt.com.au/rsa_factorize_n.html
