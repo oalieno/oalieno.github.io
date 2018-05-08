@@ -6,9 +6,10 @@
 
 Partial RELRO: GOT writable
 
-Full RELRO: GOT not writable
+Full RELRO: GOT read only, no `link_map` and `dl_resolver` pointer
 
 ```
+No RELRO : gcc -Wl,-z,norelro code.c
 Partial RELRO : GCC COMPILE DEFAULT
 Full RELRO : gcc -Wl,-z,relro,-z,now code.c
 ```
