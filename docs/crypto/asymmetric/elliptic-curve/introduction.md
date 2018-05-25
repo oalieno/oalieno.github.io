@@ -4,9 +4,9 @@ Elliptic Curve 的定義就是滿足下面的式子的點的集合
 
 $E = \{(x,y) \ | \ y^2 = x^3 + ax + b\} \text{ where } 4a^3 + 27b^2 \neq 0$
 
-$a,b \in \mathbb{R} \text{ or } \mathbb{Q} \text{ or } \mathbb{C} \text{ or } \mathbb{Z}/p\mathbb{Z}$
+$x,y,a,b \in \mathbb{R} \text{ or } \mathbb{Q} \text{ or } \mathbb{C} \text{ or } \mathbb{Z}_p$
 
-在 cryptography 通常是用 $\mathbb{Z}/p\mathbb{Z}$
+在 cryptography 通常是用 $\mathbb{Z}_p$
 
 再配上一個
 

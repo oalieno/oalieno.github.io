@@ -38,6 +38,7 @@ pages:
           - Introduction to Diffie-Hellman: crypto/asymmetric/diffie-hellman/introduction.md
           - ElGamal: crypto/asymmetric/diffie-hellman/elgamal.md
           - Big-Step Giant-Step: crypto/asymmetric/diffie-hellman/baby-step-giant-step.md
+          - Pollard's Rho Algorithm: crypto/asymmetric/diffie-hellman/pollard-rho.md
           - Pohlig Hellman Algorithm: crypto/asymmetric/diffie-hellman/pohlig-hellman.md
           - Backdoor in Diffie-Hellman: crypto/asymmetric/diffie-hellman/backdoor.md
         - RSA:
@@ -62,6 +63,10 @@ pages:
         - Rainbow Table: crypto/hash/rainbow-table.md
         - Length Extension Attack: crypto/hash/length-extension-attack.md
         - 實做: crypto/hash/implementation.md
+      - Digital Signature:
+        - DSA: crypto/digital-signature/dsa.md
+        - DSA Known Partial Nonce Attack: crypto/digital-signature/dsa-known-partial-nonce.md
+        - ECDSA: crypto/digital-signature/ecdsa.md
       - 經典攻擊:
         - BEAST Attack: crypto/classic/beast.md
         - POODLE Attack: crypto/classic/poodle.md
@@ -82,9 +87,19 @@ pages:
       - XSS: web/xss.md
       - Tricks in PHP: web/php.md
       - DDOS: web/ddos.md
+    - ALGORITHM:
+      - 相關資源: algorithm/resources.md
+      - Floyd's Cycle-Finding Algorithm: algorithm/floyd-cycle-finding.md
+    - MOVIES & SERIES:
+        - 列表: movies-series/list.md
 
 # Theme
-theme: 'material'
+theme:
+    name: 'material'
+    palette:
+        primary: 'teal'
+    feature:
+        tabs: true
 
 # Customization
 extra_javascript: 

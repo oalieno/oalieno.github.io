@@ -37,3 +37,15 @@ $$
 在 $n \equiv 3 \pmod{4}$ 時有特殊解 &nbsp; $a^{\frac{1}{4}(n+1)} \mod n$
 
 相關主題 : [二次剩餘](/math/number-theory/quadratic-residue.md)
+
+### 化簡
+
+$ax \equiv ay \pmod{am}$
+
+可以化簡成
+
+$x \equiv y \pmod{m}$
+
+因為
+
+$\begin{align} ax &= ay + k(am) \\ x &= y + km \end{align}$

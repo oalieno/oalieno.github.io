@@ -24,9 +24,9 @@ $$
 \end{align}
 $$
 
-$(\beta_j)^{\frac{p - 1}{q^{j+1}}} \equiv \alpha^{\frac{a_j(p-1)}{q}} \pmod{p}$，除了 $a_j$ 之外我們都知道
+$(\beta_j)^{\frac{p - 1}{q^{j+1}}} \equiv \alpha^{\frac{a_j(p-1)}{q}} \pmod{p}$，除了 $a_j$ 之外我們都知道 ( $a_{0}$ ~ $a_{j-1}$ 會比 $a_j$ 先算出來 )
 
-假設 $A = \alpha^{\frac{p-1}{q}}, B = (\beta_j)^{\frac{p - 2}{q^{j+1}}}$
+假設 $A = \alpha^{\frac{p-1}{q}}, B = (\beta_j)^{\frac{p - 1}{q^{j+1}}}$
 
 那麼 $B = A^{a_j} \pmod{p}$，已知 $A, B$，且 $0 \le a_j \le q$，當 $q$ 很小我們可以輕鬆解出 $a_j$
 
