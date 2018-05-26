@@ -2,9 +2,9 @@
 
 ### about me
 
-TEAM : ==**BAMBOOFOX**==
+CTF TEAM : ==**BAMBOOFOX**==
 
-SKILL : ==**CRYPTO**== &nbsp; ==**PWN**==
+CTF SKILL : ==**CRYPTO**== &nbsp; ==**PWN**==
 
 ### contact me
 
