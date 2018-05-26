@@ -61,7 +61,7 @@ $(R, \bullet)$ 滿足交換律
 
 order of a group $G$ 是指該群 $G$ 的元素個數
 
-order of an element $a$ in a group 是指最小的正整數 $m$ 滿足 $a^m = e$ ($e$ 是該群的單位元素)
+order of an element $a$ in a group 是指最小的正整數 $m$ 滿足 $a^m = e$ ( $e$ 是該群的單位元素 )
 
 ## exponent
 
