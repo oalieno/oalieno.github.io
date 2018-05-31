@@ -43,14 +43,17 @@ pages:
           - Backdoor in Diffie-Hellman: crypto/asymmetric/diffie-hellman/backdoor.md
         - RSA:
           - Introduction to RSA: crypto/asymmetric/rsa/introduction.md
-          - factor n with d: crypto/asymmetric/rsa/factor-n-with-d.md
-          - Pollard's p-1 Algorithm: crypto/asymmetric/rsa/pollard.md
-          - Williams's p+1 Algorithm: crypto/asymmetric/rsa/williams.md
-          - Fermat's Factorization Method: crypto/asymmetric/rsa/fermat.md
+          - Factor n with d: crypto/asymmetric/rsa/factor-n-with-d.md
+          - Factor Attack: crypto/asymmetric/rsa/factor-attack.md
           - Wiener's Attack: crypto/asymmetric/rsa/wiener.md
           - Common Factor Attack: crypto/asymmetric/rsa/common-factor-attack.md
           - Common Modulus Attack: crypto/asymmetric/rsa/common-modulus-attack.md
-          - Coppersmith Attack: crypto/asymmetric/rsa/coppersmith.md
+          - Coppersmith Attack:
+            - Coppersmith Method: crypto/asymmetric/rsa/coppersmith/coppersmith.md
+            - Håstad's Broadcast Attack: crypto/asymmetric/rsa/coppersmith/hastad.md
+            - Franklin-Reiter Related Message Attack: crypto/asymmetric/rsa/coppersmith/franklin-reiter.md
+            - Coppersmith’s Short-Pad Attack: crypto/asymmetric/rsa/coppersmith/coppersmith-short-pad.md
+            - Boneh and Durfee Attack: crypto/asymmetric/rsa/coppersmith/boneh-and-durfee.md
           - Backdoor in RSA: crypto/asymmetric/rsa/backdoor.md
           - 實做: crypto/asymmetric/rsa/implementation.md
         - Rabin: crypto/asymmetric/rabin.md
@@ -76,7 +79,6 @@ pages:
       - 保護機制: pwn/protection.md
       - gdb tips: pwn/gdb-tips.md
       - Format String: pwn/format-string.md
-      - return to libc: pwn/return-to-libc.md
       - return to dl-resolve: pwn/return-to-dl-resolve.md
       - Heap Exploitation:
         - House of Force: pwn/heap/house-of-force.md
@@ -90,6 +92,10 @@ pages:
     - ALGORITHM:
       - 相關資源: algorithm/resources.md
       - Floyd's Cycle-Finding Algorithm: algorithm/floyd-cycle-finding.md
+      - Factoring Algorithm:
+        - Pollard's p - 1 Algorithm: algorithm/factoring/pollard.md
+        - Williams's p + 1 Algorithm: algorithm/factoring/williams.md
+        - Fermat's Factorization Algorithm: algorithm/factoring/fermat.md
     - MOVIES & SERIES:
       - 列表: movies-series/list.md
     - OTHERS:

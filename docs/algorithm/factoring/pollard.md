@@ -1,4 +1,4 @@
-# Pollard's p-1 Algorithm
+# Pollard's p - 1 Algorithm
 
 有一個合數 $n$ 有一個質因數 $p$
 
@@ -32,8 +32,3 @@ def pollard(n):
         if 1 < d < n: return d
         b += 1
 ```
-
-### CTF 題目
-
-[SECCON 2017 Online CTF](https://ctftime.org/task/5056)
-

@@ -1,12 +1,16 @@
 # Welcome to OAlienO's Blog
 
-### about me
+### 關於我 ( About )
 
 CTF TEAM : ==**BAMBOOFOX**==
 
 CTF SKILL : ==**CRYPTO**== &nbsp; ==**PWN**==
 
-### contact me
+興趣 : 看電影影集動漫, 彈鋼琴
+
+歡迎拍打餵食 XD
+
+### 聯絡我 ( Contact )
 
 ```
 # email

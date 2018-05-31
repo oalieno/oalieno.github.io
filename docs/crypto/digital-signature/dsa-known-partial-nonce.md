@@ -1,7 +1,10 @@
 # DSA Known Partial Nonce Attack
 
+### CTF 題目
 
-## 相關資源
+[DEFCON CTF QUALS 2018 - official](https://ctftime.org/task/6109)
+
+### 相關資源
 
 * https://crypto.stackexchange.com/questions/44644/how-does-the-biased-k-attack-on-ecdsa-work
 * https://pdfs.semanticscholar.org/b2ba/95d5155df3a56e32fbb8320df8a197bfe1e0.pdf

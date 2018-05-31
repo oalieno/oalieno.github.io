@@ -1,4 +1,4 @@
-# factor n with d
+# Factor n with d
 
 有 d 我們可以很有效率的分解 n
 

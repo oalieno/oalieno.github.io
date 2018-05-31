@@ -34,8 +34,3 @@ def fermat(n):
     b = sqrt(b2)
     return [a + b, a - b]
 ```
-
-### CTF 題目
-
-[Codegate CTF 2018 Preliminary - Miro](https://ctftime.org/task/5246)
-
