@@ -91,7 +91,10 @@ pages:
       - 相關資源: algorithm/resources.md
       - Floyd's Cycle-Finding Algorithm: algorithm/floyd-cycle-finding.md
     - MOVIES & SERIES:
-        - 列表: movies-series/list.md
+      - 列表: movies-series/list.md
+    - OTHERS:
+      - QEMU Internals: others/qemu-internals.md
+      - x86 Instructions Format: others/x86-instructions-format.md
 
 # Theme
 theme:
