@@ -2,13 +2,13 @@
 
 [主要格式](http://www.c-jump.com/CIS77/CPU/x86/X77_0030_encoding_format.htm)
 
-opcode 的 d = 0 代表 REG 是 source
+opcode 的 d = 0 代表 REG 是 source  
 opcode 的 d = 1 代表 REG 是 destination
 
 `mov ecx, eax` 有兩個 operand，一個是 `ecx`，另一個是 `eax`
 
-一個用 REG 來形容
-另一個用 MOD + R/M 來形容
+一個用 REG 來形容其中一個 operand  
+另一個用 MOD + R/M 來形容另一個 operand
 
 [MOD-REG-R/M 查表](http://www.c-jump.com/CIS77/CPU/x86/X77_0090_addressing_modes.htm)
 
