@@ -24,7 +24,9 @@ pages:
         - Resultant: math/number-theory/resultant.md
       - 群論: math/group-theory.md
       - Lattice:
+        - 相關資源: math/lattice/resources.md
         - 定義: math/lattice/definition.md
+        - 性質和定理: math/lattice/theorem.md
     - CRYPTO:
       - 相關資源: crypto/resources.md
       - 古典密碼: crypto/classical.md
