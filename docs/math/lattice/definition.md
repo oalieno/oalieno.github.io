@@ -25,14 +25,6 @@ When $n = m$, we call the lattice a full-rank lattice
 
 Lattice 跟 Vector Space 很像，但 Lattice 是 vectors **整數倍**的 linear combination
 
-### Determinant of Lattice
-
-Let $\mathbf{B}$ be the basis matrix of $L$
-
-$\text{det}(L) = \text{det}(B) =$ the volume of its fundamental parallelepiped
-
-$\text{det}(L)$ 是個定值，所有的 bases 都有一樣的 determinant
-
 ### Unimodular Matrix
 
 A matrix $\mathbf{U} \in \mathbb{Z}^{n \times n}$ is unimodular if $|\text{det}(\mathbf{U})| = 1$
@@ -48,3 +40,15 @@ Given $n$ linearly independent vectors $\mathbf{b_1}, \mathbf{b_2}, \cdots, \mat
 $$
 P(\mathbf{b_1}, \cdots, \mathbf{b_n}) \overset{\text{def}}{=} \Big{\{}\sum_{i=1}^{n}x_i\mathbf{b_i} \ | \ x_i \in \mathbb{R}, 0 \le x_i < 1\Big{\}}
 $$
+
+### Determinant of Lattice
+
+Let $\mathbf{B}$ be the basis matrix of $L$
+
+$\text{det}(L) = \text{det}(\mathbf{B}) = \text{vol}(P(\mathbf{B}))$
+
+$\text{det}(L)$ 是個定值，所有的 bases 都有一樣的 determinant
+
+### Minimum Distance of Lattice
+
+$\lambda_1(L) = \underset{v \ \in \ L \setminus 0}{min} \|v\|$

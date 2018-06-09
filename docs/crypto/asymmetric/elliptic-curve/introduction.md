@@ -24,11 +24,21 @@ $x,y,a,b \in \mathbb{R} \text{ or } \mathbb{Q} \text{ or } \mathbb{C} \text{ or 
 
 **從代數的角度** :
 
-$s = \frac{y_P - y_Q}{x_P - x_Q}$
+$P \ne Q$ :
 
-$x_R = s^2 - (x_P + x_Q)$
+$s = \frac{y_p - y_q}{x_p - x_q}$
 
-$y_R = s(x_P - x_R) - y_R$
+$x_r = s^2 - (x_p + x_q)$
+
+$y_r = s(x_p - x_r) - y_p$
+
+$P = Q$ :
+
+$s = \frac{3x_p^2 + a}{2y_p}$
+
+$x_r = s^2 -2x_p$
+
+$y_r = s(x_p - x_r) - y_p$
 
 可以看這個影片 : [P + Q in algebra](https://www.youtube.com/watch?v=XmygBPb7DPM)
 

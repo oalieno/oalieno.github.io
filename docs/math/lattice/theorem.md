@@ -18,3 +18,29 @@ A : 檢查 $\mathbf{B'B^{-1}}$ 是不是 unimodular matrix
 Let $\mathbf{b_1}, \cdots \mathbf{b_n} \in \mathbb{R}^n$ denote linear independent vectors in $L$ ( full-rank n-dimensional lattice )
 
 $\mathbf{b_1}, \cdots \mathbf{b_n}$ form a basis of $L$ $\Leftrightarrow$ $P(\mathbf{b_1}, \cdots, \mathbf{b_n}) \cap L = \{\mathbf{0}\}$
+
+### Minkowski Theorem
+
+Any convex, centrally symmetric body $S$
+
+$$
+\text{vol}(S) > 2^n\text{det}(L)
+$$
+
+#### convex set ( convex body )
+
+A set $S$
+
+滿足 $x, y \in S \Rightarrow \alpha x + (1-\alpha)y \in S$ 就是 convex
+
+滿足 $x \in S \Leftrightarrow -x \in S$ 就是 centrally symmetric
+
+想知道更多請去看 [wikipedia - Convex set](https://en.wikipedia.org/wiki/Convex_set)
+
+### Minkowskis First Theorem
+
+Any Lattice $L$
+
+$$
+\lambda_1(L) \le \sqrt{n}\ \text{det}(L)^{\frac{1}{n}}
+$$
