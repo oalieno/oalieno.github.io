@@ -56,6 +56,7 @@ pages:
             - Franklin-Reiter Related Message Attack: crypto/asymmetric/rsa/coppersmith/franklin-reiter.md
             - Coppersmith’s Short-Pad Attack: crypto/asymmetric/rsa/coppersmith/coppersmith-short-pad.md
             - Boneh and Durfee Attack: crypto/asymmetric/rsa/coppersmith/boneh-and-durfee.md
+          - LSB Oracle Attack: crypto/asymmetric/rsa/lsb-oracle.md
           - Backdoor in RSA: crypto/asymmetric/rsa/backdoor.md
           - 實做: crypto/asymmetric/rsa/implementation.md
         - Rabin: crypto/asymmetric/rabin.md
@@ -98,6 +99,10 @@ pages:
         - Pollard's p - 1 Algorithm: algorithm/factoring/pollard.md
         - Williams's p + 1 Algorithm: algorithm/factoring/williams.md
         - Fermat's Factorization Algorithm: algorithm/factoring/fermat.md
+    - AI:
+      - 相關資源: ai/resources.md
+      - Neural Network: ai/neural-network.md
+      - Support Vector Machines: ai/svm.md
     - MOVIES & SERIES:
       - 列表: movies-series/list.md
     - OTHERS:
