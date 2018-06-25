@@ -1,5 +1,7 @@
 # DES ( Data Encryption Standard )
 
+**這邊不討論 DES 的細節步驟，還不清楚的可以看相關資料中連結裡的教學**
+
 DES 可以看作是這些 state 的演算
 
 $M_0, M_1, \cdots, M_{17}$
