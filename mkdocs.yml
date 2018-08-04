@@ -99,6 +99,9 @@ pages:
         - Pollard's p - 1 Algorithm: algorithm/factoring/pollard.md
         - Williams's p + 1 Algorithm: algorithm/factoring/williams.md
         - Fermat's Factorization Algorithm: algorithm/factoring/fermat.md
+      - Quantum Algorithm:
+        - 相關資源: algorithm/quantum-algorithm/resources.md
+        - Introduction: algorithm/quantum-algorithm/introduction.md
     - AI:
       - 相關資源: ai/resources.md
       - Neural Network: ai/neural-network.md
@@ -108,6 +111,7 @@ pages:
     - OTHERS:
       - QEMU Internals: others/qemu-internals.md
       - x86 Instructions Format: others/x86-instructions-format.md
+      - SSH: others/ssh.md
 
 # Theme
 theme:
