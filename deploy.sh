@@ -2,9 +2,7 @@
 
 # source code repo
 
-git add .
-
-git commit -m "update"
+git commit -a -m "update"
 
 git push origin master
 
@@ -14,8 +12,6 @@ mkdocs build
 
 cd site
 
-git add .
-
-git commit -m "auto update"
+git commit -a -m "auto update"
 
 git push origin master
