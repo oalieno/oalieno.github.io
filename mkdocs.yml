@@ -95,6 +95,7 @@ pages:
     - ALGORITHM:
       - 相關資源: algorithm/resources.md
       - Floyd's Cycle-Finding Algorithm: algorithm/floyd-cycle-finding.md
+      - Bloom Filter: algorithm/bloom-filter.md
       - Factoring Algorithm:
         - Pollard's p - 1 Algorithm: algorithm/factoring/pollard.md
         - Williams's p + 1 Algorithm: algorithm/factoring/williams.md
@@ -112,6 +113,7 @@ pages:
       - QEMU Internals: others/qemu-internals.md
       - x86 Instructions Format: others/x86-instructions-format.md
       - SSH: others/ssh.md
+      - Python Sandbox Challenge in CTF: others/python-sandbox.md
 
 # Theme
 theme:
