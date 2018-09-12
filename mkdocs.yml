@@ -30,6 +30,8 @@ pages:
     - CRYPTO:
       - 相關資源: crypto/resources.md
       - 古典密碼: crypto/classical.md
+      - Stream Cipher:
+        - Linear Feedback Shift Register: crypto/stream/lfsr.md
       - 對稱式密碼:
         - DES: crypto/symmetric/des.md
         - AES: crypto/symmetric/aes.md
