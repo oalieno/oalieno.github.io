@@ -27,14 +27,15 @@ Host dev
 
 `IdentityFile` 就是指定要用哪個 key，等同於 `-i ~/.ssh/id_rsa`
 
-#### ssh tunnel
+預設會抓 `id_*.pub` 中的最新的 ( `/usr/bin/ssh-copy-id` 59 行 )
+
+#### ssh tunnel ( port forwarding )
 
 ```
 Host dev
     HostName 123.45.67.89
     User oalieno
     Port 22000
-    IdentityFile ~/.ssh/id_rsa
     LocalForward 5555 127.0.0.1:6666
 ```
 
@@ -50,14 +51,13 @@ ssh -f -N -L 5555:127.0.0.1:6666 oalieno@123.45.67.89
 # -N : not execute remote command, useful for forwarding ports
 ```
 
-#### reverse ssh tunnel
+#### reverse ssh tunnel ( reverse port forwarding )
 
 ```
 Host dev
     HostName 123.45.67.89
     User oalieno
     Port 22000
-    IdentityFile ~/.ssh/id_rsa
     RemoteForward 6666 127.0.0.1:5555
 ```
 
@@ -72,6 +72,28 @@ ssh -f -N -R 6666:127.0.0.1:5555 oalieno@123.45.67.89
 # -f : run in background
 # -N : not execute remote command, useful for forwarding ports
 ```
+
+#### dynamic port forwarding
+
+```
+Host dev
+    HostName 123.45.67.89
+    User oalieno
+    Port 22000
+    DynamicForward 9999
+```
+
+設定好後可以直接 `ssh -f -N dev`，就會等同於
+
+```sh
+ssh -f -N -D 9999 oalieno@123.45.67.89
+# -f : run in background
+# -N : not execute remote command, useful for forwarding ports
+```
+
+並在電腦上設定 SOCKS 代理伺服器 ( `127.0.0.1:9999` )
+
+之後你上網瀏覽網頁就會好像你在 `123.45.67.89` 上網一樣
 
 ### autossh
 
