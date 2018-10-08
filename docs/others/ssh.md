@@ -88,7 +88,7 @@ Host dev
 
 設定好後可以直接 `autossh -M 0 -f -N dev`，就會等同於
 
-```
+```sh
 autossh -M 0 -f -N -o "ServerAliveInterval 30" -o "ServerAliveCountMax 3" -L 5555:localhost:6666 oalieno@123.45.67.89
 # -M 0 : autossh echo port, recommend disable it by setting it to 0
 # -f : run in background
