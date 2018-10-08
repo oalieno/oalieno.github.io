@@ -27,7 +27,7 @@ Host dev
 
 `IdentityFile` 就是指定要用哪個 key，等同於 `-i ~/.ssh/id_rsa`
 
-預設會抓 `id_*.pub` 中的最新的 ( `/usr/bin/ssh-copy-id` 59 行 )
+預設會抓 `id_*.pub` 中最新的 ( `/usr/bin/ssh-copy-id` 59 行 )
 
 #### ssh tunnel ( port forwarding )
 
