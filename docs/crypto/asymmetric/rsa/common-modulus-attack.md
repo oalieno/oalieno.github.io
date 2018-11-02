@@ -1,6 +1,6 @@
 # Common Modulus Attack
 
-有兩個公鑰 $(n, e_1), (n, e_2)$ 有相同的 $n$ \( modulus \)，且 $gcd(e_1, e_2) = 1$
+有兩個公鑰 $(n, e_1), (n, e_2)$ 有相同的 $n$ (modulus)，且 $gcd(e_1, e_2) = 1$
 
 我們攔截到分別用這兩把公鑰加密 $m$ 為 $c_1, c_2$
 
