@@ -151,4 +151,4 @@ markdown_extensions:
     - pymdownx.progressbar
 
 extra_css:
-  - extra-06017885a7.css
+  - extra.css
