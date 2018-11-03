@@ -22,7 +22,6 @@ pages:
         - Carmichael Function: math/number-theory/carmichael-function.md
         - Legendre Symbol: math/number-theory/legendre.md
         - Resultant: math/number-theory/resultant.md
-      - 群論: math/group-theory.md
       - Lattice:
         - 相關資源: math/lattice/resources.md
         - 定義: math/lattice/definition.md
@@ -109,8 +108,15 @@ pages:
       - 相關資源: ai/resources.md
       - Neural Network: ai/neural-network.md
       - Support Vector Machines: ai/svm.md
-    - MOVIES & SERIES:
-      - 列表: movies-series/list.md
+    - 影評:
+      - HOME: videos/home.md
+      - 動漫:
+        - 列表: videos/anime/list.md
+      - 影集:
+        - 列表: videos/series/list.md
+      - 電影:
+        - 列表: videos/movies/list.md
+        - "亞瑟:王者之劍": videos/movies/king-arthur.md
     - OTHERS:
       - QEMU Internals: others/qemu-internals.md
       - x86 Instructions Format: others/x86-instructions-format.md
@@ -120,6 +126,7 @@ pages:
 # Theme
 theme:
     name: 'material'
+    custom_dir: theme
     palette:
         primary: 'teal'
     feature:
@@ -141,3 +148,7 @@ markdown_extensions:
     - pymdownx.smartsymbols
     - pymdownx.superfences
     - pymdownx.tilde
+    - pymdownx.progressbar
+
+extra_css:
+  - extra-06017885a7.css
