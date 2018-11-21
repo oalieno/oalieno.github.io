@@ -108,6 +108,10 @@ pages:
       - 相關資源: ai/resources.md
       - Neural Network: ai/neural-network.md
       - Support Vector Machines: ai/svm.md
+    - Others:
+      - QEMU Internals: others/qemu-internals.md
+      - x86 Instructions Format: others/x86-instructions-format.md
+      - SSH: others/ssh.md
     - 影評:
       - HOME: videos/home.md
       - 動漫:
@@ -117,11 +121,9 @@ pages:
       - 電影:
         - 列表: videos/movies/list.md
         - "亞瑟:王者之劍": videos/movies/king-arthur.md
-    - OTHERS:
-      - QEMU Internals: others/qemu-internals.md
-      - x86 Instructions Format: others/x86-instructions-format.md
-      - SSH: others/ssh.md
-      - Python Sandbox Challenge in CTF: others/python-sandbox.md
+    - 主題式文章:
+      - "CTF 技巧彙整 000 - Python Sandbox Challenge": topics/python-sandbox.md
+      - "資安小故事 000 - 餅乾猜猜樂": topics/lovemeter.md
 
 # Theme
 theme:
@@ -149,6 +151,9 @@ markdown_extensions:
     - pymdownx.superfences
     - pymdownx.tilde
     - pymdownx.progressbar
+    - pymdownx.highlight:
+        css_class: codehilite
 
 extra_css:
   - extra.css
+  - superfences.css
