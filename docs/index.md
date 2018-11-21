@@ -1,21 +1,8 @@
 # Welcome to OAlienO's Blog
 
-### 關於我 ( About )
+## 最新文章
 
-CTF TEAM : ==**BAMBOOFOX**==
-
-CTF SKILL : ==**CRYPTO**== &nbsp; ==**PWN**==
-
-興趣 : 看電影影集動漫, 彈鋼琴
-
-歡迎拍打餵食 XD
-
-### 聯絡我 ( Contact )
-
-```
-# email
-base64 -d <<< amVmZnJleTY5MTBAZ21haWwuY29t
-
-# facebook
-base64 -d <<< aHR0cHM6Ly93d3cuZmFjZWJvb2suY29tL3Byb2ZpbGUucGhwP2lkPTEwMDAwMTI2OTIxMTk2Mw==
-```
+| 類別 | 文章 |
+| --- | --- |
+| TOPICS | [資安小故事 000 - 餅乾猜猜樂](/topics/lovemeter/) |
+| REVIEWS | [亞瑟:王者之劍](/reviews/movies/king-arthur/) |

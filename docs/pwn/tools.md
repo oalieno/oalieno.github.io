@@ -16,3 +16,4 @@
 
 * [pwntools](https://github.com/Gallopsled/pwntools)
 * [one_gadget](https://github.com/david942j/one_gadget)
+* [seccomp-tools](https://github.com/david942j/seccomp-tools)
