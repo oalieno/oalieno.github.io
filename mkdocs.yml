@@ -11,8 +11,9 @@ pages:
       - HOME: index.md
       - ABOUT ME: about.md
     - TOPICS:
-      - "CTF 技巧彙整 000 - Python Sandbox Challenge": topics/python-sandbox.md
-      - "資安小故事 000 - 餅乾猜猜樂": topics/lovemeter.md
+      - "CTF 技巧彙整 - Python Sandbox Challenge": topics/python-sandbox.md
+      - "資安小故事 - 餅乾猜猜樂": topics/lovemeter.md
+      - "部落格維護日記 - mkdocs extensions": topics/mkdocs-extensions.md
     - MATH:
       - 相關資源: math/resources.md
       - 數學名詞: math/math-term.md
@@ -27,6 +28,8 @@ pages:
         - Carmichael Function: math/number-theory/carmichael-function.md
         - Legendre Symbol: math/number-theory/legendre.md
         - Resultant: math/number-theory/resultant.md
+      - Algebra:
+        - First Ring Isomorphism Theorem: math/algebra/000.md
       - Lattice:
         - 相關資源: math/lattice/resources.md
         - 定義: math/lattice/definition.md
@@ -109,10 +112,18 @@ pages:
       - Quantum Algorithm:
         - 相關資源: algorithm/quantum-algorithm/resources.md
         - Introduction: algorithm/quantum-algorithm/introduction.md
-    - AI:
-      - 相關資源: ai/resources.md
-      - Neural Network: ai/neural-network.md
-      - Support Vector Machines: ai/svm.md
+      - AI:
+        - 相關資源: algorithm/ai/resources.md
+        - Neural Network: algorithm/ai/neural-network.md
+        - Support Vector Machines: algorithm/ai/svm.md
+    - PROGRAMMING LANGUAGE:
+      - python:
+        - python 中的奇淫技巧: programming/python/tricks.md
+        - Decorators: programming/python/decorators.md
+        - Global Interpreter Lock ( GIL ): programming/python/GIL.md
+        - What's new in python 3.7: programming/python/37.md
+      - C++:
+        - What's new in C++17: programming/c++/17.md
     - OTHERS:
       - QEMU Internals: others/qemu-internals.md
       - x86 Instructions Format: others/x86-instructions-format.md
@@ -142,6 +153,7 @@ extra_javascript:
 
 # Extensions
 markdown_extensions:
+    - markdown.extensions.admonition
     - pymdownx.arithmatex
     - pymdownx.caret
     - pymdownx.critic

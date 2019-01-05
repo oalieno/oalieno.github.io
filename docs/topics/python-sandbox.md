@@ -1,4 +1,4 @@
-# CTF 技巧彙整 000 - Python Sandbox Challenge
+# CTF 技巧彙整 - Python Sandbox Challenge
 
 Python Sandbox 的題目通常都是可以讓我們執行 python 的程式碼，但是會有各種檢查
 
