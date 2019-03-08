@@ -3,7 +3,9 @@ site_name: OAlienO's Blog
 
 # Repository
 repo_name: 'OAlienO/OAlienO'
-repo_url: 'https://github.com/OAlienO/OAlienO.github.io'
+repo_url: 'https://github.com/OAlienO/OAlienO'
+
+google_analytics: ['UA-87869756-1', 'oalieno.github.io']
 
 # Content
 pages:

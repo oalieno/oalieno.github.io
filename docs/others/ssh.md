@@ -41,9 +41,19 @@ Host dev
 
 將 local 的 5555 port 透過 ssh tunnel 對應到 remote 的 6666 port
 
-連線到 local 的 5555 port 等於連線到 remote 的 6666 port
+連線到 local 的 5555 port 等於連線到 remote 的 127.0.0.1 的 6666 port
 
-設定好後可以直接 `ssh -f -N dev`，就會等同於
+不一定要用 127.0.0.1 也可以連到 remote 出去的 google.com:80 ( 透過 remote 瀏覽 google.com )
+
+設定好後可以直接打以下指令
+
+```sh
+ssh -f -N dev
+# -f : run in background
+# -N : not execute remote command, useful for forwarding ports
+```
+
+就會等同於以下指令
 
 ```sh
 ssh -f -N -L 5555:127.0.0.1:6666 oalieno@123.45.67.89
@@ -65,7 +75,17 @@ Host dev
 
 連線到 remote 的 6666 port 等於連線到 local 的 5555 port
 
-設定好後可以直接 `ssh -f -N dev`，就會等同於
+不一定要用 127.0.0.1 也可以連到 local 出去的 google.com:80 ( 透過 local 瀏覽 google.com )
+
+設定好後可以直接打以下指令
+
+```sh
+ssh -f -N dev
+# -f : run in background
+# -N : not execute remote command, useful for forwarding ports
+```
+
+就會等同於以下指令
 
 ```sh
 ssh -f -N -R 6666:127.0.0.1:5555 oalieno@123.45.67.89
@@ -83,7 +103,15 @@ Host dev
     DynamicForward 9999
 ```
 
-設定好後可以直接 `ssh -f -N dev`，就會等同於
+設定好後可以直接打以下指令
+
+```sh
+ssh -f -N dev
+# -f : run in background
+# -N : not execute remote command, useful for forwarding ports
+```
+
+就會等同於打以下指令
 
 ```sh
 ssh -f -N -D 9999 oalieno@123.45.67.89
@@ -93,7 +121,9 @@ ssh -f -N -D 9999 oalieno@123.45.67.89
 
 並在電腦上設定 SOCKS 代理伺服器 ( `127.0.0.1:9999` )
 
-之後你上網瀏覽網頁就會好像你在 `123.45.67.89` 上網一樣
+之後你可以查找你的 ip 位址 ( https://www.whatismyip.com/ )
+
+會發現你已經跳去 `123.45.67.89`
 
 ### autossh
 
@@ -108,7 +138,16 @@ Host dev
     ServerAliveCountMax 3
 ```
 
-設定好後可以直接 `autossh -M 0 -f -N dev`，就會等同於
+設定好後可以直接打以下指令
+
+```
+autossh -M 0 -f -N dev
+# -M 0 : autossh echo port, recommend disable it by setting it to 0
+# -f : run in background
+# -N : not execute remote command, useful for forwarding ports
+```
+
+就會等同於打以下指令
 
 ```sh
 autossh -M 0 -f -N -o "ServerAliveInterval 30" -o "ServerAliveCountMax 3" -L 5555:localhost:6666 oalieno@123.45.67.89
