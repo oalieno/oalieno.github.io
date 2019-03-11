@@ -8,7 +8,7 @@ repo_url: 'https://github.com/OAlienO/OAlienO'
 google_analytics: ['UA-87869756-1', 'oalieno.github.io']
 
 # Content
-pages:
+nav:
     - HOME:
       - HOME: index.md
       - ABOUT ME: about.md
