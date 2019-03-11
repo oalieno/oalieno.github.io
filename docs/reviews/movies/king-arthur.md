@@ -4,7 +4,6 @@
 
 [=68% "IMDB : 6.8 / 10"]
 [=47% "rottentomatoes : 4.7 / 10"]
-[=41% "metacritic : 41 / 100"]
 
 ## 我的評價
 
