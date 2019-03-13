@@ -1,9 +1,12 @@
 # Information
 site_name: OAlienO's Blog
+site_description: notes about programming and cyber security, powered by mkdocs
 
 # Repository
 repo_name: 'OAlienO/OAlienO'
 repo_url: 'https://github.com/OAlienO/OAlienO'
+
+edit_uri: ''
 
 google_analytics: ['UA-87869756-1', 'oalieno.github.io']
 
