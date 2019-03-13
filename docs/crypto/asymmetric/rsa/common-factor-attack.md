@@ -28,6 +28,7 @@ $$
 
 * [how to efficiently compute a batch gcd](https://www.cryptologie.net/article/313/how-to-efficiently-compute-a-batch-gcd/)
 * [Mining Your Ps and Qs: Detection of Widespread Weak Keys in Network Devices](https://factorable.net/weakkeys12.extended.pdf)
+* [FAST MULTIPLICATION AND ITS APPLICATIONS](http://cr.yp.to/lineartime/multapps-20041007.pdf)
 
 ### CTF 題目
 
