@@ -10,7 +10,7 @@
 
 <img style="height: 150px;" src="https://i.imgur.com/L95clhv.png">
 
-以 $z_1$ 為例
+以 $z_1$ 為例，以下推導 $gcd(N_1, \frac{z_1}{N_1})$ 實際上就是 $gcd(N_1, N_2 \cdots N_m)$
 
 我們可以把 $z_1$ 寫成 $z_1 = N_1 N_2 \cdots N_m \text{ mod } N_1^2 = N_1 N_2 \cdots N_m - k N_1^2 \text{ for some } k$，那麼
 

@@ -1,5 +1,3 @@
-# ABOUT ME
-
 ### 關於我 ( About )
 
 CTF TEAM : ==**BAMBOOFOX**==

@@ -1,7 +1,3 @@
-# Welcome to OAlienO's Blog
-
-## 最新文章
-
 | 類別 | 文章 |
 | --- | --- |
 | PROGRAMMING LANGUAGE | [Global Interpreter Lock ( GIL )](/programming/python/GIL/) |
