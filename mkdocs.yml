@@ -1,148 +1,143 @@
-# Information
 site_name: OAlienO's Blog
 site_description: notes about programming and cyber security, powered by mkdocs
 
-# Repository
 repo_name: 'OAlienO/OAlienO'
 repo_url: 'https://github.com/OAlienO/OAlienO'
-
 edit_uri: ''
 
 google_analytics: ['UA-87869756-1', 'oalieno.github.io']
 
-# Content
 nav:
     - 首頁:
-      - 最新文章: index.md
-      - 個人資料: about.md
+        - 最新文章: index.md
+        - 個人資料: about.md
     - 主題式文章:
-      - "CTF 技巧彙整 - Python Sandbox Challenge": topics/python-sandbox.md
-      - "資安小故事 - 餅乾猜猜樂": topics/lovemeter.md
-      - "部落格維護日記 - mkdocs extensions": topics/mkdocs-extensions.md
-      - "指令整理 - SSH": topics/ssh.md
-      - "深度之旅 - QEMU Internals": topics/qemu-internals.md
+        - "CTF 技巧彙整 - Python Sandbox Challenge": topics/python-sandbox.md
+        - "資安小故事 - 餅乾猜猜樂": topics/lovemeter.md
+        - "部落格維護日記 - mkdocs extensions": topics/mkdocs-extensions.md
+        - "指令整理 - SSH": topics/ssh.md
+        - "深度之旅 - QEMU Internals": topics/qemu-internals.md
     - 數學:
-      - 相關資源: math/resources.md
-      - 數學名詞: math/math-term.md
-      - 數論:
-        - 連分數: math/number-theory/continued-fractions.md
-        - 模運算: math/number-theory/modular.md
-        - 費馬小定理: math/number-theory/fermat.md
-        - 二次剩餘: math/number-theory/quadratic-residue.md
-        - 中國剩餘定理: math/number-theory/chinese-remainder-theorem.md
-        - 擴展歐基里得演算法: math/number-theory/exgcd.md
-        - Euler's Totient Function: math/number-theory/euler-totient.md
-        - Carmichael Function: math/number-theory/carmichael-function.md
-        - Legendre Symbol: math/number-theory/legendre.md
-        - Resultant: math/number-theory/resultant.md
-      - Algebra:
-        - First Ring Isomorphism Theorem: math/algebra/000.md
-      - Lattice:
-        - 相關資源: math/lattice/resources.md
-        - 定義: math/lattice/definition.md
-        - 性質和定理: math/lattice/theorem.md
+        - 相關資源: math/resources.md
+        - 數學名詞: math/math-term.md
+        - 數論:
+            - 連分數: math/number-theory/continued-fractions.md
+            - 模運算: math/number-theory/modular.md
+            - 費馬小定理: math/number-theory/fermat.md
+            - 二次剩餘: math/number-theory/quadratic-residue.md
+            - 中國剩餘定理: math/number-theory/chinese-remainder-theorem.md
+            - 擴展歐基里得演算法: math/number-theory/exgcd.md
+            - Euler's Totient Function: math/number-theory/euler-totient.md
+            - Carmichael Function: math/number-theory/carmichael-function.md
+            - Legendre Symbol: math/number-theory/legendre.md
+            - Resultant: math/number-theory/resultant.md
+        - Algebra:
+            - First Ring Isomorphism Theorem: math/algebra/000.md
+        - Lattice:
+            - 相關資源: math/lattice/resources.md
+            - 定義: math/lattice/definition.md
+            - 性質和定理: math/lattice/theorem.md
     - 資訊安全:
         - CRYPTO:
-          - 相關資源: security/crypto/resources.md
-          - 古典密碼: security/crypto/classical.md
-          - Stream Cipher:
-            - Linear Feedback Shift Register: security/crypto/stream/lfsr.md
-          - 對稱式密碼:
-            - DES: security/crypto/symmetric/des.md
-            - AES: security/crypto/symmetric/aes.md
-            - Block Cipher Modes: security/crypto/symmetric/mode.md
-            - Padding Oracle Attack: security/crypto/symmetric/padding-oracle.md
-          - 非對稱式密碼:
-            - Diffie-Hellman:
-              - Introduction to Diffie-Hellman: security/crypto/asymmetric/diffie-hellman/introduction.md
-              - ElGamal: security/crypto/asymmetric/diffie-hellman/elgamal.md
-              - Big-Step Giant-Step: security/crypto/asymmetric/diffie-hellman/baby-step-giant-step.md
-              - Pollard's Rho Algorithm: security/crypto/asymmetric/diffie-hellman/pollard-rho.md
-              - Pohlig Hellman Algorithm: security/crypto/asymmetric/diffie-hellman/pohlig-hellman.md
-              - Backdoor in Diffie-Hellman: security/crypto/asymmetric/diffie-hellman/backdoor.md
-            - RSA:
-              - Introduction to RSA: security/crypto/asymmetric/rsa/introduction.md
-              - Factor n with d: security/crypto/asymmetric/rsa/factor-n-with-d.md
-              - Factor Attack: security/crypto/asymmetric/rsa/factor-attack.md
-              - Wiener's Attack: security/crypto/asymmetric/rsa/wiener.md
-              - Common Factor Attack: security/crypto/asymmetric/rsa/common-factor-attack.md
-              - Common Modulus Attack: security/crypto/asymmetric/rsa/common-modulus-attack.md
-              - Coppersmith Attack:
-                - Coppersmith Method: security/crypto/asymmetric/rsa/coppersmith/coppersmith.md
-                - Håstad's Broadcast Attack: security/crypto/asymmetric/rsa/coppersmith/hastad.md
-                - Franklin-Reiter Related Message Attack: security/crypto/asymmetric/rsa/coppersmith/franklin-reiter.md
-                - Coppersmith’s Short-Pad Attack: security/crypto/asymmetric/rsa/coppersmith/coppersmith-short-pad.md
-                - Boneh and Durfee Attack: security/crypto/asymmetric/rsa/coppersmith/boneh-and-durfee.md
-              - LSB Oracle Attack: security/crypto/asymmetric/rsa/lsb-oracle.md
-              - Backdoor in RSA: security/crypto/asymmetric/rsa/backdoor.md
-              - 實做: security/crypto/asymmetric/rsa/implementation.md
-            - Rabin: security/crypto/asymmetric/rabin.md
-            - Elliptic Curve:
-              - Introduction to Elliptic Curve: security/crypto/asymmetric/elliptic-curve/introduction.md
-              - Elliptic Curve Key Exchange: security/crypto/asymmetric/elliptic-curve/key-exchange.md
-          - 哈希函數:
-            - Merkle–Damgård Construction: security/crypto/hash/merkle-damgard.md
-            - Birthday Attack: security/crypto/hash/birthday-attack.md
-            - Rainbow Table: security/crypto/hash/rainbow-table.md
-            - Length Extension Attack: security/crypto/hash/length-extension-attack.md
-            - 實做: security/crypto/hash/implementation.md
-          - Digital Signature:
-            - DSA: security/crypto/digital-signature/dsa.md
-            - DSA Known Partial Nonce Attack: security/crypto/digital-signature/dsa-known-partial-nonce.md
-            - ECDSA: security/crypto/digital-signature/ecdsa.md
-          - 經典攻擊:
-            - BEAST Attack: security/crypto/classic/beast.md
-            - POODLE Attack: security/crypto/classic/poodle.md
-            - Dual EC DRBG Backdoor: security/crypto/classic/dual-ec.md
+            - 相關資源: security/crypto/resources.md
+            - 古典密碼: security/crypto/classical.md
+            - Stream Cipher:
+                - Linear Feedback Shift Register: security/crypto/stream/lfsr.md
+            - 對稱式密碼:
+                - DES: security/crypto/symmetric/des.md
+                - AES: security/crypto/symmetric/aes.md
+                - Block Cipher Modes: security/crypto/symmetric/mode.md
+                - Padding Oracle Attack: security/crypto/symmetric/padding-oracle.md
+            - 非對稱式密碼:
+                - Diffie-Hellman:
+                    - Introduction to Diffie-Hellman: security/crypto/asymmetric/diffie-hellman/introduction.md
+                    - ElGamal: security/crypto/asymmetric/diffie-hellman/elgamal.md
+                    - Big-Step Giant-Step: security/crypto/asymmetric/diffie-hellman/baby-step-giant-step.md
+                    - Pollard's Rho Algorithm: security/crypto/asymmetric/diffie-hellman/pollard-rho.md
+                    - Pohlig Hellman Algorithm: security/crypto/asymmetric/diffie-hellman/pohlig-hellman.md
+                    - Backdoor in Diffie-Hellman: security/crypto/asymmetric/diffie-hellman/backdoor.md
+                - RSA:
+                    - Introduction to RSA: security/crypto/asymmetric/rsa/introduction.md
+                    - Factor n with d: security/crypto/asymmetric/rsa/factor-n-with-d.md
+                    - Factor Attack: security/crypto/asymmetric/rsa/factor-attack.md
+                    - Wiener's Attack: security/crypto/asymmetric/rsa/wiener.md
+                    - Common Factor Attack: security/crypto/asymmetric/rsa/common-factor-attack.md
+                    - Common Modulus Attack: security/crypto/asymmetric/rsa/common-modulus-attack.md
+                    - Coppersmith Attack:
+                        - Coppersmith Method: security/crypto/asymmetric/rsa/coppersmith/coppersmith.md
+                        - Håstad's Broadcast Attack: security/crypto/asymmetric/rsa/coppersmith/hastad.md
+                        - Franklin-Reiter Related Message Attack: security/crypto/asymmetric/rsa/coppersmith/franklin-reiter.md
+                        - Coppersmith’s Short-Pad Attack: security/crypto/asymmetric/rsa/coppersmith/coppersmith-short-pad.md
+                        - Boneh and Durfee Attack: security/crypto/asymmetric/rsa/coppersmith/boneh-and-durfee.md
+                    - LSB Oracle Attack: security/crypto/asymmetric/rsa/lsb-oracle.md
+                    - Backdoor in RSA: security/crypto/asymmetric/rsa/backdoor.md
+                    - 實做: security/crypto/asymmetric/rsa/implementation.md
+                - Rabin: security/crypto/asymmetric/rabin.md
+                - Elliptic Curve:
+                    - Introduction to Elliptic Curve: security/crypto/asymmetric/elliptic-curve/introduction.md
+                    - Elliptic Curve Key Exchange: security/crypto/asymmetric/elliptic-curve/key-exchange.md
+            - 哈希函數:
+                - Merkle–Damgård Construction: security/crypto/hash/merkle-damgard.md
+                - Birthday Attack: security/crypto/hash/birthday-attack.md
+                - Rainbow Table: security/crypto/hash/rainbow-table.md
+                - Length Extension Attack: security/crypto/hash/length-extension-attack.md
+                - 實做: security/crypto/hash/implementation.md
+            - Digital Signature:
+                - DSA: security/crypto/digital-signature/dsa.md
+                - DSA Known Partial Nonce Attack: security/crypto/digital-signature/dsa-known-partial-nonce.md
+                - ECDSA: security/crypto/digital-signature/ecdsa.md
+            - 經典攻擊:
+                - BEAST Attack: security/crypto/classic/beast.md
+                - POODLE Attack: security/crypto/classic/poodle.md
+                - Dual EC DRBG Backdoor: security/crypto/classic/dual-ec.md
         - PWN:
-          - 常用指令與工具: security/pwn/tools.md
-          - 保護機制: security/pwn/protection.md
-          - gdb tips: security/pwn/gdb-tips.md
-          - Format String: security/pwn/format-string.md
-          - return to dl-resolve: security/pwn/return-to-dl-resolve.md
-          - Heap Exploitation:
-            - House of Force: security/pwn/heap/house-of-force.md
-            - House of Orange: security/pwn/heap/house-of-orange.md
+            - 常用指令與工具: security/pwn/tools.md
+            - 保護機制: security/pwn/protection.md
+            - gdb tips: security/pwn/gdb-tips.md
+            - Format String: security/pwn/format-string.md
+            - return to dl-resolve: security/pwn/return-to-dl-resolve.md
+            - Heap Exploitation:
+                - House of Force: security/pwn/heap/house-of-force.md
+                - House of Orange: security/pwn/heap/house-of-orange.md
         - WEB:
-          - Information Gathering: security/web/information-gathering.md
-          - SQL injection: security/web/sql-injection.md
-          - XSS: security/web/xss.md
-          - Tricks in PHP: security/web/php.md
-          - DDOS: security/web/ddos.md
+            - Information Gathering: security/web/information-gathering.md
+            - SQL injection: security/web/sql-injection.md
+            - XSS: security/web/xss.md
+            - Tricks in PHP: security/web/php.md
+            - DDOS: security/web/ddos.md
     - 演算法:
-      - 相關資源: algorithm/resources.md
-      - Floyd's Cycle-Finding Algorithm: algorithm/floyd-cycle-finding.md
-      - Bloom Filter: algorithm/bloom-filter.md
-      - Factoring Algorithm:
-        - Pollard's p - 1 Algorithm: algorithm/factoring/pollard.md
-        - Williams's p + 1 Algorithm: algorithm/factoring/williams.md
-        - Fermat's Factorization Algorithm: algorithm/factoring/fermat.md
-      - Quantum Algorithm:
-        - 相關資源: algorithm/quantum-algorithm/resources.md
-        - Introduction: algorithm/quantum-algorithm/introduction.md
-      - AI:
+        - 相關資源: algorithm/resources.md
+        - Floyd's Cycle-Finding Algorithm: algorithm/floyd-cycle-finding.md
+        - Bloom Filter: algorithm/bloom-filter.md
+        - Factoring Algorithm:
+            - "Pollard's p - 1 Algorithm": algorithm/factoring/pollard.md
+            - "Williams's p + 1 Algorithm": algorithm/factoring/williams.md
+            - Fermat's Factorization Algorithm: algorithm/factoring/fermat.md
+        - Quantum Algorithm:
+            - 相關資源: algorithm/quantum-algorithm/resources.md
+            - Introduction: algorithm/quantum-algorithm/introduction.md
+    - AI:
         - 相關資源: algorithm/ai/resources.md
         - Neural Network: algorithm/ai/neural-network.md
         - Support Vector Machines: algorithm/ai/svm.md
     - 程式語言:
-      - python:
-        - python 中的奇淫技巧: programming/python/tricks.md
-        - Decorators: programming/python/decorators.md
-        - Global Interpreter Lock ( GIL ): programming/python/GIL.md
-        - What's new in python 3.7: programming/python/37.md
-      - C++:
-        - What's new in C++17: programming/c++/17.md
+        - python:
+            - python 中的奇淫技巧: programming/python/tricks.md
+            - Decorators: programming/python/decorators.md
+            - Global Interpreter Lock ( GIL ): programming/python/GIL.md
+            - What's new in python 3.7: programming/python/37.md
+        - C++:
+            - What's new in C++17: programming/c++/17.md
     - 影評:
-      - 最新影評: reviews/index.md
-      - 動漫:
-        - 列表: reviews/anime/list.md
-      - 影集:
-        - 列表: reviews/series/list.md
-      - 電影:
-        - 列表: reviews/movies/list.md
-        - "亞瑟:王者之劍": reviews/movies/king-arthur.md
+        - 最新影評: reviews/index.md
+        - 動漫:
+            - 列表: reviews/anime/list.md
+        - 影集:
+            - 列表: reviews/series/list.md
+        - 電影:
+            - 列表: reviews/movies/list.md
+            - "亞瑟:王者之劍": reviews/movies/king-arthur.md
 
-# Theme
 theme:
     name: 'material'
     custom_dir: theme
@@ -151,11 +146,11 @@ theme:
     feature:
         tabs: true
 
-# Customization
-extra_javascript: 
-    - 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'
 
-# Extensions
+plugins:
+    - search
+    - minify
+
 markdown_extensions:
     - markdown.extensions.admonition
     - pymdownx.arithmatex
@@ -172,6 +167,9 @@ markdown_extensions:
     - pymdownx.highlight:
         css_class: codehilite
 
+extra_javascript: 
+    - 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'
+
 extra_css:
-  - extra.css
-  - superfences.css
+    - extra.css
+    - superfences.css
