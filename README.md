@@ -1,5 +1,3 @@
 # OAlienO's Blog
 
-[https://oalieno.github.io/](https://oalieno.github.io/)
-
-我的學習筆記
+部落格啦 powerd by [mkdocs](https://www.mkdocs.org/)

@@ -38,6 +38,7 @@ nav:
             - 定義: math/lattice/definition.md
             - 性質和定理: math/lattice/theorem.md
     - 資訊安全:
+        - 相關資源: security/resources.md
         - CRYPTO:
             - 相關資源: security/crypto/resources.md
             - 古典密碼: security/crypto/classical.md
@@ -116,10 +117,10 @@ nav:
         - Quantum Algorithm:
             - 相關資源: algorithm/quantum-algorithm/resources.md
             - Introduction: algorithm/quantum-algorithm/introduction.md
-    - AI:
-        - 相關資源: algorithm/ai/resources.md
-        - Neural Network: algorithm/ai/neural-network.md
-        - Support Vector Machines: algorithm/ai/svm.md
+        - AI:
+            - 相關資源: algorithm/ai/resources.md
+            - Neural Network: algorithm/ai/neural-network.md
+            - Support Vector Machines: algorithm/ai/svm.md
     - 程式語言:
         - python:
             - python 中的奇淫技巧: programming/python/tricks.md
