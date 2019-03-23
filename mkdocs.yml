@@ -17,6 +17,8 @@ nav:
         - "部落格維護日記 - mkdocs extensions": topics/mkdocs-extensions.md
         - "指令整理 - SSH": topics/ssh.md
         - "深度之旅 - QEMU Internals": topics/qemu-internals.md
+        - "看片小技巧 - Netflix": topics/netflix.md
+        - "工具整理 - 一秒變時尚": topics/tools.md
     - 數學:
         - 相關資源: math/resources.md
         - 數學名詞: math/math-term.md
