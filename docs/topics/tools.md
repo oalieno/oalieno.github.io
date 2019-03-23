@@ -6,11 +6,10 @@
 
 使用 [powerlevel9k](https://github.com/bhilburn/powerlevel9k) 主題
 
-### 踩雷 : command not found: print_icon
-
-```
-locale-gen --lang en_US.UTF-8
-```
+!!! failure "command not found: print_icon"
+    ```
+    locale-gen --lang en_US.UTF-8
+    ```
 
 ### 插件
 
@@ -30,11 +29,10 @@ locale-gen --lang en_US.UTF-8
 
 `SpaceVim` 用在 `neovim` 上比較沒有問題，所以可以先裝個 `neovim`
 
-### 踩雷 : look: /usr/share/dict/words: No such file or directory
-
-```
-sudo apt-get install wamerican
-```
+!!! failure "look: /usr/share/dict/words: no such file or directory"
+    ```
+    sudo apt-get install wamerican
+    ```
 
 ## [thefuck](https://github.com/nvbn/thefuck)
 
