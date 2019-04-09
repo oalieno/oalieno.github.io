@@ -30,7 +30,7 @@ netflix 有一大堆分類
 
 url 後面填不同的數字就有不同的分類
 
-## 相關資源
-
-* https://www.pantz.org/software/chrome/netflix_streaming_playback_speed_and_hidden_menus.html
-* https://blog.gslin.org/archives/2016/04/09/6485/%E7%94%A8%E7%80%8F%E8%A6%BD%E5%99%A8%E7%9C%8B-netflix-%E5%8A%A0%E9%80%9F%E6%92%AD%E6%94%BE/
+[^1]:
+    https://www.pantz.org/software/chrome/netflix_streaming_playback_speed_and_hidden_menus.html
+[^2]:
+    https://blog.gslin.org/archives/2016/04/09/6485/%E7%94%A8%E7%80%8F%E8%A6%BD%E5%99%A8%E7%9C%8B-netflix-%E5%8A%A0%E9%80%9F%E6%92%AD%E6%94%BE/

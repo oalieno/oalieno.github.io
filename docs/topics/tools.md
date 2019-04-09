@@ -66,8 +66,9 @@
 
 更好看的 `find`
 
-## 相關資源
-
-* https://zcheng.ren/2018/07/27/spacevimtutorial/
-* https://hufangyun.com/2017/zsh-plugin/
-* https://remysharp.com/2018/08/23/cli-improved/
+[^1]:
+    https://zcheng.ren/2018/07/27/spacevimtutorial/
+[^2]:
+    https://hufangyun.com/2017/zsh-plugin/
+[^3]:
+    https://remysharp.com/2018/08/23/cli-improved/
