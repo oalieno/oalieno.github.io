@@ -58,7 +58,16 @@
 
 <img style="width: 600px" src="https://i.imgur.com/JiQg08m.png">
 
+## [ncdu](https://dev.yorhel.nl/ncdu)
+
+更好看的 `du`
+
+## [fd](https://github.com/sharkdp/fd/)
+
+更好看的 `find`
+
 ## 相關資源
 
 * https://zcheng.ren/2018/07/27/spacevimtutorial/
 * https://hufangyun.com/2017/zsh-plugin/
+* https://remysharp.com/2018/08/23/cli-improved/

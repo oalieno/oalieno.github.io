@@ -96,12 +96,15 @@ nav:
         - PWN:
             - 常用指令與工具: security/pwn/tools.md
             - 保護機制: security/pwn/protection.md
-            - gdb tips: security/pwn/gdb-tips.md
+            - 編譯 glibc: security/pwn/compile-glibc.md
+            - gdb 小技巧: security/pwn/gdb-tips.md
+            - "Minimal ELF 64-bit - 124 bytes": security/pwn/minimal-elf.md
+            - Dynamic Resolver: security/pwn/dynamic-resolver.md
             - Format String: security/pwn/format-string.md
-            - return to dl-resolve: security/pwn/return-to-dl-resolve.md
             - Heap Exploitation:
                 - House of Force: security/pwn/heap/house-of-force.md
                 - House of Orange: security/pwn/heap/house-of-orange.md
+            - 後門技巧: security/pwn/backdoor.md
         - WEB:
             - Information Gathering: security/web/information-gathering.md
             - SQL injection: security/web/sql-injection.md
@@ -155,6 +158,7 @@ plugins:
     - minify
 
 markdown_extensions:
+    - footnotes
     - markdown.extensions.admonition
     - pymdownx.arithmatex
     - pymdownx.caret
