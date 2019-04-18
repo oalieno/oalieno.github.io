@@ -113,6 +113,7 @@ nav:
             - DDOS: security/web/ddos.md
     - 演算法:
         - 相關資源: algorithm/resources.md
+        - 莫隊算法: algorithm/mo.md
         - Floyd's Cycle-Finding Algorithm: algorithm/floyd-cycle-finding.md
         - Bloom Filter: algorithm/bloom-filter.md
         - Factoring Algorithm:

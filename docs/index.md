@@ -1,5 +1,6 @@
 | 類別 | 文章 |
 | --- | --- |
+| 演算法 | [莫隊算法](/algorithm/mo/) |
 | 資訊安全 | [後門技巧](/security/pwn/backdoor/) |
 | 資訊安全 | [Minimal ELF 64-bit - 124 bytes](/security/pwn/minimal-elf/) |
 | 資訊安全 | [編譯 glibc](/security/pwn/compile-glibc/)
