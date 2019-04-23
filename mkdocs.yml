@@ -96,8 +96,10 @@ nav:
         - PWN:
             - 常用指令與工具: security/pwn/tools.md
             - 保護機制: security/pwn/protection.md
-            - 編譯 glibc: security/pwn/compile-glibc.md
-            - gdb 小技巧: security/pwn/gdb-tips.md
+            - GDB 小技巧: security/pwn/gdb-tips.md
+            - Compile Glibc: security/pwn/compile-glibc.md
+            - Compile Kernel: security/pwn/compile-kernel.md
+            - Debug Kernel: security/pwn/debug-kernel.md
             - "Minimal ELF 64-bit - 124 bytes": security/pwn/minimal-elf.md
             - Dynamic Resolver: security/pwn/dynamic-resolver.md
             - Format String: security/pwn/format-string.md

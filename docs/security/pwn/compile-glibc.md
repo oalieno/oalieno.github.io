@@ -14,7 +14,7 @@ cd glibc-2.29 && mkdir build && cd build
 CFLAGS="-g -g3 -ggdb -gdwarf-4 -Og -w" \
   CXXFLAGS="-g -g3 -ggdb -gdwarf-4 -Og -w" \
   ../configure --prefix=/path/to/install
-make && make install
+make -j$(nproc) && make -j$(nproc) install
 ```
 
 ```bash tab="32 bit"
@@ -24,8 +24,10 @@ CC="gcc -m32"
   CFLAGS="-g -g3 -ggdb -gdwarf-4 -Og -w" \
   CXXFLAGS="-g -g3 -ggdb -gdwarf-4 -Og -w" \
   ../configure --prefix=/path/to/install --host=i686-linux-gnu
-make -j8 && make -j8 install
+make -j$(nproc) && make -j$(nproc) install
 ```
+
+`-j` 多個程序並行編譯
 
 ??? info "`-w`"
     `-w` 的作用是關掉所有 warning messages

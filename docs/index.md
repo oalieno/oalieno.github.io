@@ -1,5 +1,7 @@
 | 類別 | 文章 |
 | --- | --- |
+| 資訊安全 | [Debug Kernel](/security/pwn/debug-kernel) |
+| 資訊安全 | [Compile Kernel](/security/pwn/compile-kernel) |
 | 演算法 | [莫隊算法](/algorithm/mo/) |
 | 資訊安全 | [後門技巧](/security/pwn/backdoor/) |
 | 資訊安全 | [Minimal ELF 64-bit - 124 bytes](/security/pwn/minimal-elf/) |

@@ -1,5 +1,3 @@
-# gdb tips
-
 ## layout
 
 ```
