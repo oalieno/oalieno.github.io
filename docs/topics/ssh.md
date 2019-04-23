@@ -156,8 +156,9 @@ autossh -M 0 -f -N -o "ServerAliveInterval 30" -o "ServerAliveCountMax 3" -L 555
 # -N : not execute remote command, useful for forwarding ports
 ```
 
-### 相關資料
-
-* https://linux.die.net/man/5/ssh_config
-* https://nerderati.com/2011/03/17/simplify-your-life-with-an-ssh-config-file/
-* https://www.everythingcli.org/ssh-tunnelling-for-fun-and-profit-local-vs-remote/
+[^1]:
+    https://linux.die.net/man/5/ssh_config
+[^2]:
+    https://nerderati.com/2011/03/17/simplify-your-life-with-an-ssh-config-file/
+[^3]:
+    https://www.everythingcli.org/ssh-tunnelling-for-fun-and-profit-local-vs-remote/
