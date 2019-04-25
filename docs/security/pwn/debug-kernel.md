@@ -43,7 +43,8 @@ root:x:0:0::/root:/bin/sh
 ### 打包
 
 ```bash
-find initramfs -print0 | cpio --null --create --verbose --format=newc | gzip --best > initramfs.cpio.gz
+cd initramfs
+find . -print0 | cpio --null --create --verbose --format=newc | gzip --best > ../initramfs.cpio.gz
 ```
 
 ## qemu-system

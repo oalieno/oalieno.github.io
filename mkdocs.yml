@@ -107,6 +107,8 @@ nav:
                 - House of Force: security/pwn/heap/house-of-force.md
                 - House of Orange: security/pwn/heap/house-of-orange.md
             - 後門技巧: security/pwn/backdoor.md
+            - Writeups:
+                - "[2019] Teaser Confidence Quals - p4fmt": security/pwn/writeups/p4fmt.md
         - WEB:
             - Information Gathering: security/web/information-gathering.md
             - SQL injection: security/web/sql-injection.md

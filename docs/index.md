@@ -1,5 +1,6 @@
 | 類別 | 文章 |
 | --- | --- |
+| 資訊安全 | [[2019] Teaser Confidence Quals - p4fmt](/security/pwn/writeups/p4fmt) |
 | 資訊安全 | [Debug Kernel](/security/pwn/debug-kernel) |
 | 資訊安全 | [Compile Kernel](/security/pwn/compile-kernel) |
 | 演算法 | [莫隊算法](/algorithm/mo/) |
