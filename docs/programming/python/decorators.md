@@ -177,6 +177,5 @@ hello oalieno
 
 原本的函式會在 `__init__` 被傳進去
 
-## 參考資料
-
-* https://realpython.com/primer-on-python-decorators/
+[^1]:
+    https://realpython.com/primer-on-python-decorators/

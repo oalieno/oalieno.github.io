@@ -48,9 +48,12 @@
 
 比如 Jython 和 IronPython 沒有 GIL
 
-## 參考資料
 
-* https://realpython.com/python-gil/
-* https://www.youtube.com/watch?v=Obt-vMVdM8s
-* http://dabeaz.blogspot.com/2010/01/python-gil-visualized.html
-* http://www.dabeaz.com/python/GIL.pdf
+[^1]:
+    https://realpython.com/python-gil/
+[^2]:
+    https://www.youtube.com/watch?v=Obt-vMVdM8s
+[^3]:
+    http://dabeaz.blogspot.com/2010/01/python-gil-visualized.html
+[^4]:
+    http://www.dabeaz.com/python/GIL.pdf
