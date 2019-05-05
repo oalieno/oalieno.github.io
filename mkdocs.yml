@@ -93,6 +93,8 @@ nav:
                 - BEAST Attack: security/crypto/classic/beast.md
                 - POODLE Attack: security/crypto/classic/poodle.md
                 - Dual EC DRBG Backdoor: security/crypto/classic/dual-ec.md
+            - Writeups:
+                - "[2019] TSG CTF - OPQRX": security/crypto/writeups/opqrx.md
         - PWN:
             - 常用指令與工具: security/pwn/tools.md
             - 保護機制: security/pwn/protection.md

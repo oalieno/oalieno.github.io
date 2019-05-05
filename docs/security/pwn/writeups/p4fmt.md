@@ -4,7 +4,9 @@
 ==分數 : 304==
 ==解題人數 : 10==
 
-## 題解
+---
+
+## Writeup
 
 題目檔案解壓縮後有三個檔案 `bzImage`, `initramfs.cpio.gz`, `run.sh`
 
@@ -220,7 +222,7 @@ test
 找了一找發現在第六個 `vm_mmap` 的 `0xffffa1c307595b40` 這個位址是 `cred`  
 但是這個位址每次跑起來都不一樣，不過多跑幾次會發現，這個值會一直循環重複利用，所以只要多跑幾次就會對了
 
-### Final Exploit
+## Final Exploit
 
 ```python
 #!/usr/bin/env python3
