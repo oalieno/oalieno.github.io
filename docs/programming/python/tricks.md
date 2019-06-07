@@ -233,3 +233,18 @@ print(__annotations__)
 ```python tab="output"
 {'a': <class 'int'>, 'b': <class 'int'>}
 ```
+
+## intern string
+
+```python
+s = 'hello'
+s = sys.intern(s)
+```
+
+把字串存進快取池，相同的字串只會存一次  
+做字串比對會比較快且節省空間
+
+[^1]:
+    http://guilload.com/python-string-interning/
+[^2]:
+	http://www.laurentluce.com/posts/python-string-objects-implementation/

@@ -89,12 +89,16 @@ nav:
                 - DSA: security/crypto/digital-signature/dsa.md
                 - DSA Known Partial Nonce Attack: security/crypto/digital-signature/dsa-known-partial-nonce.md
                 - ECDSA: security/crypto/digital-signature/ecdsa.md
+            - Blockchain:
+                - Ethereum 基礎篇: security/crypto/blockchain/basics.md
+                - Ethereum 工具篇: security/crypto/blockchain/tools.md
             - 經典攻擊:
                 - BEAST Attack: security/crypto/classic/beast.md
                 - POODLE Attack: security/crypto/classic/poodle.md
                 - Dual EC DRBG Backdoor: security/crypto/classic/dual-ec.md
             - Writeups:
                 - "[2019] TSG CTF - OPQRX": security/crypto/writeups/opqrx.md
+                - "[OJ] Security Innovation Blockchain CTF": security/crypto/writeups/blockchain-ctf.md
         - PWN:
             - 常用指令與工具: security/pwn/tools.md
             - 保護機制: security/pwn/protection.md
@@ -139,6 +143,7 @@ nav:
             - Decorators: programming/python/decorators.md
             - Global Interpreter Lock ( GIL ): programming/python/GIL.md
             - What's new in python 3.7: programming/python/37.md
+            - pyc 格式分析: programming/python/pyc.md
         - C++:
             - What's new in C++17: programming/c++/17.md
     - 影評:
