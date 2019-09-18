@@ -13,6 +13,20 @@
 就可以一次設定好所有的暫存器  
 缺點是需要夠大的空間塞下整個 Signal Frame
 
+## pwntools `SigFrame`
+
+```python
+frame = SigreturnFrame()
+frame.rsp = 0
+frame.rax = 0
+frame.rdi = 0
+frame.rsi = 0
+frame.rdx = 0
+frame.rip = 0
+
+rop = bytes(frame)
+```
+
 ## CTF 題目
 
 [pwnable.kr - unexploitable](http://pwnable.kr)
