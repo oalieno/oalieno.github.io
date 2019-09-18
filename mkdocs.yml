@@ -19,6 +19,7 @@ nav:
         - "深度之旅 - QEMU Internals": topics/qemu-internals.md
         - "看片小技巧 - Netflix": topics/netflix.md
         - "工具整理 - 一秒變時尚": topics/tools.md
+        - "elasticdump - es_rejected_execution_exception error": topics/elasticdump-error.md
     - 數學:
         - 相關資源: math/resources.md
         - 數學名詞: math/math-term.md
@@ -51,6 +52,7 @@ nav:
                 - AES: security/crypto/symmetric/aes.md
                 - Block Cipher Modes: security/crypto/symmetric/mode.md
                 - Padding Oracle Attack: security/crypto/symmetric/padding-oracle.md
+                - Linear and Differential Cryptanalysis: security/crypto/symmetric/ldc.md
             - 非對稱式密碼:
                 - Diffie-Hellman:
                     - Introduction to Diffie-Hellman: security/crypto/asymmetric/diffie-hellman/introduction.md
@@ -133,7 +135,7 @@ nav:
             - Fermat's Factorization Algorithm: algorithm/factoring/fermat.md
         - Quantum Algorithm:
             - 相關資源: algorithm/quantum-algorithm/resources.md
-            - Introduction: algorithm/quantum-algorithm/introduction.md
+            - Notation: algorithm/quantum-algorithm/notation.md
         - AI:
             - 相關資源: algorithm/ai/resources.md
             - Neural Network: algorithm/ai/neural-network.md

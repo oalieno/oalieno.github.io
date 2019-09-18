@@ -1,8 +1,6 @@
-# Introduction
-
 ### Dirac Notation
 
-就是另一種表示 vector 的方式
+就是另一種表示 vector 的方式，這裡的數字都是複數
 
 $|\mathbf{v}\rangle = \begin{bmatrix}v_0\\ v_1\\ \cdots\\ v_n \end{bmatrix}$
 
@@ -31,6 +29,9 @@ $\mathbf{v}$ 的長度 ( norm ) 是 $\| \mathbf{v} \| = \sqrt{\langle \mathbf{v}
 
 ### Qubit
 
+!!!info
+    $|0\rangle, |1\rangle$ can be any two vectors that form an orthonormal basis in $\mathbb{C}^2$
+
 $|0\rangle = \begin{bmatrix} 1\\ 0 \end{bmatrix}, |1\rangle = \begin{bmatrix} 0\\ 1 \end{bmatrix}$
 
 因為 $|0\rangle$ and $|1\rangle$ are orthonormal
@@ -38,6 +39,8 @@ $|0\rangle = \begin{bmatrix} 1\\ 0 \end{bmatrix}, |1\rangle = \begin{bmatrix} 0\
 $\langle 0 | 1 \rangle = \langle 1 | 0 \rangle = 0$
 
 $\langle 0 | 0 \rangle = \langle 1 | 1 \rangle = 1$
+
+$|101\rangle = |1\rangle \oplus |0\rangle \oplus |1\rangle$
 
 ### Unitary Matrix
 
@@ -51,4 +54,6 @@ $|det(U)| = 1$
 
 我們可以用 $(\theta, \phi)$ 來表示所有 linear combination of $| 0 \rangle, | 1 \rangle$
 
-$| \varphi \rangle = a_0 | 0 \rangle + a_1 | 1 \rangle$
+$| \psi \rangle = a_0 | 0 \rangle + a_1 | 1 \rangle$
+
+$|\psi\rangle = e^{i\gamma}(cos\frac{\theta}{2}|0\rangle+e^{i\varphi}sin\frac{\theta}{2}|1\rangle)$
