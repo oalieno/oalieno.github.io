@@ -1,8 +1,8 @@
 site_name: OAlienO's Blog
 site_description: notes about programming and cyber security, powered by mkdocs
 
-repo_name: 'OAlienO/OAlienO'
-repo_url: 'https://github.com/OAlienO/OAlienO'
+repo_name: 'oalieno/oalieno.github.io'
+repo_url: 'https://github.com/oalieno/oalieno.github.io'
 edit_uri: ''
 
 google_analytics: ['UA-87869756-1', 'oalieno.github.io']
@@ -167,7 +167,6 @@ theme:
     feature:
         tabs: true
 
-
 plugins:
     - search
     - minify
@@ -189,7 +188,7 @@ markdown_extensions:
     - pymdownx.highlight:
         css_class: codehilite
 
-extra_javascript: 
+extra_javascript:
     - 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'
 
 extra_css:
