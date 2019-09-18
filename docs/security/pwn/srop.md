@@ -13,6 +13,13 @@
 就可以一次設定好所有的暫存器  
 缺點是需要夠大的空間塞下整個 Signal Frame
 
+## `sys_rt_sigreturn` syscall gadget
+
+哪裡有 `mov rax, 0xf; syscall` 的 gadget 可以用
+
+1. libc 裡面的 `__restore_rt`
+2. 自己用 ROP 設定好 rax, 再接 syscall gadget
+
 ## pwntools `SigFrame`
 
 ```python
@@ -32,4 +39,6 @@ rop = bytes(frame)
 [pwnable.kr - unexploitable](http://pwnable.kr)
 
 [^1]:
+    https://www.slideshare.net/AngelBoy1/sigreturn-ori
+[^2]:
     http://weaponx.site/2017/02/28/unexploitable-Writeup-pwnable-kr/
