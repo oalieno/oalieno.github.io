@@ -111,6 +111,7 @@ nav:
             - "Minimal ELF 64-bit - 124 bytes": security/pwn/minimal-elf.md
             - Dynamic Resolver: security/pwn/dynamic-resolver.md
             - Format String: security/pwn/format-string.md
+            - SROP ( Sigreturn Oriented Programming ): security/pwn/srop.md
             - Heap Exploitation:
                 - House of Force: security/pwn/heap/house-of-force.md
                 - House of Orange: security/pwn/heap/house-of-orange.md
