@@ -134,13 +134,15 @@ nav:
             - "Pollard's p - 1 Algorithm": algorithm/factoring/pollard.md
             - "Williams's p + 1 Algorithm": algorithm/factoring/williams.md
             - Fermat's Factorization Algorithm: algorithm/factoring/fermat.md
-        - Quantum Algorithm:
-            - 相關資源: algorithm/quantum-algorithm/resources.md
-            - Notation: algorithm/quantum-algorithm/notation.md
         - AI:
             - 相關資源: algorithm/ai/resources.md
             - Neural Network: algorithm/ai/neural-network.md
             - Support Vector Machines: algorithm/ai/svm.md
+    - 量子電腦:
+        - 相關資源: algorithm/quantum-algorithm/resources.md
+        - Notation: algorithm/quantum-algorithm/notation.md
+        - "入門量子電腦[1]: Quantum Bits": algorithm/quantum-algorithm/quantum-bits.md
+        - "入門量子電腦[2]: Quantum Gates": algorithm/quantum-algorithm/quantum-gates.md
     - 程式語言:
         - python:
             - python 中的奇淫技巧: programming/python/tricks.md

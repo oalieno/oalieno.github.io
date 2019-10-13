@@ -68,7 +68,7 @@ $d$ : 私鑰指數 ( private exponent)
 | :-: | :-: | :-: | :-: | :-: |
 | $p - 1$ 是 smooth number | | | 分解 $n$ | [Pollard's p - 1 Algorithm](/algorithm/factoring/pollard/) |
 | $p + 1$ 是 smooth number | | | 分解 $n$ | [Williams's p + 1 Algorithm](/algorithm/factoring/williams/) |
-| $\|p - q\|$ 很小 | | | 分解 $n$ | [Fermat's Factorization Method](/algorithm/factoring/fermat/) |
+| $|p - q|$ 很小 | | | 分解 $n$ | [Fermat's Factorization Method](/algorithm/factoring/fermat/) |
 | | $d$ 很小 | | 分解 $n$ | [Wiener's Attack](/crypto/asymmetric/rsa/wiener) |
 | | $d$ 很小 | | 分解 $n$ | [Boneh and Durfee Attack](/crypto/asymmetric/rsa/coppersmith/#boneh-and-durfee-attack) |
 | $gcd(n_1, ..., n_k) \ne 1$ | | | 多個密文 | [Common Factor Attack](/crypto/asymmetric/rsa/common-factor-attack) |
