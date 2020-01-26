@@ -1,0 +1,8 @@
+<% if (head) { %>
+<%- _css('css/bottom-to-top') %>
+<% } else { %>
+<a id="bottom-to-top" title="<%= __('plugin.bottomtotop') %>" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<%- _js('js/bottom-to-top', true) %>
+<% } %>
