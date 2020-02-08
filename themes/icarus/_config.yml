@@ -133,9 +133,9 @@ widgets:
             Ig:
                 icon: fab fa-ig
                 url: 'https://www.instagram.com/oalieno'
-            Email:
-                icon: far fa-envelope
-                url: 'mailto:jeffrey6910@gmail.com'
+            In:
+                icon: fab fa-linkedin
+                url: 'https://www.linkedin.com/in/oalieno/'
     -
         # Widget name
         type: toc

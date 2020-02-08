@@ -33,7 +33,7 @@ zmodule djui/alias-tips
 
 [powerlevel10k](https://github.com/romkatv/powerlevel10k) 看名字就知道是用來幹掉 [powerlevel9k](https://github.com/Powerlevel9k/powerlevel9k) 的，記得當初看到 [powerlevel9k](https://github.com/Powerlevel9k/powerlevel9k) 的時候兩眼發光，此生沒看過這麼漂亮的主題，直到現在看到 [powerlevel10k](https://github.com/romkatv/powerlevel10k) powerlevel9k，那 [powerlevel10k](https://github.com/romkatv/powerlevel10k) 究竟是猛在哪，就我來看，我覺得 [powerlevel10k](https://github.com/romkatv/powerlevel10k) 最大的優點在於他優秀的客製化系統，請看下圖
 
-![](/images/powerlevel10k.gif)
+{% img /images/powerlevel10k.gif 'powerlevel10k 設定畫面' %}
 
 可以讓你一步步設定每個細節，而且不用自己手動去改設定，只要跑 `p10k configure` 這個指令就好，對懶人十分的友善阿，而且 [powerlevel10k](https://github.com/romkatv/powerlevel10k) 直接推薦我們安裝 `MesloLGS NF` 字型，裝好就完事了，不需要像 [powerlevel9k](https://github.com/Powerlevel9k/powerlevel9k) 還要自己調字型和大小，另一個優點就是速度了，官方說是比 powerlevel9k 快上不少，但是因為我同時也換了 zimfw 所以不知道是不是真的有變快
 
@@ -41,4 +41,4 @@ zmodule djui/alias-tips
 
 顏色的配置我使用 Nord 這款，有冰天雪地高冷的感覺，我把他套用到 iTerm2, vim, tmux 上，讓整個環境有一致的色調，十分舒服，請看下圖，安裝的部分可以到[官方的 github](https://github.com/arcticicestudio?tab=repositories) 裡面去找，各大常見的編輯器幾乎都有支援
 
-![](/images/nord.gif)
+{% img /images/nord.gif 'nord 顏色配置效果' %}

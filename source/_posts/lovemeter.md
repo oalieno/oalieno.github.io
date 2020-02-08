@@ -7,13 +7,13 @@ tags:
 
 事情是這樣的，我在別人的挨居的自介上面看到一個連結，就好奇的點了進去
 
-{% img /images/lovemeter-1.png 500 %}
+{% img /images/lovemeter-1.png 500 'lovemeter 首頁' %}
 
 裡面看起來就是那種心裡測驗的網站，愛情計算器，幫你測你和喜歡的人配不配
 
 聰明如我<del>資安小天才</del>，當然是隨便亂打個 abcd 就送出看看這是在耍什麼花樣
 
-{% img /images/lovemeter-2.png 500 %}
+{% img /images/lovemeter-2.png 500 'lovemeter 計算結果頁面' %}
 
 果然是愚弄人的網站，如果你誠實的填上你的名字和你喜歡的人的名字，就被分享給你連結的人看光光啦
 

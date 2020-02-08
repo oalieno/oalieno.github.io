@@ -29,7 +29,7 @@ tags:
 `initramfs.cpio.gz` 是臨時的檔案系統  
 `run.sh` 裡面用 `qemu-system-x86_64` 把 kernel 跑起來
 
-不熟悉 linux kernel debug 可以參考 [Debug Kernel](/security/pwn/debug-kernel)
+不熟悉 linux kernel debug 可以參考 [Debug Kernel](/old/security/pwn/debug-kernel)
 
 ### First Glance
 
@@ -129,7 +129,7 @@ int load_p4_binary (linux_binprm *bprm) {
 因為有這個結構有 [`__randomize_layout`](https://lwn.net/Articles/722293/)，所以結構成員的順序是隨機的  
 這題的 `bprm->buf` 從 `0x48` 開始 128 bytes，可見下圖  
 
-<img src="https://i.imgur.com/XlPKVe1.png" width="500">
+{% img https://i.imgur.com/XlPKVe1.png 500 'linux_binprm 格式' %}
 
 程式一開始會先檢查前兩個 bytes 是不是 `P4`  
 接著檢查第三個 byte 是不是 `\x00`，不是的話會噴 `Unknown version`  
