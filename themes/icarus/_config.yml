@@ -197,9 +197,9 @@ plugins:
         tracking_id: 
     # Hotjar user feedback plugin
     # https://ppoffice.github.io/hexo-theme-icarus/Plugins/General/site-analytics-plugin/#Hotjar
-    hotjar:
+    #hotjar:
         # Hotjar site id
-        site_id: 1657949
+        #site_id:
     # Show a loading progress bar at top of the page
     progressbar: true
     # BuSuanZi site/page view counter
