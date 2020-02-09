@@ -14,6 +14,7 @@
   "dependencies": {
     "cheerio": "^1.0.0-rc.3",
     "hexo": "^4.0.0",
+    "hexo-auto-canonical": "^0.1.1",
     "hexo-deployer-git": "^2.1.0",
     "hexo-generator-archive": "^1.0.0",
     "hexo-generator-category": "^1.0.0",
