@@ -29,11 +29,11 @@ navbar:
     # Navigation bar menu links
     menu:
         首頁: /
-        歷史文章: /archives
-        分類: /categories
-        標籤: /tags
-        關於我: /about
-        舊部落格: /old
+        歷史文章: /archives/
+        分類: /categories/
+        標籤: /tags/
+        關於我: /about/
+        舊部落格: /old/
     github:
         name: oalieno/oalieno.github.io
         url: https://github.com/oalieno/oalieno.github.io
