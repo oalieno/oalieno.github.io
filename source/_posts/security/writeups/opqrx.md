@@ -1,7 +1,6 @@
 ---
 title: "[2019] TSG CTF - OPQRX"
 date: 2019-05-06 00:00:00
-disqusId: oalieno
 categories:
 - [security, writeups]
 tags:

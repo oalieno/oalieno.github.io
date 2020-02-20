@@ -4,7 +4,6 @@ date: 2019-03-21 00:00:00
 categories:
 - [security, pwn]
 tags:
-- ctf
 - security
 - pwn
 ---

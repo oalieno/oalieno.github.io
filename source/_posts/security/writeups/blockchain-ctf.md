@@ -1,7 +1,6 @@
 ---
 title: "[OJ] Security Innovation Blockchain CTF"
 date: 2019-06-07 00:00:00
-disqusId: oalieno
 categories:
 - [security, writeups]
 tags:

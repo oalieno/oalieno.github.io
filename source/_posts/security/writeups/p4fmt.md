@@ -1,7 +1,6 @@
 ---
 title: "[2019] Teaser Confidence CTF Quals - p4fmt"
 date: 2019-04-26 00:00:00
-disqusId: oalieno
 categories:
 - [security, writeups]
 tags:
