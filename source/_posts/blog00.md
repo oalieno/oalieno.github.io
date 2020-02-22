@@ -3,6 +3,7 @@ title: "部落格開發日誌 0x00"
 date: 2020-01-23 09:49:35
 tags:
 - hexo
+- icarus
 ---
 
 之前的部落格是用 mkdocs，但是 mkdocs 其實是用來生成 document 的，不是拿來生成部落格的，所以文章都沒有日期，也沒有近期文章或是標籤的功能，我之所以選 mkdocs 是因為 [mkdocs-material](https://github.com/squidfunk/mkdocs-material) 實在太好看了很對我胃口，不過最近興起了想幫部落格換個皮的念頭，主要是看上了 [icarus](https://blog.zhangruipeng.me/hexo-theme-icarus/) 和 [material-x](https://xaoxuu.com/wiki/material-x/) 這兩個主題，都是 hexo 的主題，最後選了 [icarus](https://blog.zhangruipeng.me/hexo-theme-icarus/)，然後再自己手動調整，下面會說明一下我手動調整的內容

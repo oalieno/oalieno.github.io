@@ -12,7 +12,7 @@ tags:
 
 今天我們要來練習用 frida 在 Android 上做動態調試
 
-## hook 一般函式
+## 逆之呼吸壹之型 - 一般函式
 
 先來寫個簡單的範例 APP
 有一個按扭和一個輸入欄，輸入名字之後，按下按鈕，就會顯示 Hello 加上你輸入的名字
@@ -90,7 +90,7 @@ Java.perform(() => {
 
 {% img /images/example-app-hook.png 300 "example app hook" %}
 
-## hook 重載函式
+## 逆之呼吸貳之型 - 重載函式
 
 改一下範例 APP，多加上一個接受數字做輸入的 `say` 函式
 接收到數字後，就輸出 Hello 加上輸入的數字的平方
@@ -162,7 +162,7 @@ Java.perform(() => {
 
 {% img /images/example-app2-hook.png 300 "example app hook" %}
 
-## 呼叫隱藏函式
+## 逆之呼吸參之型 - 隱藏函式
 
 再改一下範例 APP，多加上一個變數 `secret` 和一個函式 `getSecret`，在 `onCreate` 裡面會給 `secret` 一個隨機值，我們的目標就是找出這個值
 
