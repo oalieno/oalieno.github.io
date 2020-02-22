@@ -4,5 +4,6 @@
   "private": true,
   "engines": {
     "node": ">=8.3.0"
-  }
+  },
+  "dependencies": {}
 }

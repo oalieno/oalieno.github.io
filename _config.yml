@@ -99,7 +99,7 @@ theme: icarus
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: https://github.com/oalieno/oalieno.github.io
+  repo: https://github.com/oalieno/oalieno.github.io.git
   branch: master
 
 markdown:

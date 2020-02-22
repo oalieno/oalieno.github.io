@@ -46,25 +46,11 @@
             }
         });
 
-        if (typeof (ClipboardJS) !== 'undefined' && IcarusThemeSettings.article.highlight.clipboard) {
-            $('figure.highlight').each(function () {
-                var id = 'code-' + Date.now() + (Math.random() * 1000 | 0);
-                var button = '<a href="javascript:;" class="copy" title="Copy" data-clipboard-target="#' + id + ' .code"><i class="fas fa-copy"></i></a>';
-                $(this).attr('id', id);
-                if ($(this).find('figcaption').length) {
-                    $(this).find('figcaption').prepend(button);
-                } else {
-                    $(this).prepend('<figcaption>' + button + '</figcaption>');
-                }
-            });
-            new ClipboardJS('.highlight .copy');
-        }
         var fold = IcarusThemeSettings.article.highlight.fold;
         if (fold.trim()) {
-            var button = '<span class="fold">' + (fold === 'unfolded' ? '<i class="fas fa-angle-down"></i>' : '<i class="fas fa-angle-right"></i>') + '</span>';
+            var button = '<span class="fold">' + (fold === 'unfolded' ? '<i class="material-icons">keyboard_arrow_down</i>' : '<i class="material-icons">keyboard_arrow_right</i>') + '</span>';
             $('figure.highlight').each(function () {
-                if ($(this).find('figcaption').length) {
-
+                if ($(this).find('figcaption')) {
                     // 此处find ">folded" span,如果有自定义code头,并且">folded"进行处理
                     // 使用示例，.md 文件中头行标记">folded"
                     // ```java main.java >folded
@@ -75,12 +61,12 @@
                     //     return i;
                     // }
                     // ```
-                    if ($(this).find('figcaption').find('span').length > 0) {
-                        let spanArr = $(this).find('figcaption').find('span');
-                        if (spanArr[0].innerText.indexOf(">folded") > -1) {
+                    if ($(this).find('figcaption').find('span')) {
+                        let span = $(this).find('figcaption').find('span')[0]
+                        if (span && span.innerText.indexOf(">folded") > -1) {
                             // 去掉folded
-                            spanArr[0].innerText = spanArr[0].innerText.replace(">folded", "")
-                            button = '<span class="fold"><i class="fas fa-angle-right"></i></span>';
+                            span.innerText = span.innerText.replace(">folded", "").trim()
+                            button = '<span class="fold"><i class="material-icons">keyboard_arrow_right</i></span>';
                             $(this).find('figcaption').prepend(button);
 
                             // 收叠代码块
@@ -89,8 +75,6 @@
                         }
                     }
                     $(this).find('figcaption').prepend(button);
-                } else {
-                    $(this).prepend('<figcaption>' + button + '</figcaption>');
                 }
                 toggleFold(this, fold === 'folded');
             });
@@ -98,17 +82,59 @@
             function toggleFold(codeBlock, isFolded) {
                 var $toggle = $(codeBlock).find('.fold i');
                 !isFolded ? $(codeBlock).removeClass('folded') : $(codeBlock).addClass('folded');
-                !isFolded ? $toggle.removeClass('fa-angle-right') : $toggle.removeClass('fa-angle-down');
-                !isFolded ? $toggle.addClass('fa-angle-down') : $toggle.addClass('fa-angle-right');
+                !isFolded ? $toggle.text('keyboard_arrow_down') : $toggle.text('keyboard_arrow_right');
             }
 
             // $('figure.highlight').each(function () {
             //     toggleFold(this, fold === 'folded');
             // });
-            $('figure.highlight figcaption .fold').click(function () {
+            $('figure.highlight figcaption').click(function (e) {
+                if (e.target.parentElement.tagName === 'A') return
                 var $code = $(this).closest('figure.highlight');
                 toggleFold($code.eq(0), !$code.hasClass('folded'));
             });
+        }
+
+        $('figure.highlight').each(function () {
+            let span = $(this).find('figcaption').find('span')[1]
+            if (span && span.innerText.indexOf(">") > -1) {
+                let item = span.innerText.split('>')[1].split(',')
+                let start = parseInt(item[0])
+                let mark = parseInt(item[1])
+                let lines = $(this).find('.highlight-body .code span.line')
+                $(this).find('.highlight-body .gutter').find('span').each(function () {
+                    let num = parseInt($(this).text()) + start - 1
+                    $(this).text(num)
+                    if (mark && num === mark) {
+                        $(lines[mark - start]).addClass('marked')
+                    }
+                })
+                $(span).text($(span).text().substring(0, $(span).text().indexOf('>')).trim())
+                if ($(span).text().length == 0) {
+                    $(this).find('figcaption').remove()
+                }
+            }
+        })
+
+        $('figure.highlight .highlight-body .code pre').each(function () {
+            $(this).find('br').remove()
+            $(this).find('span').each(function () {
+                if ($(this).is(':empty')) $(this).text(' ')
+            })
+        })
+
+        if (typeof (ClipboardJS) !== 'undefined' && IcarusThemeSettings.article.highlight.clipboard) {
+            $('figure.highlight').each(function () {
+                var id = 'code-' + Date.now() + (Math.random() * 1000 | 0);
+                var button = '<a href="javascript:;" class="copy" title="Copy" data-clipboard-target="#' + id + ' .code"><i class="material-icons">content_copy</i></a>';
+                $(this).attr('id', id);
+                if ($(this).find('figcaption').length) {
+                    $(this).find('figcaption').append(button);
+                } else {
+                    $(this).find('div').prepend(button)
+                }
+            });
+            new ClipboardJS('.highlight .copy');
         }
     }
 
@@ -184,12 +210,9 @@
     if (typeof (IcarusThemeSettings) !== 'undefined' &&
         typeof (IcarusThemeSettings.github.url) !== 'undefined') {
         const url = IcarusThemeSettings.github.url
-        console.log(url)
         const matches = /^.+github\.com\/([^/]+)\/?([^/]+)?.*$/.exec(url)
-        console.log(matches)
         if (matches && matches.length === 3) {
             const [, user, name] = matches
-            console.log(user, name)
             const api = `https://api.github.com/users/${user}/repos`
             const paginate = (page = 0) => (
                 fetch(`${api}?per_page=100&sort=updated&page=${page}`)
@@ -221,7 +244,6 @@
                 })
             )
             paginate().then(data => {
-                console.log(data)
                 const [stars, forks] = data
                 const facts = $(`<ul class="github-facts"><li id="github-stars">${stars}</li><li id="github-forks">• ${forks}</li></ul>`)
                 $('.github-source-repository').append(facts)
