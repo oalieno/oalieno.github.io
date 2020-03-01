@@ -2,7 +2,7 @@
     const avatar = get_config_from_obj(widget, 'avatar');
     const gravatar_email = get_config_from_obj(widget, 'gravatar');
     if (gravatar_email) {
-        return gravatar(gravatar_email, 128);
+        return gravatar(gravatar_email, 512);
     }
     if (avatar) {
         return url_for(avatar)

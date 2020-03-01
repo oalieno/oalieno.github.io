@@ -1,5 +1,5 @@
 ---
-title: 學習筆記 - Android Emulator 環境佈置
+title: 零失敗教學 - Android Studio Emulator + ADB 環境佈置
 date: 2020-02-15 23:17:50
 categories:
 - [security, reverse]

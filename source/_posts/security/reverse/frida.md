@@ -1,5 +1,5 @@
 ---
-title: "學習筆記 - Frida Hook 注入"
+title: "安卓動態調試 - Frida Hook 注入"
 date: 2020-02-16 16:35:13
 categories:
 - [security, reverse]

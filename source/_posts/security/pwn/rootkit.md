@@ -1,5 +1,5 @@
 ---
-title: 學習筆記 - ROOTKIT 隱藏程序技巧
+title: 看不到的後門 - ROOTKIT 隱藏程序技巧
 date: 2019-06-07 00:00:00
 categories:
 - [security, pwn]
@@ -7,6 +7,10 @@ tags:
 - security
 - pwn
 - rootkit
+---
+
+簡報版本 : https://www.slideshare.net/ssuserd44fa2/rootkit-101-228943978
+
 ---
 
 root + kit 的意思就是拿到 root 權限後可以用的工具包，大多是隱藏程序的技巧，所以 rootkit 也可以理解成隱藏程序技術的通稱，不過也有些不需要 root 的隱藏程序技術，今天會逐一介紹 linux 上 rootkit 的原理與實作
