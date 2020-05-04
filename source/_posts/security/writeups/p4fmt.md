@@ -1,5 +1,5 @@
 ---
-title: "[2019] Teaser Confidence CTF Quals - p4fmt"
+title: "[Writeups] Teaser Confidence CTF Quals 2019 - p4fmt"
 date: 2019-04-26 00:00:00
 categories:
 - [security, writeups]

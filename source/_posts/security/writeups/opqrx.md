@@ -1,5 +1,5 @@
 ---
-title: "[2019] TSG CTF - OPQRX"
+title: "[Writeups] TSG CTF 2019 - OPQRX"
 date: 2019-05-06 00:00:00
 categories:
 - [security, writeups]
@@ -83,5 +83,6 @@ print(long_to_bytes(m))
 TSGCTF{Absolutely, X should be 'S' in 'OPQRX'.}
 ```
 
-[^1]:
-	https://furutsuki.hatenablog.com/entry/2019/05/05/163313#Crypto-497pts-10-Solves-OPQRX
+---
+
+1. https://furutsuki.hatenablog.com/entry/2019/05/05/163313#Crypto-497pts-10-Solves-OPQRX
