@@ -13,25 +13,33 @@ tags:
 
 {% img /images/ais3-scores.png 500 'AIS3 Pre-Exam Scores' %}
 
+[攻擊腳本們在這](https://github.com/OAlienO/CTF/tree/master/2020/AIS3-pre-exam)
+
 ## Misc
 
 ### Piquero
 
 這題給了一張點字的圖，只要先找到出題者用的 generator [這個](https://www.mathsisfun.com/braille-translation.html)，接著就一個一個對照就解出來了。
 
-`AIS3{I_feel_sleepy_Good_Night!!!}`
+```
+AIS3{I_feel_sleepy_Good_Night!!!}
+```
 
 ### Karuego
 
 這題給了一張 png，先用 `binwalk --dd=".*" Karuego.png` 拉出一個 zip 檔，這個 zip 檔有加密，原本想用 `fcrackzip` 之類的爆破工具，但 `zsteg -a Karuego.png` 下去發現 LSB 有一段文字 `The key is : lafire`，zip 檔解開裡面有一張 `Demon.png` 打開就看到 flag 了。
 
-`AIS3{Ar3_y0u_r34l1y_r34dy_t0_sumnn0n_4_D3m0n?}`
+```
+AIS3{Ar3_y0u_r34l1y_r34dy_t0_sumnn0n_4_D3m0n?}
+```
 
 ### Soy
 
 這題給了一張 png，是被墨漬污染的 QR Code，我用 `https://merricx.github.io/qrazybox/` 把已知的黑點白點都畫了上去就解出來了，因為大部分的 Data 區塊都沒被污染到吧，這個網站上畫 QR Code 的時候記得要畫白點，不要只畫黑點，沒畫的會是未知的灰點，我在這裡卡很久Q
 
-`AIS3{H0w_c4n_y0u_f1nd_me?!?!?!!}`
+```
+AIS3{H0w_c4n_y0u_f1nd_me?!?!?!!}
+```
 
 ### Saburo
 
@@ -71,7 +79,9 @@ else:
 
 所以每個字都爆搜 0 - 255，然後取最大的就好了，可以每次嘗試都送個十次取平均之類的，或是把 log 記起來，之後如果爆搜所有 byte 都沒有進展的話就，回去找第二高的，會比較穩。
 
-`AIS3{A1r1ght_U_4r3_my_3n3nnies}`
+```
+AIS3{A1r1ght_U_4r3_my_3n3nnies}
+```
 
 ### Shichirou
 
@@ -83,14 +93,18 @@ ln -s ../flag.txt guess.txt
 tar -cf test.tar ./
 ```
 
-`AIS3{Bu223r!!!!_I_c4n_s33_e_v_e_r_y_th1ng!!}`
+```
+AIS3{Bu223r!!!!_I_c4n_s33_e_v_e_r_y_th1ng!!}
+```
 
 ### Clara
 
 這題給了一個 pcap 檔，一開始啥提示都沒有，後來有說是 Malware 在 monitor 電腦然後傳 encrypted data 給 C&C Server，然後傳了兩次一樣的資料，看了老半天，會發現 tcp 流量裡面有類似 AIS3 的字樣，有兩大包 tcp，一包 10 MB 另一包 27 MB，加密的話大概也只有 xor 比較正常吧，所以複製了一些部分用 `xortool` 分析，找到 key 是 `AIS3{NO}`，而且看到 PNG 開頭的字樣和一些 xml 的 meta data，就可以確定假設正確也解對了(汗，既然兩次包的明文是一樣的那就把兩包做 xor 再 xor 上 `AIS3{NO}` 就得到另一包的 key 是 `xSECRETx`，接著把整包拿去做 xor 拉出圖片，圖片有好幾 MB 很大，一開始只有拉出一張圖片，某個動漫的圖，又卡了一下後，發現那包前面的部分有類似 header 的東西，他不是 8 的倍數，我一開始是直接不理他，但是猜測後面也有好幾段 header，讓 xor 沒對齊壞掉，所以我就把整段 data 暴力 shift 了幾次拿去 xor，就拉出所有照片了，其中一張有 flag，其他都垃圾，原本不知道有很多張圖片，也不知道 flag 在哪的時候還在開 `stegsolve` 和 `zsteg` 在圖片找 flag，浪費很多時間。
 他的 packet 是很有秩序沒有亂傳的，header 裡面就是固定傳一個 `0xdeadbeeffaceb00c` 然後 C&C 把剛剛那段 xor 加密回傳，接著後面檔案名字的大小，和檔案名字，每個都分開傳，每個都自己做 xor cipher，接著就是傳 data，都沒有走歪或是掉進什麼坑的話還是有機會解出來的，我也不常分析 packet 也沒分析過什麼惡意程式，經驗不足所以解很久還要看 hint QQ
 
-`AIS3{T0y_t0Y_C4n_u_f1nd_A_n_yTh1ng_d3h1nb_nn3??}`
+```
+AIS3{T0y_t0Y_C4n_u_f1nd_A_n_yTh1ng_d3h1nb_nn3??}
+```
 
 ## Reverse
 
@@ -102,7 +116,9 @@ tar -cf test.tar ./
 
 隨便用 ida 看了一下後，加密流程就是把 flag 轉乘 `flag // 8` 和 `flag % 8`，然後數字是多少就轉乘多少個點，所以最多 8 個點，上面那段就是 `[2, 7, 4, 7, 4, 1, 8]`，那解密就反過來組回去就好。
 
-`AIS3{y3s_y0u_h4ve_s4w_7h1s_ch4ll3ng3_bef0r3_bu7_its_m0r3_looooooooooooooooooong_7h1s_t1m3}`
+```
+AIS3{y3s_y0u_h4ve_s4w_7h1s_ch4ll3ng3_bef0r3_bu7_its_m0r3_looooooooooooooooooong_7h1s_t1m3}
+```
 
 ### Fallen Beat
 
@@ -127,7 +143,9 @@ if (t == mc) {
 
 這裡的 cache 原本以為是內建的東東，結果不是，追了一下發現在 `GameControl.class` 有定義，東西是從 `songs/gekkou/hell.txt` 抓出來的，那就直接照著 xor 就解出來了。
 
-`AIS3{Wow_how_m4ny_h4nds_do_you_h4ve}`
+```
+AIS3{Wow_how_m4ny_h4nds_do_you_h4ve}
+```
 
 ### Stand up!Brain
 
@@ -161,7 +179,9 @@ if (t == mc) {
 
 所以只要你的輸入要是 `C8763!` 就會進到後面印 flag 的部分，所以可以直接執行原本的程式輸入 `C8763!` 跟桐人一起使出星爆氣流斬拿 flag，或是直接忽略前面把後面那段貼到線上的 Brainfuck Compiler 執行一下也可以拿到 flag。
 
-`AIS3{Th1s_1s_br4iNFUCK_bu7_m0r3_ez}`
+```
+AIS3{Th1s_1s_br4iNFUCK_bu7_m0r3_ez}
+```
 
 ### Long Island Iced Tea
 
@@ -179,7 +199,9 @@ if (t == mc) {
 
 前面 8 個 bytes 已知 `AIS3{` 5 個字了，所以直接爆搜剩下 3 個字。
 
-`AIS3{A!girl_g1v3_m3_Ur_IG_4nd_th1s_1s_m1ne_terryterry__}`
+```
+AIS3{A!girl_g1v3_m3_Ur_IG_4nd_th1s_1s_m1ne_terryterry__}
+```
 
 ### La vie en rose
 
@@ -201,7 +223,9 @@ for i in range(len(notes) - 1):
 
 最後把 `result` 跟一個固定的陣列做比較，所以我們有 `a+b` 和 `a-b` 只要把兩個加起來除以二就拿到 `a` 了，把 `notes` 還原再跟 `secret` xor 就得到 `flag` 了。
 
-`AIS3{th1s_fl4g_red_lik3_ros3s_f1lls_ta1wan}`
+```
+AIS3{th1s_fl4g_red_lik3_ros3s_f1lls_ta1wan}
+```
 
 ### Uroboros
 
@@ -217,7 +241,9 @@ struct Node {
 
 總共有 314 個 Node，對輸入的每個字，他會先往下走 **輸入的字乘上 7** 次然後把走到的那個 Node 的值乘 64 加上 counter，counter 就是一開始是 1，每經過一個字加一，最後把整段輸出跟某個答案比較，對了就代表你的輸入就是 flag，所以就照著解回來，把數字當成 64 進位拆開，比如第 141 個 Node 存的 `70` 拆成 `64 * 1 + 6`，代表第一個和第六個字是 'A'，因為 `ord('A') * 7 = 141 ( mod 341 )`，就是把 `141 * inverse(7, 341) = 65 = ord('A')`，就這樣。
 
-`AIS3{4ll_humonculus_h4v3_a_ur0b0r0s_m4rk_0n_the1r_b0dy}`
+```
+AIS3{4ll_humonculus_h4v3_a_ur0b0r0s_m4rk_0n_the1r_b0dy}
+```
 
 ## Pwn
 
@@ -225,7 +251,9 @@ struct Node {
 
 最簡單的 buffer overflow，裡面已經有一個函式，直接呼叫就拿到 shell 了，但是記得要跳到 `push rbp` 下一行，如果跳到 `push rbp` 的話 stack 會沒有對齊 16 的倍數，做 `system` 的時候會進到 child thread 然後跑到 `movaps XMMWORD PTR [rsp+0x40], xmm0` 因為沒對齊就掛了，然後 child thread 死掉 `system` 就會執行完跳出來 ( 都還沒打到指令 )，出來跑到函式結尾 `return` 的時候又會掛掉，因為正常呼叫函式都會把 return address 放到 stack 上，但是直接跳過去就沒有放，他就會 return 到奇怪的位置。
 
-`AIS3{OLd_5ChOOl_tr1ck_T0_m4Ke_s7aCk_A116nmeNt}`
+```
+AIS3{OLd_5ChOOl_tr1ck_T0_m4Ke_s7aCk_A116nmeNt}
+```
 
 ### Nonsense
 
@@ -239,31 +267,41 @@ shellcode:
 ...
 ```
 
-`AIS3{Y0U_5peAk_$helL_codE_7hat_iS_CARzy!!!}`
+```
+AIS3{Y0U_5peAk_$helL_codE_7hat_iS_CARzy!!!}
+```
 
 ### Portal Gun
 
 這題就是用 `gets` 的 bof，有一個函式有用到 `system('sh')`，但是他有 `LD_PRELOAD` 一個 `hook.so` 裡面把 `system` hook 掉了，所以不能直接叫，那就堆 ROP leak libc address 再自己跳進去 system 吧。
 
-`AIS3{U5E_Port@L_6uN_7o_GET_tHe_$h3L1_0_o}`
+```
+AIS3{U5E_Port@L_6uN_7o_GET_tHe_$h3L1_0_o}
+```
 
 ### Morty School
 
 這題一開始就給你 leak libc address 給你，接下來你可以挑一個 Morty 教，但你給的 index 他沒有檢查，所以可以任意寫一個位址，但是不是直接寫值上去，而是寫到你給他的位址裡面放的位址裡面的值，所以找一下哪裡有存 `__stack_chk_fail` got 的位址，利用他去寫 `__stack_chk_fail` 的 got 改成我們串好的 ROP gadgets，然後寫爆 stack（ 因為這裡也有 overflow ），就跳去做 ROP 了，一開始有想直接跳 one gadgets 但是條件都不符，所以就自己做 ROP 做 `system('/bin/sh')`。
 
-`AIS3{s7ay_At_h0ME_And_Keep_$Oc1@L_D1$T4Nc3,M0rTyS}`
+```
+AIS3{s7ay_At_h0ME_And_Keep_$Oc1@L_D1$T4Nc3,M0rTyS}
+```
 
 ### Death Crystal
 
 這題是 format string，但是有檢查輸入，所有字都不能有 `$`, `\`, `/`, `^`，並且 `%` 後面都不能有 `c`, `p`, `n`, `h`，主要是不能用 `$` 去指定參數，但沒關係就多放幾個 padding 用的把參數推過去就好了，他的 `flag` 已經讀進來放到 `0x202060` 了，但是 PIE 有開所以還是要 leak 一下 code base address，要繞過檢查只要前面隨便放個數字就好了，比如 `%1p`，先 `b'%1p' * 11 + b';%1p'` leak 出 code base address，然後再 `b'%d' * 8 + b'%100sAA\x00' + p64(base + 0x202060)` 就拿到 flag 了。
 
-`AIS3{FOrM@T_5TRin6_15_$o0o_pOw3rFul_And_eAsY}`
+```
+AIS3{FOrM@T_5TRin6_15_$o0o_pOw3rFul_And_eAsY}
+```
 
 ### Meeseeks Box
 
 這題是 heap 題，很一般的有 `create`, `show`, `delete` 的題目，然後沒什麼檢查，而且是 ubuntu 18.04 有 tcache 可以用，所以先弄個夠大的 chunk 然後 free 掉他讓他進到 unsorted bins 就可以拿 libc address 了，然後有 tcache 可以隨便 double free 他去把 `__malloc_hook` 寫成 one gadget 的位址就完成了。
 
-`AIS3{G0D_d4mn!_Mr._M3e5EEk5_g1V3S_Y0U_@_sH31l}`
+```
+AIS3{G0D_d4mn!_Mr._M3e5EEk5_g1V3S_Y0U_@_sH31l}
+```
 
 ## Crypto
 
@@ -271,7 +309,9 @@ shellcode:
 
 給了一個檔案叫 `KcufsJ` 裡面是 jsfuck 混淆過的 js code，他的檔名就是倒過來的 jsfuck，所以內容也要倒過來，開瀏覽器 console 執行一下就好了。
 
-`AIS3{Br0n7Os4uru5_ch3at_3asi1Y}`
+```
+AIS3{Br0n7Os4uru5_ch3at_3asi1Y}
+```
 
 ### T-Rex
 
@@ -299,7 +339,9 @@ shellcode:
 
 這題給 python script 和他執行後的 output，裡面在做 [BB84 量子密鑰分發](https://en.wikipedia.org/wiki/Quantum_key_distribution#BB84_protocol:_Charles_H._Bennett_and_Gilles_Brassard_(1984))，兩邊的 Basis 都給了，Qubits 也給了，就是把 Basis 一樣部分的那些 Qubits 抓出來轉回 binary 就好了。
 
-`AIS3{EveryONe_kn0w_Quan7um_k3Y_Distr1but1on--BB84}`
+```
+AIS3{EveryONe_kn0w_Quan7um_k3Y_Distr1but1on--BB84}
+```
 
 ### Blowfish
 
@@ -312,7 +354,9 @@ shellcode:
 連上去之後，他會給你這段用 Blowfish 的 CTR Mode 加密的結果當作 token，接著你就可以再把 token 丟回去給他解密，他會看你是不是 admin，因為是 CTR Mode 所以就翻一下 bit 就好了，把那個 False 的部分翻成 True，就這麼簡單。
 詳情可以參考 [這份投影片](https://github.com/OAlienO/Crypto-Course/blob/master/AES/AES.pdf) Bit-Flipping Attack 的部分。
 
-`AIS3{ATk_BloWf1sH-CTR_by_b1t_Flipping_^_^}`
+```
+AIS3{ATk_BloWf1sH-CTR_by_b1t_Flipping_^_^}
+```
 
 ### Camel
 
@@ -327,14 +371,18 @@ $$
 
 上面兩式相加之後可以得到 `2b`，還有其他兩組 `p+3`, `p-3`, `p+5`, `p-5` 也是同樣的情況，所以我們可以拿到三組 `2b + kp` 這樣形式的東西，把他們互減去做 gcd 就得到 `p` 了，有 `p` 之後就帶回去就可以得到 `a, b`。
 
-`AIS3{Curv3_Mak3_M3_Th1nK_Ab0Ut_CaME1_A_P}`
+```
+AIS3{Curv3_Mak3_M3_Th1nK_Ab0Ut_CaME1_A_P}
+```
 
 ### Turtle
 
 這題就是 Padding Oracle Attack，我把以前的 script 拿出來然後把 oracle 換成用 requests 去抓就完成了。
 詳情可以參考 [這份投影片](https://github.com/OAlienO/Crypto-Course/blob/master/AES/AES.pdf)
 
-`AIS3{5l0w_4nd_5734dy_w1n5_7h3_r4c3.}`
+```
+AIS3{5l0w_4nd_5734dy_w1n5_7h3_r4c3.}
+```
 
 ## Web
 
@@ -368,7 +416,9 @@ if ($file = @$_GET['get']) {
 
 看起來是 command injection，`/api.php?get='|bash -c 'ls` 就可以執行任意 command 了，`ls /` 看根目錄有個 `5qu1rr3l_15_4_k1nd_0f_b16_r47.txt` 裡面就是 flag 了 ( 剛好檔名跟 flag 一樣，真佛心 )
 
-`AIS3{5qu1rr3l_15_4_k1nd_0f_b16_r47}`
+```
+AIS3{5qu1rr3l_15_4_k1nd_0f_b16_r47}
+```
 
 ### Shark
 
@@ -419,7 +469,9 @@ ff02::2	ip6-allrouters
 
 瀏覽一下 `/?path=http://02b23467485e` 發現是本機，那就找找子網路下的鄰居們，就找到 `/?path=http://172.22.0.2/flag`
 
-`AIS3{5h4rk5_d0n'7_5w1m_b4ckw4rd5}`
+```
+AIS3{5h4rk5_d0n'7_5w1m_b4ckw4rd5}
+```
 
 ### Elephant
 
@@ -524,9 +576,15 @@ if ($name = $_POST['name']) {
 </body>
 ```
 
-只要讓 `strcmp($flag, $this->token) == 0` 就好啦，那 `strcmp` 已知的問題就是他 compare 陣列隨然會噴 Warning，但結果會是 `NULL`，而這裡是用兩個 `=` 不是三個，所以 `NULL == 0`，把 `O:4:"User":2:{s:4:"name";s:1:"a";s:11:"\x00User\x00token";a:0:{}}` encode 成 `Tzo0OiJVc2VyIjoyOntzOjQ6Im5hbWUiO3M6MToiYSI7czoxMToiAFVzZXIAdG9rZW4iO2E6MDp7fX0=` 放回 Cookie 就完成啦。
+只要讓 `strcmp($flag, $this->token) == 0` 就好啦，那 `strcmp` 已知的問題就是他 compare 陣列隨然會噴 Warning，但結果會是 `NULL`，而這裡是用兩個 `=` 不是三個，所以 `NULL == 0`，把下面這段 base64 encode 後放回 Cookie 就完成啦。
 
-`AIS3{0nly_3l3ph4n75_5h0uld_0wn_1v0ry}`
+```
+O:4:"User":2:{s:4:"name";s:1:"a";s:11:"\x00User\x00token";a:0:{}}
+```
+
+```
+AIS3{0nly_3l3ph4n75_5h0uld_0wn_1v0ry}
+```
 
 ### Snake
 
@@ -574,7 +632,9 @@ ex = Exploit()
 print(b64decode(pickle.dumps(ex)))
 ```
 
-`AIS3{7h3_5n4k3_w1ll_4lw4y5_b173_b4ck.}`
+```
+AIS3{7h3_5n4k3_w1ll_4lw4y5_b173_b4ck.}
+```
 
 ### Owl
 
@@ -743,7 +803,9 @@ print(b64decode(pickle.dumps(ex)))
 
 再挖 db 裡面，挖到有個 name 是 `something good`，挖他的 value 就看到 flag 了
 
-`AIS3{4_ch1ld_15_4_curly_d1mpl3d_lun471c}`
+```
+AIS3{4_ch1ld_15_4_curly_d1mpl3d_lun471c}
+```
 
 ### Rhino
 
@@ -819,4 +881,5 @@ app.listen(process.env.PORT, '0.0.0.0');
 
 看起來只要讓他的 `n && (n + 420) === 420` 就可以讀 flag 了，以前就很常看到 FB 上有人 po 一些 js 的梗圖說明 js 很古怪的行為，隨便看了幾張複習一下，就想到有浮點數誤差的問題，所以 `n` 設成 `0.00000000000001` 就可以了，`n` 是從 `req.session.magic` 抓的，所以我們要設 `req.session.magic` 的話，最簡單的方式就是自己把 server 架起來，然後多加一行 `req.session.magic = 0.00000000000001`，就可以產出 `express:sess` 和 `express:sess.sig` 兩個 Cookie 了，sig 是用前面設定的 `secret: "I'm watching you."` 算出來的，詳情可以看 [cookie-session](https://www.npmjs.com/package/cookie-session)。
 
-`AIS3{h4v3_y0u_r34d_7h3_rh1n0_b00k?}`
+```
+AIS3{h4v3_y0u_r34d_7h3_rh1n0_b00k?}```
