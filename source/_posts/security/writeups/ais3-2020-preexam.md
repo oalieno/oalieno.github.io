@@ -9,6 +9,10 @@ tags:
 - writeups
 ---
 
+這學期修了網路攻防實習，這堂課要用 AIS3 Pre-Exam 當期末考，好喔。
+
+{% img /images/ais3-scores.png 500 'AIS3 Pre-Exam Scores' %}
+
 ## Misc
 
 ### Piquero
