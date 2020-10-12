@@ -352,7 +352,7 @@ AIS3{EveryONe_kn0w_Quan7um_k3Y_Distr1but1on--BB84}
 ```
 
 連上去之後，他會給你這段用 Blowfish 的 CTR Mode 加密的結果當作 token，接著你就可以再把 token 丟回去給他解密，他會看你是不是 admin，因為是 CTR Mode 所以就翻一下 bit 就好了，把那個 False 的部分翻成 True，就這麼簡單。
-詳情可以參考 [這份投影片](https://github.com/OAlienO/Crypto-Course/blob/master/AES/AES.pdf) Bit-Flipping Attack 的部分。
+詳情可以參考 [這份投影片](https://github.com/oalieno/Crypto-Course/blob/master/Block-Cipher-Mode/Block-Cipher-Mode.pdf) Bit-Flipping Attack 的部分。
 
 ```
 AIS3{ATk_BloWf1sH-CTR_by_b1t_Flipping_^_^}
@@ -378,7 +378,7 @@ AIS3{Curv3_Mak3_M3_Th1nK_Ab0Ut_CaME1_A_P}
 ### Turtle
 
 這題就是 Padding Oracle Attack，我把以前的 script 拿出來然後把 oracle 換成用 requests 去抓就完成了。
-詳情可以參考 [這份投影片](https://github.com/OAlienO/Crypto-Course/blob/master/AES/AES.pdf)
+詳情可以參考 [這份投影片](https://github.com/oalieno/Crypto-Course/blob/master/Block-Cipher-Mode/Block-Cipher-Mode.pdf) Padding Oracle Attack 的部分。
 
 ```
 AIS3{5l0w_4nd_5734dy_w1n5_7h3_r4c3.}
