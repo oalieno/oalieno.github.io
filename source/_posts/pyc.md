@@ -1,5 +1,5 @@
 ---
-title: "pyc 與他們的產地"
+title: "【技術筆記】pyc 與他們的產地"
 date: 2019-06-07 00:00:00
 disqusId: oalieno
 tags:
@@ -91,12 +91,10 @@ dis.dis(code.co_code)
 比如 `TYPE_INT` 就是用 `r_long` 去讀 4 個 bytes 的 long 進來，所以 `marshal.dumps(1)` 就會長得像 `b'\xe9\x01\x00\x00\x00'`，前面的 type 有時候會被 `| 0x80`，請看 [marshal.c line 223](https://github.com/python/cpython/blob/3.8/Python/marshal.c#L223)，所以 `0xe9 & (0x80 - 1) = ord('i')`。
 另一個像是 `TYPE_CODE` 就先 `r_long` 了六次，讀了 `argcount, posonlyargcount, kwonlyargcount, ...` 進來，接下來才用 `r_object` 把 code 讀進來 ( 也就是 bytecode )，讀進來的 object 其實是 bytes 型態，也就是 bytecode 是用 bytes 型態存在 code object 裡面的，接下來再繼續把一些 `consts, names, varnames, ...` 讀進來。
 
-[^1]:
-    https://docs.python.org/3/library/dis.html
-[^2]:
-    http://unpyc.sourceforge.net/Opcodes.html
-[^3]:
-    https://kdr2.com/tech/main/1012-pyc-format.html
-[^4]:
-	https://late.am/post/2012/03/26/exploring-python-code-objects.html
+---
+
+1. https://docs.python.org/3/library/dis.html
+2. http://unpyc.sourceforge.net/Opcodes.html
+3. https://kdr2.com/tech/main/1012-pyc-format.html
+4. https://late.am/post/2012/03/26/exploring-python-code-objects.html
 

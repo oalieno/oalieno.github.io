@@ -1,5 +1,5 @@
 ---
-title: "[Writeups] TSG CTF 2019 - OPQRX"
+title: "【Writeups】TSG CTF 2019 - OPQRX"
 date: 2019-05-06 00:00:00
 categories:
 - [security, writeups]

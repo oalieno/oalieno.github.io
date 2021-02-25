@@ -3,7 +3,7 @@ title: "我是誰"
 ---
 
 ~~皮卡丘~~
-目前就讀台大資訊安全碩士班碩一
+目前就讀台大資訊安全碩士班碩二
 
 ## Awards
 
@@ -23,12 +23,14 @@ title: "我是誰"
 |---|---|
 | HITCON CMT 2017 (Cyber Security Conference) | 滲透測試基本技巧與經驗分享 |
 | HITCON CMT 2018 (Cyber Security Conference) | 那些年的密碼學後門 |
+| CODE BLUE 2020 @ Tokyo | Cryfind : A Static Tool to Identify Cryptographic Algorithm in Binary |
 
 ## Publications
 
 | Conference | Subject |
 |---|---|
 | The 2018 IEEE Conference on Dependable and Secure Computing | Design and Implement of a Binary Fuzzer based on Libfuzzer |
+| The 2021 IEEE Conference on Dependable and Secure Computing | Cryfind : Using Static Analysis to Identify Cryptographic Algorithms in Binary Executables |
 
 ## Contacts
 

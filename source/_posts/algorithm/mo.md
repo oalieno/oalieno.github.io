@@ -1,5 +1,5 @@
 ---
-title: "莫隊算法"
+title: "【演算法筆記】莫隊算法"
 date: 2019-04-18 00:00:00
 categories:
 - algorithm

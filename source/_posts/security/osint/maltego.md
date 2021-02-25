@@ -1,5 +1,5 @@
 ---
-title: "[小工具] Maltego"
+title: "【小工具】Maltego"
 date: 2020-07-31 00:29:25
 categories:
 - [security, osint]

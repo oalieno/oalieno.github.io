@@ -1,5 +1,5 @@
 ---
-title: "[Writeups] Security Innovation Blockchain CTF"
+title: "【Writeups】Security Innovation Blockchain CTF"
 date: 2019-06-07 00:00:00
 categories:
 - [security, writeups]

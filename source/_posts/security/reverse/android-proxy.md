@@ -1,5 +1,5 @@
 ---
-title: "[安卓逆向] 透過 Burp Suite Proxy 夜神模擬器"
+title: "【安卓逆向】透過 Burp Suite Proxy 夜神模擬器"
 date: 2020-03-18 20:31:14
 categories:
 - [security, reverse]

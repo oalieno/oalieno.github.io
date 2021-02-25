@@ -1,5 +1,5 @@
 ---
-title: "[Writeups] VolgaCTF Quals 2020 - F-Hash"
+title: "【Writeups】VolgaCTF Quals 2020 - F-Hash"
 date: 2020-05-04 14:33:13
 categories:
 - [security, writeups]

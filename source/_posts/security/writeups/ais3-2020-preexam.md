@@ -1,5 +1,5 @@
 ---
-title: "[Writeups] AIS3 pre-exam 2020"
+title: "【Writeups】AIS3 pre-exam 2020"
 date: 2020-06-09 22:29:00
 categories:
 - [security, writeups]

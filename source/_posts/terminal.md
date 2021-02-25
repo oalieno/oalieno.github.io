@@ -1,7 +1,6 @@
 ---
-title: "一秒變時尚 - iTerm2 + zsh + zimfw + powerlevel10k + nord"
+title: "【一秒變時尚】iTerm2 + zsh + zimfw + powerlevel10k + nord"
 date: 2020-01-18 16:11:58
-disqusId: oalieno
 tags:
 - iterm2
 - zsh

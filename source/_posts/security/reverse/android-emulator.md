@@ -1,5 +1,5 @@
 ---
-title: "[安卓逆向] Android Studio Emulator + ADB 環境佈置"
+title: "【安卓逆向】Android Studio Emulator + ADB 環境佈置"
 date: 2020-02-15 23:17:50
 categories:
 - [security, reverse]
