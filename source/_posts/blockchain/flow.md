@@ -56,7 +56,25 @@ Flow 是專門為應用程式以及遊戲所構件的一條新的區塊鍊
 * 聽官網介紹是說有**帳號恢復機制**，不清楚細節
 * 強調說他遵守了資料庫系統的 ACID ( Atomic, Consistent, Isolated, and Durable ) 原則，因為根本上區塊鍊就是一個去中心化的資料庫
 
-### Flow 目前的一些問題
+## 如何成為節點
+
+[官方的文檔](https://docs.onflow.org/node-operation/node-setup)
+
+| NODE TYPE | CPU | MEMORY | DISK |
+| --- | --- | --- | --- |
+| Collection | 2 cores | 16 GB | 200 GB |
+| Consensus | 2 coresv | 16 GB | 200 GB |
+| Execution | 16 cores | 128 GB | 2 TB |
+| Verification | 2 cores | 16 GB | 200 GB |
+| Access | 2 cores | 16 GB | 200 GB |
+
+> Make sure you have a sufficiently fast connection; we recommend at least 1Gbps, and 5Gbps is better.
+
+硬體要求還行，我的桌機好像還能跑，但是這個網速要求有點高啊
+而且還要填[表單](https://www.onflow.org/node-validators)申請，太中心化了啊
+然後[這裡](https://docs.onflow.org/node-operation/node-roles)有寫每種 node 要跑得話要 stake 多少顆 flow，最便宜也至少要 stake 135000 顆 flow，以目前的價格來看大概是 270 萬美金吧，我去
+
+## Flow 目前的一些問題
 
 目前 Flow 還在初期階段，有些東西還沒搞好
 下面一些資訊是我在 discord 群看到的
@@ -78,8 +96,8 @@ Flow 是專門為應用程式以及遊戲所構件的一條新的區塊鍊
 
 沒有正式的 roadmap
 
-### 總結
+## 總結
 
 Flow 提出了很多方案來改進去中心化應用面臨到的問題，接下來就要靜待時間的考驗，等潮水退了就知道 Flow 有沒有穿褲子了
 
-### **Flow to the Moon 🚀**
+## **Flow to the Moon 🚀**
