@@ -17,6 +17,7 @@ tags:
 這邊先放幾個連結，有興趣入門的可以看一下
 
 * [官方寫的入門文章](https://www.onflow.org/primer)
+* [官方的文檔](https://docs.onflow.org/)
 * [國外大佬的入坑指南](https://joshuahannan.medium.com/taking-your-first-steps-with-cadence-19dde86bbd0)
 
 ## 特點
@@ -58,7 +59,7 @@ Flow 是專門為應用程式以及遊戲所開發的一條新的區塊鍊
 
 ## 如何成為節點
 
-[官方的文檔](https://docs.onflow.org/node-operation/node-setup)
+[官方的文檔 - Setting Up a Flow Node](https://docs.onflow.org/node-operation/node-setup)
 
 | NODE TYPE | CPU | MEMORY | DISK |
 | --- | --- | --- | --- |
@@ -95,6 +96,13 @@ Flow 是專門為應用程式以及遊戲所開發的一條新的區塊鍊
 > - Flow Assistant Bot on discord
 
 沒有正式的 roadmap
+
+## Flow 的應用
+
+* [NBA Top Shot](https://www.nbatopshot.com/): NBA 主題的 NFT，可以讓你收藏你最愛的球員，以及他們得分的片段等
+* [VIV3](https://viv3.com/): 買賣 NFT 的平台
+* [MotoGP™ Ignition](https://motogp-ignition.com/): 類似 Ethereum 上的 [F1® Delta Time](https://www.f1deltatime.com/)，同一批開發人員的樣子，只是從 F1 賽車改成 MotoGP 摩托車，可以組裝自己的車車然後跟別人比賽，下個月 3/26 開賣
+* [CryptoKitties](https://www.cryptokitties.co/): 還在計畫從 Ethereum 遷移到 Flow，不知道是哪時候
 
 ## 總結
 
