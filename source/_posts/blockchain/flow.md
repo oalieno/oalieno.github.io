@@ -21,7 +21,7 @@ tags:
 
 ## 特點
 
-Flow 是專門為應用程式以及遊戲所構件的一條新的區塊鍊
+Flow 是專門為應用程式以及遊戲所開發的一條新的區塊鍊
 在鍊上面可以用 Cadence 這個程式語言撰寫 smart contract，對比隔壁棚的 Ethereum 用 Solidity 寫 smart contract
 
 ### Cadence 這個程式語言有什麼特點呢
