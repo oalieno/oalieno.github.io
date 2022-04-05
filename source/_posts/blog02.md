@@ -1,6 +1,8 @@
 ---
 title: "【部落格開發日誌】0x02"
 date: 2020-02-22
+categories:
+- 程式
 tags:
 - hexo
 - icarus

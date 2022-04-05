@@ -1,6 +1,8 @@
 ---
 title: "【部落格開發日誌】0x00"
 date: 2020-01-23
+categories:
+- 程式
 tags:
 - hexo
 - icarus

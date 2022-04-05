@@ -1,6 +1,8 @@
 ---
 title: "【部落格開發日誌】0x03"
 date: 2022-03-30
+categories:
+- 程式
 tags:
 - hexo
 - icarus
