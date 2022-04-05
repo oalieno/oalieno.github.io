@@ -4,7 +4,7 @@ date: 2019-05-06
 categories:
 - [資安, writeups]
 tags:
-- 資安
+- security
 - ctf
 - writeups
 - crypto

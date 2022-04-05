@@ -5,7 +5,7 @@ thumbnail: /images/ais3-scores.png
 categories:
 - [資安, writeups]
 tags:
-- 資安
+- security
 - ctf
 - writeups
 ---
