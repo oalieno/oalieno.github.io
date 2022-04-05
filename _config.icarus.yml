@@ -173,7 +173,7 @@ donates:
     -
         type: buymeacoffee
         # URL to the "Buy me a coffee" page
-        url: ''
+        url: 'https://www.buymeacoffee.com/oalieno'
     # Patreon donate button configurations
     -
         type: patreon
