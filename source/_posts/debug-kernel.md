@@ -2,9 +2,8 @@
 title: "【手把手教你玩 Kernel】如何對 Kernel 除錯"
 date: 2019-04-23
 categories:
-- 資安
+- 程式
 tags:
-- 資安
 - kernel
 ---
 

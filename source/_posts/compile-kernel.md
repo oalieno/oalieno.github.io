@@ -2,9 +2,8 @@
 title: "【手把手教你玩 Kernel】編譯 Linux Kernel"
 date: 2019-04-23
 categories:
-- 資安
+- 程式
 tags:
-- 資安
 - kernel
 ---
 
