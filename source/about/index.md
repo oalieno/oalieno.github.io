@@ -1,14 +1,8 @@
 ---
-title: "想知道我是誰?"
+title: "我"
 ---
 
-不告訴你🥺
-
-<div style="display:none">
-
-好了你發現了
-
-我現在在 [奧義智慧](https://www.cycarrier.com/) 擔任資安研究員
+現在在 [奧義智慧](https://www.cycarrier.com/) 擔任資安研究員
 
 ## Awards
 
@@ -37,4 +31,9 @@ title: "想知道我是誰?"
 | The 2018 IEEE Conference on Dependable and Secure Computing | Design and Implement of a Binary Fuzzer based on Libfuzzer |
 | The 2021 IEEE Conference on Dependable and Secure Computing | Cryfind : Using Static Analysis to Identify Cryptographic Algorithms in Binary Executables |
 
-</div>
+## 外傳: the rise of oalieno
+
+因為我在看電影拿到的一隻外星人玩偶，所以綽號就變成外星人了O_O?
+但是創帳號的時候，alien 都被取走了，所以就前後加個 o (要對稱啊)，就變成 oalieno 了OwO
+有些地方連 oalieno 都被取走的時候，就會取名為 ooalieno, oooalienooo, owoalienowo, ... 等名字
+不過其實最早的時候是取名成 0Alien0，但後來覺得整個形狀看起來不好看，就變成全小寫的 oalieno
