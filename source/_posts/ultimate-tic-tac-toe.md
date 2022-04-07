@@ -1,6 +1,7 @@
 ---
 title: "【大開眼界】Ultimate tic-tac-toe"
 date: 2022-04-06
+short: true
 tags:
 - tic-tac-toe
 ---
@@ -13,3 +14,5 @@ tags:
 
 1. https://en.wikipedia.org/wiki/Ultimate_tic-tac-toe
 2. https://ultimate-t3.herokuapp.com/
+
+<!-- more -->
