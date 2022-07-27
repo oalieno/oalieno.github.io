@@ -1636,12 +1636,15 @@ hexo-cli@^4.3.0:
     resolve "^1.11.0"
     tildify "^2.0.0"
 
-hexo-component-inferno@^1.0.2:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/hexo-component-inferno/-/hexo-component-inferno-1.1.0.tgz#b9176fb501728fbd1f50f125b49fa42511b1ba89"
-  integrity sha512-oLiPxrhO/KMU4kGrgVAF3R4DWdRjMXiD7qV7rDaSaMpADP4Nq0EJGvHVas4rzzx2WTQ5AZpGyB74jNV60PKfMA==
+hexo-component-inferno@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/hexo-component-inferno/-/hexo-component-inferno-1.2.0.tgz#0e7130905fe1e44b452397fd471ed65d1e5f48dc"
+  integrity sha512-UGrkw14QwnlOsMkLbdD6fA+ZJWYRwUaWojwN7f2wKP/wNZMCYWDDjiB02rqZXeOwOEXm4HNQmVboS/oQUEzYTw==
   dependencies:
     ajv "^8.8.2"
+    hexo "^6.0.0"
+    hexo-pagination "^2.0.0"
+    hexo-util "^2.2.0"
     inferno "^7.3.3"
     inferno-create-element "^7.3.3"
     js-yaml "^4.1.0"
@@ -1811,7 +1814,7 @@ hexo-theme-landscape@^0.0.3:
   resolved "https://registry.yarnpkg.com/hexo-theme-landscape/-/hexo-theme-landscape-0.0.3.tgz#87d1f4d613da9be5245dad0d4b80479eab70d386"
   integrity sha512-b0Di+TUVs4ESrNX4ULEh9uQmADpO6kr10rIJ2OGZM8suNQNFKdxn+vJUjnLfKkCPJAfVmS7/S83KCNYe4tpoNw==
 
-hexo-util@^2.0.0, hexo-util@^2.1.0, hexo-util@^2.6.1:
+hexo-util@^2.0.0, hexo-util@^2.1.0, hexo-util@^2.2.0, hexo-util@^2.6.1:
   version "2.6.1"
   resolved "https://registry.yarnpkg.com/hexo-util/-/hexo-util-2.6.1.tgz#19b79a1ec751a735ffe34766b65d8e2039c00519"
   integrity sha512-xj1jUrId2qTe8L/tRizWWRl+j7X1Zzh5rCVtffboOU0p/EfbPomxIxDvntTHT3fcqgvLHsncqJF9V5j7+buOqA==
