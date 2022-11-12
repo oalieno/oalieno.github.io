@@ -61,6 +61,7 @@
 <p>每行都是代表某年某月某日，然後算一下是陰曆幾號，再把那個數字對到 <code>a-z0-9</code> 就可以組出 flag 了，大概吧 O3O?<br>
 反正後來我覺得好麻煩，就直接把解出來的封包內容倒回去 debugger，flag 就掉出來了 O_O</p>
 <p>flag 是 <code>i_s33_you_m00n@flare-on.com</code></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/oalieno/CTF/tree/master/flare-on/9/05">看 code 點我</a></p>
 <h2 id="06-a-la-mode">06 - à la mode</h2>
 <p>這題乍看之下是 .NET 程式<br>
 但用 dnspy 翻了一下發現沒什麼東西<br>
@@ -103,6 +104,7 @@
 後來受不了，沒有可以偷吃步的地方，還是乖乖地寫了一個 dns server 跟程式互動，按照步驟去發 task id，執行完之後就噴出 flag 了</p>
 <p align="center"><img data-src="/images/08-flag.png" class=" lazyload"  title="flare-on challenge 08 flag"></p>
 <p>flag 是 <code>W3_4re_Kn0wn_f0r_b31ng_Dyn4m1c@flare-on.com</code></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/oalieno/CTF/tree/master/flare-on/9/08">看 code 點我</a></p>
 <h2 id="09-encryptor">09 - encryptor</h2>
 <p>這隻是一個 Ransomware，標準的用 Symmetric Encryption 做加密，再用 Asymmetric Encryption 加密 Symmetric Encryption 的 key<br>
 很快就可以看出他有做 chacha20<br>
