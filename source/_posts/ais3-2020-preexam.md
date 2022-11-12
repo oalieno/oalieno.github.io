@@ -12,7 +12,7 @@ tags:
 
 這學期修了網路攻防實習，這堂課要用 AIS3 Pre-Exam 當期末考，好喔。
 
-{% img /images/ais3-scores.png 500 'AIS3 Pre-Exam Scores' %}
+{% img /images/ais3-scores.png 'AIS3 Pre-Exam Scores' %}
 
 [攻擊腳本們在這](https://github.com/OAlienO/CTF/tree/master/2020/AIS3-pre-exam)
 
