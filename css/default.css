@@ -5214,33 +5214,33 @@ fieldset[disabled] .button {
 }
 .container.is-fluid {
   max-width: none;
-  padding-left: 64px;
-  padding-right: 64px;
+  padding-left: 0px;
+  padding-right: 0px;
   width: 100%;
 }
 @media screen and (min-width: 1088px) {
   .container {
-    max-width: 960px;
+    max-width: 1088px;
   }
 }
 @media screen and (max-width: 1279px) {
   .container.is-widescreen {
-    max-width: 1152px;
+    max-width: 1280px;
   }
 }
 @media screen and (max-width: 1471px) {
   .container.is-fullhd {
-    max-width: 1344px;
+    max-width: 1472px;
   }
 }
 @media screen and (min-width: 1280px) {
   .container {
-    max-width: 1152px;
+    max-width: 1280px;
   }
 }
 @media screen and (min-width: 1472px) {
   .container {
-    max-width: 1344px;
+    max-width: 1472px;
   }
 }
 .content li + li {
@@ -10999,6 +10999,7 @@ a.article-nav-next span {
 }
 .navbar-main {
   box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  font-size: 18px;
 }
 .navbar-main .navbar-container {
   overflow-x: auto;
@@ -11446,6 +11447,9 @@ figure.highlight.foldable div.level-left {
 .gist .file {
   all: initial;
 }
+.widget .menu-list {
+  font-size: 16px;
+}
 .widget .menu-list li ul {
   margin-right: 0;
 }
@@ -11742,18 +11746,18 @@ figure.highlight.foldable div.level-left {
 @media screen and (min-width: 1280px) {
   .is-1-column .container,
   .is-2-column .container {
-    max-width: 960px;
-    width: 960px;
+    max-width: 1088px;
+    width: 1088px;
   }
 }
 @media screen and (min-width: 1472px) {
   .is-2-column .container {
-    max-width: 1152px;
-    width: 1152px;
+    max-width: 1280px;
+    width: 1280px;
   }
   .is-1-column .container {
-    max-width: 960px;
-    width: 960px;
+    max-width: 1088px;
+    width: 1088px;
   }
 }
 @media screen and (min-width: 769px), print {
