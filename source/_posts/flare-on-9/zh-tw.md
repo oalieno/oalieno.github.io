@@ -133,6 +133,8 @@ print(dec_res)
 
 flag 是 `i_s33_you_m00n@flare-on.com`
 
+[看 code 點我](https://github.com/oalieno/CTF/tree/master/flare-on/9/05)
+
 ## 06 - à la mode
 
 這題乍看之下是 .NET 程式
@@ -226,6 +228,8 @@ p.s. 雖然 flag 說 `not just a javascript challenge`，但是我完全把他�
 {% img /images/08-flag.png 'flare-on challenge 08 flag' %}
 
 flag 是 `W3_4re_Kn0wn_f0r_b31ng_Dyn4m1c@flare-on.com`
+
+[看 code 點我](https://github.com/oalieno/CTF/tree/master/flare-on/9/08)
 
 ## 09 - encryptor
 
