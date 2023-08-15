@@ -2,63 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://oalieno.github.io/2023/03/02/bloom-zh/</loc>
+    <loc>http://oalieno.github.io/2019/01/06/GIL/</loc>
     
-    <lastmod>2023-03-02</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://oalieno.github.io/about/index.html</loc>
-    
-    <lastmod>2023-02-28</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://oalieno.github.io/2023/02/28/ubuntu-kernel-version/</loc>
-    
-    <lastmod>2023-02-28</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://oalieno.github.io/2022/12/22/chatgpt-wootalk/</loc>
-    
-    <lastmod>2022-12-22</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://oalieno.github.io/2022/12/15/wtf-powershell/</loc>
-    
-    <lastmod>2022-12-15</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://oalieno.github.io/2022/11/09/cve-2022-41049/</loc>
-    
-    <lastmod>2022-11-27</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://oalieno.github.io/2022/11/12/flare-on-9/zh-tw/</loc>
-    
-    <lastmod>2022-11-12</lastmod>
+    <lastmod>2023-08-15</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -67,25 +13,7 @@
   <url>
     <loc>http://oalieno.github.io/2020/06/09/ais3-2020-preexam/</loc>
     
-    <lastmod>2022-11-12</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://oalieno.github.io/2022/11/01/MpDlpCmd/en/</loc>
-    
-    <lastmod>2022-11-01</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://oalieno.github.io/2019/01/06/GIL/</loc>
-    
-    <lastmod>2022-11-01</lastmod>
+    <lastmod>2023-08-15</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -94,7 +22,7 @@
   <url>
     <loc>http://oalieno.github.io/2020/02/15/android-emulator/</loc>
     
-    <lastmod>2022-11-01</lastmod>
+    <lastmod>2023-08-15</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -103,7 +31,7 @@
   <url>
     <loc>http://oalieno.github.io/2020/03/18/android-proxy/</loc>
     
-    <lastmod>2022-11-01</lastmod>
+    <lastmod>2023-08-15</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -112,7 +40,7 @@
   <url>
     <loc>http://oalieno.github.io/2019/06/07/blockchain-ctf/</loc>
     
-    <lastmod>2022-11-01</lastmod>
+    <lastmod>2023-08-15</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -121,7 +49,7 @@
   <url>
     <loc>http://oalieno.github.io/2020/01/23/blog00/</loc>
     
-    <lastmod>2022-11-01</lastmod>
+    <lastmod>2023-08-15</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -130,7 +58,7 @@
   <url>
     <loc>http://oalieno.github.io/2020/02/08/blog01/</loc>
     
-    <lastmod>2022-11-01</lastmod>
+    <lastmod>2023-08-15</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -139,7 +67,7 @@
   <url>
     <loc>http://oalieno.github.io/2020/02/22/blog02/</loc>
     
-    <lastmod>2022-11-01</lastmod>
+    <lastmod>2023-08-15</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -148,7 +76,7 @@
   <url>
     <loc>http://oalieno.github.io/2022/03/30/blog03/</loc>
     
-    <lastmod>2022-11-01</lastmod>
+    <lastmod>2023-08-15</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -157,7 +85,16 @@
   <url>
     <loc>http://oalieno.github.io/2018/09/11/bloom-filter/</loc>
     
-    <lastmod>2022-11-01</lastmod>
+    <lastmod>2023-08-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://oalieno.github.io/2023/03/02/bloom-zh/</loc>
+    
+    <lastmod>2023-08-15</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -166,7 +103,16 @@
   <url>
     <loc>http://oalieno.github.io/2019/01/06/c++17/</loc>
     
-    <lastmod>2022-11-01</lastmod>
+    <lastmod>2023-08-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://oalieno.github.io/2022/12/22/chatgpt-wootalk/</loc>
+    
+    <lastmod>2023-08-15</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -175,7 +121,7 @@
   <url>
     <loc>http://oalieno.github.io/2020/08/16/clipboard-hijack/</loc>
     
-    <lastmod>2022-11-01</lastmod>
+    <lastmod>2023-08-15</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -184,7 +130,16 @@
   <url>
     <loc>http://oalieno.github.io/2019/04/23/compile-kernel/</loc>
     
-    <lastmod>2022-11-01</lastmod>
+    <lastmod>2023-08-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://oalieno.github.io/2022/11/09/cve-2022-41049/</loc>
+    
+    <lastmod>2023-08-15</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -193,7 +148,7 @@
   <url>
     <loc>http://oalieno.github.io/2019/04/23/debug-kernel/</loc>
     
-    <lastmod>2022-11-01</lastmod>
+    <lastmod>2023-08-15</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -202,16 +157,7 @@
   <url>
     <loc>http://oalieno.github.io/2020/05/04/f-hash/</loc>
     
-    <lastmod>2022-11-01</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://oalieno.github.io/2021/02/27/flow/</loc>
-    
-    <lastmod>2022-11-01</lastmod>
+    <lastmod>2023-08-15</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -220,7 +166,16 @@
   <url>
     <loc>http://oalieno.github.io/2018/02/22/fermat/</loc>
     
-    <lastmod>2022-11-01</lastmod>
+    <lastmod>2023-08-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://oalieno.github.io/2021/02/27/flow/</loc>
+    
+    <lastmod>2023-08-15</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -229,7 +184,7 @@
   <url>
     <loc>http://oalieno.github.io/2020/02/16/frida/</loc>
     
-    <lastmod>2022-11-01</lastmod>
+    <lastmod>2023-08-15</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -238,7 +193,7 @@
   <url>
     <loc>http://oalieno.github.io/2020/07/31/maltego/</loc>
     
-    <lastmod>2022-11-01</lastmod>
+    <lastmod>2023-08-15</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -247,7 +202,7 @@
   <url>
     <loc>http://oalieno.github.io/2019/04/18/mo/</loc>
     
-    <lastmod>2022-11-01</lastmod>
+    <lastmod>2023-08-15</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -256,16 +211,7 @@
   <url>
     <loc>http://oalieno.github.io/2019/05/06/opqrx/</loc>
     
-    <lastmod>2022-11-01</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://oalieno.github.io/2018/02/22/pollard/</loc>
-    
-    <lastmod>2022-11-01</lastmod>
+    <lastmod>2023-08-15</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -274,7 +220,16 @@
   <url>
     <loc>http://oalieno.github.io/2019/04/26/p4fmt/</loc>
     
-    <lastmod>2022-11-01</lastmod>
+    <lastmod>2023-08-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://oalieno.github.io/2018/02/22/pollard/</loc>
+    
+    <lastmod>2023-08-15</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -283,7 +238,7 @@
   <url>
     <loc>http://oalieno.github.io/2019/03/21/protection/</loc>
     
-    <lastmod>2022-11-01</lastmod>
+    <lastmod>2023-08-15</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -292,7 +247,7 @@
   <url>
     <loc>http://oalieno.github.io/2019/06/07/pyc/</loc>
     
-    <lastmod>2022-11-01</lastmod>
+    <lastmod>2023-08-15</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -301,16 +256,7 @@
   <url>
     <loc>http://oalieno.github.io/2019/01/06/python-tricks/</loc>
     
-    <lastmod>2022-11-01</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://oalieno.github.io/2019/09/18/srop/</loc>
-    
-    <lastmod>2022-11-01</lastmod>
+    <lastmod>2023-08-15</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -319,16 +265,16 @@
   <url>
     <loc>http://oalieno.github.io/2019/06/07/rootkit/</loc>
     
-    <lastmod>2022-11-01</lastmod>
+    <lastmod>2023-08-15</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://oalieno.github.io/2020/01/18/terminal/</loc>
+    <loc>http://oalieno.github.io/2019/09/18/srop/</loc>
     
-    <lastmod>2022-11-01</lastmod>
+    <lastmod>2023-08-15</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -337,7 +283,70 @@
   <url>
     <loc>http://oalieno.github.io/2018/08/04/ssh/</loc>
     
-    <lastmod>2022-11-01</lastmod>
+    <lastmod>2023-08-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://oalieno.github.io/2020/01/18/terminal/</loc>
+    
+    <lastmod>2023-08-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://oalieno.github.io/2023/02/28/ubuntu-kernel-version/</loc>
+    
+    <lastmod>2023-08-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://oalieno.github.io/2023/08/15/windows-facts-00/</loc>
+    
+    <lastmod>2023-08-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://oalieno.github.io/2022/12/15/wtf-powershell/</loc>
+    
+    <lastmod>2023-08-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://oalieno.github.io/2022/11/01/MpDlpCmd/en/</loc>
+    
+    <lastmod>2023-08-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://oalieno.github.io/2022/11/12/flare-on-9/zh-tw/</loc>
+    
+    <lastmod>2023-08-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://oalieno.github.io/about/index.html</loc>
+    
+    <lastmod>2023-08-15</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -346,7 +355,7 @@
 
   <url>
     <loc>http://oalieno.github.io/</loc>
-    <lastmod>2023-03-02</lastmod>
+    <lastmod>2023-08-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -354,378 +363,385 @@
   
   <url>
     <loc>http://oalieno.github.io/tags/python/</loc>
-    <lastmod>2023-03-02</lastmod>
+    <lastmod>2023-08-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://oalieno.github.io/tags/GIL/</loc>
-    <lastmod>2023-03-02</lastmod>
+    <lastmod>2023-08-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://oalieno.github.io/tags/security/</loc>
-    <lastmod>2023-03-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://oalieno.github.io/tags/reverse/</loc>
-    <lastmod>2023-03-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://oalieno.github.io/tags/android/</loc>
-    <lastmod>2023-03-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://oalieno.github.io/tags/adb/</loc>
-    <lastmod>2023-03-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://oalieno.github.io/tags/nox/</loc>
-    <lastmod>2023-03-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://oalieno.github.io/tags/burp/</loc>
-    <lastmod>2023-03-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://oalieno.github.io/tags/drony/</loc>
-    <lastmod>2023-03-02</lastmod>
+    <lastmod>2023-08-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://oalieno.github.io/tags/ctf/</loc>
-    <lastmod>2023-03-02</lastmod>
+    <lastmod>2023-08-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://oalieno.github.io/tags/writeups/</loc>
-    <lastmod>2023-03-02</lastmod>
+    <lastmod>2023-08-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://oalieno.github.io/tags/reverse/</loc>
+    <lastmod>2023-08-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://oalieno.github.io/tags/android/</loc>
+    <lastmod>2023-08-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://oalieno.github.io/tags/adb/</loc>
+    <lastmod>2023-08-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://oalieno.github.io/tags/nox/</loc>
+    <lastmod>2023-08-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://oalieno.github.io/tags/burp/</loc>
+    <lastmod>2023-08-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://oalieno.github.io/tags/drony/</loc>
+    <lastmod>2023-08-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://oalieno.github.io/tags/blockchain/</loc>
-    <lastmod>2023-03-02</lastmod>
+    <lastmod>2023-08-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://oalieno.github.io/tags/hexo/</loc>
-    <lastmod>2023-03-02</lastmod>
+    <lastmod>2023-08-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://oalieno.github.io/tags/icarus/</loc>
-    <lastmod>2023-03-02</lastmod>
+    <lastmod>2023-08-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://oalieno.github.io/tags/blog/</loc>
-    <lastmod>2023-03-02</lastmod>
+    <lastmod>2023-08-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://oalieno.github.io/tags/seo/</loc>
-    <lastmod>2023-03-02</lastmod>
+    <lastmod>2023-08-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://oalieno.github.io/tags/algorithm/</loc>
-    <lastmod>2023-03-02</lastmod>
+    <lastmod>2023-08-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://oalieno.github.io/tags/chatgpt/</loc>
-    <lastmod>2023-03-02</lastmod>
+    <lastmod>2023-08-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://oalieno.github.io/tags/ai/</loc>
-    <lastmod>2023-03-02</lastmod>
+    <lastmod>2023-08-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://oalieno.github.io/tags/llm/</loc>
-    <lastmod>2023-03-02</lastmod>
+    <lastmod>2023-08-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://oalieno.github.io/tags/bloom/</loc>
-    <lastmod>2023-03-02</lastmod>
+    <lastmod>2023-08-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://oalieno.github.io/tags/c/</loc>
-    <lastmod>2023-03-02</lastmod>
+    <lastmod>2023-08-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://oalieno.github.io/tags/wootalk/</loc>
-    <lastmod>2023-03-02</lastmod>
+    <lastmod>2023-08-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://oalieno.github.io/tags/kernel/</loc>
-    <lastmod>2023-03-02</lastmod>
+    <lastmod>2023-08-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://oalieno.github.io/tags/cve/</loc>
-    <lastmod>2023-03-02</lastmod>
+    <lastmod>2023-08-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://oalieno.github.io/tags/windows/</loc>
-    <lastmod>2023-03-02</lastmod>
+    <lastmod>2023-08-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://oalieno.github.io/tags/gdb/</loc>
-    <lastmod>2023-03-02</lastmod>
+    <lastmod>2023-08-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://oalieno.github.io/tags/frida/</loc>
-    <lastmod>2023-03-02</lastmod>
+    <lastmod>2023-08-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://oalieno.github.io/tags/flow/</loc>
-    <lastmod>2023-03-02</lastmod>
+    <lastmod>2023-08-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://oalieno.github.io/tags/dapper-labs/</loc>
-    <lastmod>2023-03-02</lastmod>
+    <lastmod>2023-08-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://oalieno.github.io/tags/crypto/</loc>
-    <lastmod>2023-03-02</lastmod>
+    <lastmod>2023-08-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://oalieno.github.io/tags/osint/</loc>
-    <lastmod>2023-03-02</lastmod>
+    <lastmod>2023-08-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://oalieno.github.io/tags/rsa/</loc>
-    <lastmod>2023-03-02</lastmod>
+    <lastmod>2023-08-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://oalieno.github.io/tags/pwn/</loc>
-    <lastmod>2023-03-02</lastmod>
+    <lastmod>2023-08-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://oalieno.github.io/tags/pyc/</loc>
-    <lastmod>2023-03-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://oalieno.github.io/tags/srop/</loc>
-    <lastmod>2023-03-02</lastmod>
+    <lastmod>2023-08-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://oalieno.github.io/tags/rootkit/</loc>
-    <lastmod>2023-03-02</lastmod>
+    <lastmod>2023-08-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://oalieno.github.io/tags/zsh/</loc>
-    <lastmod>2023-03-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://oalieno.github.io/tags/zimfw/</loc>
-    <lastmod>2023-03-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://oalieno.github.io/tags/powerlevel9k/</loc>
-    <lastmod>2023-03-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://oalieno.github.io/tags/powerlevel10k/</loc>
-    <lastmod>2023-03-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://oalieno.github.io/tags/nord/</loc>
-    <lastmod>2023-03-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://oalieno.github.io/tags/ubuntu/</loc>
-    <lastmod>2023-03-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://oalieno.github.io/tags/linux/</loc>
-    <lastmod>2023-03-02</lastmod>
+    <loc>http://oalieno.github.io/tags/srop/</loc>
+    <lastmod>2023-08-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://oalieno.github.io/tags/ssh/</loc>
-    <lastmod>2023-03-02</lastmod>
+    <lastmod>2023-08-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://oalieno.github.io/tags/tunnel/</loc>
-    <lastmod>2023-03-02</lastmod>
+    <lastmod>2023-08-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://oalieno.github.io/tags/command/</loc>
-    <lastmod>2023-03-02</lastmod>
+    <lastmod>2023-08-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://oalieno.github.io/tags/proxy/</loc>
-    <lastmod>2023-03-02</lastmod>
+    <lastmod>2023-08-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://oalieno.github.io/tags/reverse-ssh/</loc>
-    <lastmod>2023-03-02</lastmod>
+    <lastmod>2023-08-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://oalieno.github.io/tags/zsh/</loc>
+    <lastmod>2023-08-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://oalieno.github.io/tags/zimfw/</loc>
+    <lastmod>2023-08-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://oalieno.github.io/tags/powerlevel9k/</loc>
+    <lastmod>2023-08-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://oalieno.github.io/tags/powerlevel10k/</loc>
+    <lastmod>2023-08-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://oalieno.github.io/tags/nord/</loc>
+    <lastmod>2023-08-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://oalieno.github.io/tags/ubuntu/</loc>
+    <lastmod>2023-08-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://oalieno.github.io/tags/linux/</loc>
+    <lastmod>2023-08-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://oalieno.github.io/tags/Windows/</loc>
+    <lastmod>2023-08-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://oalieno.github.io/tags/powershell/</loc>
-    <lastmod>2023-03-02</lastmod>
+    <lastmod>2023-08-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://oalieno.github.io/tags/windows-defender/</loc>
-    <lastmod>2023-03-02</lastmod>
+    <lastmod>2023-08-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://oalieno.github.io/tags/flare/</loc>
-    <lastmod>2023-03-02</lastmod>
+    <lastmod>2023-08-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://oalieno.github.io/tags/flare-on/</loc>
-    <lastmod>2023-03-02</lastmod>
+    <lastmod>2023-08-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://oalieno.github.io/tags/reverse-engineering/</loc>
-    <lastmod>2023-03-02</lastmod>
+    <lastmod>2023-08-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -734,56 +750,63 @@
   
   <url>
     <loc>http://oalieno.github.io/categories/%E7%A8%8B%E5%BC%8F/</loc>
-    <lastmod>2023-03-02</lastmod>
+    <lastmod>2023-08-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://oalieno.github.io/categories/%E8%B3%87%E5%AE%89/</loc>
-    <lastmod>2023-03-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://oalieno.github.io/categories/%E8%B3%87%E5%AE%89/reverse/</loc>
-    <lastmod>2023-03-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://oalieno.github.io/categories/%E6%BC%94%E7%AE%97%E6%B3%95/</loc>
-    <lastmod>2023-03-02</lastmod>
+    <lastmod>2023-08-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://oalieno.github.io/categories/%E8%B3%87%E5%AE%89/writeups/</loc>
-    <lastmod>2023-03-02</lastmod>
+    <lastmod>2023-08-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://oalieno.github.io/categories/%E8%B3%87%E5%AE%89/reverse/</loc>
+    <lastmod>2023-08-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://oalieno.github.io/categories/%E6%BC%94%E7%AE%97%E6%B3%95/</loc>
+    <lastmod>2023-08-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://oalieno.github.io/categories/AI/</loc>
-    <lastmod>2023-03-02</lastmod>
+    <lastmod>2023-08-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://oalieno.github.io/categories/%E5%8D%80%E5%A1%8A%E9%8D%8A/</loc>
-    <lastmod>2023-03-02</lastmod>
+    <lastmod>2023-08-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://oalieno.github.io/categories/%E8%B3%87%E5%AE%89/pwn/</loc>
-    <lastmod>2023-03-02</lastmod>
+    <lastmod>2023-08-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://oalieno.github.io/categories/%E9%9B%9C%E8%AB%87/</loc>
+    <lastmod>2023-08-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
